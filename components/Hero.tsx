@@ -6,9 +6,12 @@ const trust = ['Toutes marques', 'Sans rendez-vous', 'Paiement 3x / 4x', 'Devis 
 export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden bg-navy text-white">
-      {/* Photo de fond (atelier) */}
-      <img src={photos.devanture} alt="Le centre auto Roady de Solliès-Pont vu de l’extérieur" className="hero-img absolute inset-0 h-full w-full object-cover opacity-30" loading="eager" />
-      <div className="absolute inset-0 bg-gradient-to-br from-navy/95 via-navy/85 to-navy-3/80" />
+      {/* Photo de fond : la devanture doit se voir. Le voile est donc dégradé
+          horizontalement — opaque à gauche pour que le texte reste lisible,
+          presque transparent à droite où la photo est mise en valeur. */}
+      <img src={photos.devanture} alt="Le centre auto Roady de Solliès-Pont vu de l’extérieur" className="hero-img absolute inset-0 h-full w-full object-cover opacity-[.68]" loading="eager" />
+      <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/75 to-navy/25" />
+      <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-transparent to-navy/40" />
       <div className="pointer-events-none absolute inset-0" style={{ background: 'radial-gradient(760px 380px at 88% -10%, rgba(226,0,26,.4), transparent 60%)' }} />
 
       <div className="relative mx-auto max-w-6xl px-5 pb-24 pt-20 sm:pt-24">

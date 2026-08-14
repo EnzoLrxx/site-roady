@@ -18,9 +18,11 @@ body { -webkit-font-smoothing: antialiased; }
 .marquee-mask { -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
 
 /* Logos partenaires : gris au repos, couleur au survol */
-/* .62 rendait les logos clairs (Firestone, Total) quasi invisibles sur fond blanc */
-.logo-img { filter: grayscale(1); opacity: .82; transition: filter .3s ease, opacity .3s ease, transform .3s ease; }
-.logo-chip:hover .logo-img { filter: grayscale(0); opacity: 1; transform: scale(1.04); }
+/* Logos en couleur, à pleine opacité : en niveaux de gris et à .62 puis .82, ils
+   étaient illisibles — or ce sont des marques que le client doit reconnaître au
+   premier coup d'œil, c'est tout l'intérêt de la section. */
+.logo-img { opacity: 1; transition: transform .3s ease; }
+.logo-chip:hover .logo-img { transform: scale(1.06); }
 
 /* Hero image : léger zoom lent */
 @keyframes heroZoom { from { transform: scale(1.08); } to { transform: scale(1); } }

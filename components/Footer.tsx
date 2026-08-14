@@ -16,13 +16,14 @@ export default function Footer() {
           <div>
             <h4 className="mb-3.5 text-sm font-bold uppercase tracking-wide text-white">Prestations</h4>
             {['Révision & vidange', 'Pneus & géométrie', 'Freinage', 'Climatisation'].map((l) => (
-              <a key={l} href="#prestations" className="mb-2 block text-[14.5px] hover:text-white">{l}</a>
+              <a key={l} href="/#prestations" className="mb-2 block text-[14.5px] hover:text-white">{l}</a>
             ))}
           </div>
           <div>
             <h4 className="mb-3.5 text-sm font-bold uppercase tracking-wide text-white">Le garage</h4>
-            <a href="#pourquoi" className="mb-2 block text-[14.5px] hover:text-white">Pourquoi nous</a>
-            <a href="#contact" className="mb-2 block text-[14.5px] hover:text-white">Devis gratuit</a>
+            <a href="/catalogue" className="mb-2 block text-[14.5px] hover:text-white">Catalogue &amp; tarifs</a>
+            <a href="/#pourquoi" className="mb-2 block text-[14.5px] hover:text-white">Pourquoi nous</a>
+            <a href="/#contact" className="mb-2 block text-[14.5px] hover:text-white">Devis gratuit</a>
             <a href={site.phoneHref} className="mb-2 block text-[14.5px] hover:text-white">{site.phone}</a>
           </div>
         </div>

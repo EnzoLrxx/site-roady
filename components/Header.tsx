@@ -2,12 +2,13 @@
 import { useEffect, useState } from 'react';
 import { site } from '@/lib/site';
 
+// Ancres préfixées par « / » : sans cela elles ne mènent nulle part depuis /catalogue.
 const links = [
-  { href: '#prestations', label: 'Prestations' },
-  { href: '#pourquoi', label: 'Pourquoi nous' },
-  { href: '#marques', label: 'Marques' },
-  { href: '#avis', label: 'Avis' },
-  { href: '#contact', label: 'Accès' },
+  { href: '/#prestations', label: 'Prestations' },
+  { href: '/catalogue', label: 'Catalogue & tarifs' },
+  { href: '/#pourquoi', label: 'Pourquoi nous' },
+  { href: '/#avis', label: 'Avis' },
+  { href: '/#contact', label: 'Accès' },
 ];
 
 export default function Header() {
@@ -22,7 +23,7 @@ export default function Header() {
   return (
     <header className={`sticky top-0 z-50 transition-colors ${solid ? 'bg-white/95 backdrop-blur border-b border-line' : 'bg-white/95 border-b border-line'}`}>
       <div className="mx-auto flex h-[68px] max-w-6xl items-center gap-3 px-5">
-        <a href="#top" className="flex items-center gap-3">
+        <a href="/#top" className="flex items-center gap-3">
           <span className="flex h-10 w-10 items-center justify-center rounded-[10px] bg-red font-black italic text-white">R</span>
           <span className="font-extrabold text-ink leading-tight">
             {site.name}
@@ -36,7 +37,7 @@ export default function Header() {
         </nav>
         <div className="ml-auto flex items-center gap-3 md:ml-6">
           <span className="hidden whitespace-nowrap font-extrabold text-ink lg:inline">{site.phone}</span>
-          <a href="#contact" className="rounded-full bg-red px-5 py-2.5 text-sm font-bold text-white transition hover:bg-red-dark">Devis gratuit</a>
+          <a href="/#contact" className="rounded-full bg-red px-5 py-2.5 text-sm font-bold text-white transition hover:bg-red-dark">Devis gratuit</a>
           <button aria-label="Menu" className="md:hidden" onClick={() => setOpen(!open)}>
             <svg width="26" height="26" fill="none" stroke="#0e1b2c" strokeWidth="2"><path d="M4 7h18M4 13h18M4 19h18" /></svg>
           </button>
