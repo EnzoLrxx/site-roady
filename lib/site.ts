@@ -65,7 +65,7 @@ export type Offer = {
   tag: string;
   title: string;
   subtitle: string;
-  /** Prix affiché en gros. `null` quand l'offre n'a pas de prix (fidélité, pare-brise). */
+  /** Prix affiché en gros. `null` quand l'offre n'a pas de prix (ex. la fidélité). */
   price: string | null;
   unit: string;
   /** Remplace le prix quand celui-ci est `null`. */
@@ -109,17 +109,6 @@ export const offers: Offer[] = [
     unit: '€',
     points: ['Retrouvez les performances d’origine', 'Vanne EGR et FAP décalaminés', 'Évite des réparations coûteuses'],
     icon: 'engine',
-  },
-  {
-    id: 'pare-brise',
-    tag: 'Assurance',
-    title: 'Remplacement de pare-brise',
-    subtitle: 'Toutes assurances',
-    price: null,
-    unit: '',
-    headline: 'Franchise offerte + 50 € en bon d’achat',
-    points: ['Nous prenons en charge votre franchise', 'Bon d’achat de 50 € à dépenser en magasin', 'Démarches assurance gérées avec vous'],
-    icon: 'diag',
   },
   {
     id: 'fidelite',
