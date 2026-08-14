@@ -95,7 +95,10 @@ export const offers: Offer[] = [
     subtitle: 'Auto, moto, camping-car, poids lourd',
     price: '39',
     unit: '€ / phare',
-    points: ['Phares oxydés et opaques comme neufs', 'Vous récupérez votre capacité d’éclairage', 'Plus de 10 % des refus au contrôle technique viennent des optiques'],
+    // Bulles courtes : le détail (UV, contrôle technique) est développé dans la
+    // section « preuve en images » juste sous le carrousel, inutile de le répéter.
+    points: ['Phares oxydés comme neufs', 'Vous récupérez votre éclairage', 'Utile avant le contrôle technique'],
+    icon: 'diag',
     kind: 'compare',
     before: '/img/offres/phare-avant.jpg',
     after: '/img/offres/phare-apres.jpg',
