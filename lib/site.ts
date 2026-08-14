@@ -132,6 +132,25 @@ export const offers: Offer[] = [
   },
 ];
 
+/**
+ * Informations légales de l'éditeur (mentions légales, LCEN art. 6).
+ * Fournies par Enzo le 14/08/2026. Le siège social diffère de l'adresse du centre :
+ * le siège est au lieu-dit La Poulasse, le magasin au 6 bis avenue du Lion.
+ */
+export const legalInfo = {
+  forme: 'SAS',
+  denomination: 'SUNCAR',
+  capital: '40 000 €',
+  siege: 'Lieu-dit La Poulasse, 83210 Solliès-Pont',
+  rcs: 'Toulon 490 492 782',
+  siren: '490 492 782',
+  /** SIRET = SIREN + NIC (5 chiffres) de l'établissement. À compléter. */
+  siret: null as string | null,
+  tva: 'FR95490492782',
+  directeur: 'Éric Leroux',
+  directeurQualite: 'Président',
+};
+
 // Chiffres SOURÇABLES uniquement (BRIEF-Garde-fous.md).
 // « 24 points de contrôle » et « 8 métiers sous un même toit » ont été retirés :
 // aucune donnée ne les fonde. Remplacés par deux chiffres tirés de l'export de
