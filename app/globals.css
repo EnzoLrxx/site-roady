@@ -25,6 +25,10 @@ body { -webkit-font-smoothing: antialiased; }
 @keyframes heroZoom { from { transform: scale(1.08); } to { transform: scale(1); } }
 .hero-img { animation: heroZoom 12s ease-out both; }
 
+/* Carrousel d'offres : glissement natif, sans barre de défilement visible */
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
 /* Accordéon FAQ */
 .acc-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .35s ease; }
 .acc-panel.open { grid-template-rows: 1fr; }

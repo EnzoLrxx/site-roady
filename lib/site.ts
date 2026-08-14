@@ -11,9 +11,9 @@ export const site = {
   hours: 'Du lundi au samedi · 8h30–12h et 14h–17h30',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://garage-auto-sollies.fr',
   mapQuery: '6 bis avenue du Lion 83210 Solliès-Pont',
-  // Note Google — ⚠️ mets ta vraie note + nb d'avis (visible dans ton espace Goodays/Google).
-  googleRating: 4.6,
-  googleCount: 120,
+  // Note Google réelle, relevée sur la fiche d'établissement le 14/08/2026.
+  googleRating: 4.3,
+  googleCount: 444,
   googleReviewsUrl: 'https://www.google.com/search?q=Roady+Solli%C3%A8s-Pont+avis',
 } as const;
 
@@ -54,6 +54,84 @@ export const reviews = [
   { name: 'Julien M.', stars: 5, text: 'Accueil au top, devis clair et pas de mauvaise surprise. On voit qu’ils sont sérieux et honnêtes.' },
   { name: 'Sophie R.', stars: 5, text: 'Rapide pour la recharge de clim, prix correct. Je recommande sans hésiter, équipe sympa.' },
   { name: 'Karim B.', stars: 5, text: 'Ils m’ont montré en photo les pièces usées de ma voiture — franchement ça change tout côté confiance.' },
+];
+
+// Offres du moment — reprises des visuels réels du garage (bannières WordPress/Facebook).
+// Un seul style de carte pour toutes : c'est ce qui manquait à l'ancien carrousel,
+// où chaque offre avait sa propre couleur criarde.
+// `kind: 'compare'` déclenche le comparateur avant/après (rénovation de phares).
+export type Offer = {
+  id: string;
+  tag: string;
+  title: string;
+  subtitle: string;
+  /** Prix affiché en gros. `null` quand l'offre n'a pas de prix (fidélité, pare-brise). */
+  price: string | null;
+  unit: string;
+  /** Remplace le prix quand celui-ci est `null`. */
+  headline?: string;
+  points: string[];
+  icon?: string;
+  kind?: 'compare';
+  before?: string;
+  after?: string;
+};
+
+export const offers: Offer[] = [
+  {
+    id: 'clim',
+    tag: 'Le plus demandé',
+    title: 'Recharge climatisation',
+    subtitle: 'Gaz R134A',
+    price: '69',
+    unit: '€',
+    points: ['Diagnostic de fonctionnement', 'Recharge complète du circuit', 'Sans limite de quantité de gaz'],
+    icon: 'ac',
+  },
+  {
+    id: 'phares',
+    tag: 'Avant / après',
+    title: 'Rénovation d’optique de phares',
+    subtitle: 'Auto, moto, camping-car, poids lourd',
+    price: '39',
+    unit: '€ / phare',
+    points: ['Phares oxydés et opaques comme neufs', 'Vous récupérez votre capacité d’éclairage', 'Plus de 10 % des refus au contrôle technique viennent des optiques'],
+    kind: 'compare',
+    before: '/img/offres/phare-avant.jpg',
+    after: '/img/offres/phare-apres.jpg',
+  },
+  {
+    id: 'depollution',
+    tag: 'Nouveau',
+    title: 'Dépollution moteur',
+    subtitle: 'Éco-nettoyage Bardahl 360 Hybrid',
+    price: '99',
+    unit: '€',
+    points: ['Retrouvez les performances d’origine', 'Vanne EGR et FAP décalaminés', 'Évite des réparations coûteuses'],
+    icon: 'engine',
+  },
+  {
+    id: 'pare-brise',
+    tag: 'Pris en charge assurance',
+    title: 'Remplacement de pare-brise',
+    subtitle: 'Toutes assurances',
+    price: null,
+    unit: '',
+    headline: 'Franchise offerte + 50 € en bon d’achat',
+    points: ['Nous prenons en charge votre franchise', 'Bon d’achat de 50 € à dépenser en magasin', 'Démarches assurance gérées avec vous'],
+    icon: 'diag',
+  },
+  {
+    id: 'fidelite',
+    tag: 'Gratuit',
+    title: 'Carte de fidélité Roady',
+    subtitle: 'Votre programme de fidélité',
+    price: null,
+    unit: '',
+    headline: '1 € dépensé = 1 point',
+    points: ['250 points = 10 € offerts', 'Valable en atelier comme en boutique', 'Adhésion gratuite au comptoir'],
+    icon: 'battery',
+  },
 ];
 
 export const stats = [

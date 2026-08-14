@@ -1,0 +1,17 @@
+{
+  "_comment": "Fourchettes indicatives TTC calculees a partir des vrais devis Lemonauto (p25-p75). A rafraichir periodiquement depuis la base quotes.",
+  "_disclaimer": "Estimation indicative a titre informatif. Devis definitif etabli apres controle gratuit au garage.",
+  "categories": [
+    { "key": "vidange", "label": "Vidange / révision", "from": 119, "low": 165, "high": 280, "note": "selon huile et filtres", "n": 265 },
+    { "key": "freinage", "label": "Freinage (plaquettes / disques)", "low": 270, "high": 510, "note": "avant ou arrière, selon modèle", "n": 210 },
+    { "key": "pneus", "label": "Pneus", "from": 23, "low": 240, "high": 490, "note": "selon dimensions et nombre", "n": 393 },
+    { "key": "climatisation", "label": "Climatisation (recharge)", "from": 65, "low": 65, "high": 120, "note": "diagnostic inclus", "n": 0 },
+    { "key": "distribution", "label": "Kit de distribution", "low": 570, "high": 780, "note": "courroie + galets + pompe à eau", "n": 65 },
+    { "key": "embrayage", "label": "Embrayage", "low": 660, "high": 1090, "note": "selon véhicule", "n": 18 },
+    { "key": "boite_auto", "label": "Vidange boîte automatique", "low": 530, "high": 670, "note": "", "n": 48 },
+    { "key": "batterie", "label": "Batterie / démarrage", "low": 90, "high": 190, "note": "estimation — selon modèle", "n": 0, "estimate": true },
+    { "key": "phares", "label": "Rénovation des phares", "low": 89, "high": 150, "note": "", "n": 20 },
+    { "key": "geometrie", "label": "Géométrie / parallélisme", "from": 69, "low": 69, "high": 80, "note": "", "n": 0 },
+    { "key": "autre", "label": "Autre / je décris mon problème", "low": null, "high": null, "note": "estimation après description", "n": 136 }
+  ]
+}
