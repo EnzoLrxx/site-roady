@@ -206,7 +206,7 @@ export default function DevisForm() {
           <Check className="h-8 w-8" />
         </div>
         <h3 className="mb-2 text-xl font-extrabold text-ink">Demande envoyée !</h3>
-        <p className="text-body">On vous rappelle sous 24h ouvrées. Merci de votre confiance.</p>
+        <p className="text-body">On vous rappelle rapidement, aux horaires d’ouverture. Merci de votre confiance.</p>
         {est?.low != null && est.high != null && (
           <p className="mt-3 text-[13px] text-mut">
             Estimation retenue : entre {est.low} et {est.high} €. Le devis définitif sera établi après le contrôle gratuit.

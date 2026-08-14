@@ -32,7 +32,9 @@ export const photos = {
 };
 
 export const services = [
-  { t: 'Révision & vidange', d: 'Forfaits entretien toutes marques, filtres et contrôle 24 points inclus.', icon: 'oil' },
+  // « contrôle 24 points » retiré ici aussi : le chiffre n'est fondé sur rien,
+  // il avait déjà été enlevé de la bande de statistiques.
+  { t: 'Révision & vidange', d: 'Forfaits entretien toutes marques, filtres et contrôle inclus.', icon: 'oil' },
   { t: 'Pneus & géométrie', d: 'Montage, équilibrage, parallélisme et réparation de crevaison au champignon.', icon: 'tire' },
   { t: 'Freinage', d: 'Plaquettes, disques, purge du circuit — votre sécurité avant tout.', icon: 'brake' },
   { t: 'Climatisation', d: 'Recharge et entretien clim — notre spécialité maison, en 30 min.', icon: 'ac' },
@@ -166,7 +168,7 @@ export const faq = [
   { q: 'Faut-il prendre rendez-vous ?', a: 'Non, nous travaillons avec ou sans rendez-vous. Pour les grosses interventions (distribution, embrayage), un rendez-vous permet d’aller plus vite.' },
   { q: 'Puis-je payer en plusieurs fois ?', a: 'Oui, nous proposons le paiement en 3x ou 4x par carte, sans démarche compliquée. Idéal pour étaler une grosse réparation.' },
   { q: 'Entretenez-vous toutes les marques ?', a: 'Oui, toutes marques — sans perdre la garantie constructeur. Nous utilisons des pièces et huiles aux normes du constructeur.' },
-  { q: 'Le devis est-il gratuit ?', a: 'Toujours. Décrivez votre besoin via le formulaire ou par téléphone, et nous revenons vers vous avec un prix clair sous 24h ouvrées.' },
+  { q: 'Le devis est-il gratuit ?', a: 'Toujours. Décrivez votre besoin via le formulaire ou par téléphone, et nous revenons vers vous rapidement avec un prix clair, aux horaires d’ouverture.' },
   { q: 'C’est quoi le “diagnostic en photo” ?', a: 'À chaque contrôle, nous prenons des photos de l’usure réelle de votre véhicule. Vous voyez de vos yeux ce qui est à changer — aucune décision à l’aveugle.' },
 ];
 

@@ -18,10 +18,10 @@ export default function Infos() {
           <Reveal>
             <div>
               <span className="inline-block rounded-full bg-white/15 px-3 py-1.5 text-xs font-extrabold uppercase tracking-wide text-[#ffd0d5]">Devis gratuit</span>
-              <h2 className="mb-3.5 mt-3 text-[32px] font-extrabold tracking-tight text-white">Recevez votre devis en 24h</h2>
+              <h2 className="mb-3.5 mt-3 text-[32px] font-extrabold tracking-tight text-white">Recevez votre devis gratuit</h2>
               <p className="mb-5 text-base text-white/90">Dites-nous ce dont votre voiture a besoin. On vous répond vite, avec un prix clair et sans engagement.</p>
               <ul className="flex flex-col gap-2.5">
-                {['Réponse sous 24h ouvrées', 'Prix clair, sans surprise', 'Sans engagement'].map((t) => (
+                {['Réponse rapide, aux horaires d’ouverture', 'Prix clair, sans surprise', 'Sans engagement'].map((t) => (
                   <li key={t} className="flex items-start gap-2.5 text-[15px] text-white/90"><Check className="mt-0.5 h-5 w-5 shrink-0 text-[#ff5a6a]" /> {t}</li>
                 ))}
               </ul>
