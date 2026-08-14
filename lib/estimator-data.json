@@ -1,6 +1,6 @@
 {
-  "_comment": "Fourchettes indicatives TTC calculees a partir des vrais devis Lemonauto (p25-p75). A rafraichir periodiquement depuis la base quotes.",
-  "_disclaimer": "Estimation indicative a titre informatif. Devis definitif etabli apres controle gratuit au garage.",
+  "_comment": "Fourchettes indicatives TTC calculées à partir des vrais devis Lemonauto (p25-p75). À rafraîchir périodiquement depuis la base quotes. ATTENTION : _disclaimer est affiché tel quel aux clients sur le site.",
+  "_disclaimer": "Estimation indicative à titre informatif. Devis définitif établi après contrôle gratuit au garage.",
   "categories": [
     { "key": "vidange", "label": "Vidange / révision", "from": 119, "low": 165, "high": 280, "note": "selon huile et filtres", "n": 265 },
     { "key": "freinage", "label": "Freinage (plaquettes / disques)", "low": 270, "high": 510, "note": "avant ou arrière, selon modèle", "n": 210 },
