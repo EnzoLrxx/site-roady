@@ -17,7 +17,7 @@ export default function Hero() {
       <div className="relative mx-auto max-w-6xl px-5 pb-24 pt-20 sm:pt-24">
         <div className="mb-5 inline-flex animate-fadeUp items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-[13px] font-bold backdrop-blur">
           <span className="flex gap-0.5 text-amber-400">{Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-3.5 w-3.5" />)}</span>
-          <span className="text-white/90">{site.googleRating}/5 · {site.googleCount}+ avis · Solliès-Pont (83)</span>
+          <span className="text-white/90">{site.googleRating}/5 · {site.googleCount} avis · Solliès-Pont (83)</span>
         </div>
 
         <h1 className="mb-4 max-w-3xl animate-fadeUp text-4xl font-extrabold leading-[1.08] tracking-tight sm:text-[52px]" style={{ animationDelay: '.05s' }}>

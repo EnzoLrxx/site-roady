@@ -13,10 +13,29 @@ export default function Reviews() {
             <div className="inline-flex items-center gap-2.5 rounded-full border border-line bg-white px-4 py-2">
               <span className="flex gap-0.5 text-amber-400">{Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-4 w-4" />)}</span>
               <span className="text-sm font-bold text-ink">{site.googleRating}/5</span>
-              <span className="text-sm text-mut">· {site.googleCount}+ avis Google</span>
+              <span className="text-sm text-mut">· {site.googleCount} avis Google</span>
             </div>
           </div>
         </Reveal>
+
+        {/* Tant qu'aucun vrai avis n'a été repris depuis Google, on n'affiche
+            aucun témoignage : la note et le lien vers les avis réels suffisent,
+            et ils sont vérifiables par le client d'un clic. */}
+        {reviews.length === 0 && (
+          <Reveal>
+            <div className="mx-auto max-w-2xl rounded-2xl border border-line bg-white p-8 text-center">
+              <p className="text-[17px] leading-relaxed text-body">
+                <strong className="font-bold text-ink">{site.googleCount} clients</strong> ont noté le garage
+                sur Google, pour une moyenne de <strong className="font-bold text-ink">{site.googleRating}/5</strong>.
+              </p>
+              <p className="mt-2 text-[14.5px] text-mut">
+                Nous préférons vous laisser les lire directement à la source, plutôt que d’en sélectionner
+                quelques-uns ici.
+              </p>
+            </div>
+          </Reveal>
+        )}
+
         <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
           {reviews.map((r, i) => (
             <Reveal key={r.name} delay={i * 90}>

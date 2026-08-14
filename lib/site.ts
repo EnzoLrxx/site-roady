@@ -54,12 +54,13 @@ export const brands = [
   { name: 'Osram', logo: '/img/marques/Osram.png' },
 ];
 
-// ⚠️ AVIS : remplace ces 3 exemples par tes VRAIS avis Google/Goodays (copier-coller).
-export const reviews = [
-  { name: 'Julien M.', stars: 5, text: 'Accueil au top, devis clair et pas de mauvaise surprise. On voit qu’ils sont sérieux et honnêtes.' },
-  { name: 'Sophie R.', stars: 5, text: 'Rapide pour la recharge de clim, prix correct. Je recommande sans hésiter, équipe sympa.' },
-  { name: 'Karim B.', stars: 5, text: 'Ils m’ont montré en photo les pièces usées de ma voiture — franchement ça change tout côté confiance.' },
-];
+// AVIS — volontairement VIDE.
+// Les trois avis qui figuraient ici (Julien M., Sophie R., Karim B.) étaient inventés
+// par le scaffold initial. Publier de faux témoignages est interdit (pratique
+// commerciale trompeuse) autant que contraire à BRIEF-Garde-fous.md.
+// La section affiche donc la vraie note Google et renvoie vers les avis réels.
+// Pour en afficher : copier-coller ici de VRAIS avis (prénom + texte), rien d'autre.
+export const reviews: { name: string; stars: number; text: string }[] = [];
 
 // Offres du moment — reprises des visuels réels du garage (bannières WordPress/Facebook).
 // Un seul style de carte pour toutes : c'est ce qui manquait à l'ancien carrousel,
@@ -131,10 +132,14 @@ export const offers: Offer[] = [
   },
 ];
 
+// Chiffres SOURÇABLES uniquement (BRIEF-Garde-fous.md).
+// « 24 points de contrôle » et « 8 métiers sous un même toit » ont été retirés :
+// aucune donnée ne les fonde. Remplacés par deux chiffres tirés de l'export de
+// caisse 2026, donc vérifiables : interventions réalisées et références vendues.
 export const stats = [
+  { n: 3829, suffix: '', label: 'interventions depuis janvier 2026' },
+  { n: 2129, suffix: '', label: 'références différentes vendues' },
   { n: 400, suffix: ' m²', label: 'de boutique & atelier' },
-  { n: 24, suffix: ' pts', label: 'de contrôle à chaque visite' },
-  { n: 8, suffix: '', label: 'métiers sous un même toit' },
   { n: 6, suffix: 'j/7', label: 'ouvert du lundi au samedi' },
 ];
 

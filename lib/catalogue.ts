@@ -8,17 +8,22 @@ import raw from './catalogue-roady.json';
  * régénérable depuis W-Contact — tout le nettoyage se fait ici, à l'affichage.
  */
 
-export type Prestation = { designation: string; prix_ttc: number; ventes?: number };
+export type Prestation = { designation: string; prix_ttc: number; ventes_2026?: number };
 
 /** Période couverte par l'export (ex. « ventes 2026 (janv.→10 août) »). */
 export const periode: string = (raw as { periode?: string }).periode ?? '';
 
 /**
- * Lignes de caisse à ne jamais montrer au client. Une « REMISE VIDANGE 10 EUROS »
- * affichée à 10 € laisserait croire à une vidange à 10 €.
+ * Mention obligatoire à côté de tout prix affiché (cf. BRIEF-Garde-fous.md) :
+ * ces tarifs sont des forfaits réels, mais ils dépendent du véhicule.
  */
-const LIGNES_INTERNES =
-  /^(REMISE\b|BON ACHAT\b|PRODUITS CONNEXES|FRAIS DE\b|TARIF HORAIRE\b|PRISE EN CHARGE\b|MAIN D'OEUVRE MECANIQUE)/i;
+export const MENTION_PRIX = 'Tarif indicatif — peut varier selon le véhicule ; devis gratuit.';
+
+/**
+ * L'export ne contient plus que des prestations vérifiées (≥ 3 ventes en 2026,
+ * prix réels de la grille) : le filtrage des écritures de caisse est fait en amont,
+ * il n'y a donc plus rien à masquer ici. On n'ajoute et on ne retire aucune ligne.
+ */
 
 /** Sigles métier à garder tels quels une fois le libellé remis en minuscules. */
 const SIGLES = new Set([
@@ -100,7 +105,6 @@ export const prestations: Categorie[] = Object.entries(
   .map(([nom, items]) => {
     const vus = new Set<string>();
     const nettoyes = items
-      .filter((it) => !LIGNES_INTERNES.test(it.designation))
       .filter((it) => {
         // Le même forfait apparaît parfois plusieurs fois dans l'export.
         const cle = `${it.designation}|${it.prix_ttc}`;
@@ -114,7 +118,7 @@ export const prestations: Categorie[] = Object.entries(
       nom,
       items: nettoyes,
       aPartirDe: nettoyes[0]?.prix_ttc ?? 0,
-      ventes: nettoyes.reduce((n, it) => n + (it.ventes ?? 0), 0),
+      ventes: nettoyes.reduce((n, it) => n + (it.ventes_2026 ?? 0), 0),
     };
   })
   .filter((c) => c.items.length > 0)
@@ -130,8 +134,8 @@ export const totalPrestations = prestations.reduce((n, c) => n + c.items.length,
  */
 export const populaires: (Item & { categorie: string })[] = prestations
   .flatMap((c) => c.items.map((it) => ({ ...it, categorie: c.nom })))
-  .filter((it) => (it.ventes ?? 0) > 0)
-  .sort((a, b) => (b.ventes ?? 0) - (a.ventes ?? 0))
+  .filter((it) => (it.ventes_2026 ?? 0) > 0)
+  .sort((a, b) => (b.ventes_2026 ?? 0) - (a.ventes_2026 ?? 0))
   .slice(0, 6);
 
 /**
@@ -145,13 +149,17 @@ const EDITO: Record<string, { desc: string; marques: string[]; icon: string }> =
   'Huiles & lubrifiants': { desc: 'Du 0W20 au 10W40, en bidon ou au fût, normes constructeur respectées.', marques: ['Total', 'Motul', 'Mannol'], icon: 'oil' },
   'Freinage (pièces)': { desc: 'Plaquettes et disques avant et arrière, qualité première monte.', marques: ['Ferodo'], icon: 'brake' },
   'Distribution (pièces)': { desc: 'Kits complets courroie + galets + pompe à eau, et courroies accessoires.', marques: ['Gates'], icon: 'belt' },
-  'Batteries': { desc: 'Du 50 au 100 Ah, standard, AGM et Start & Stop, en stock.', marques: ['Fiamm', 'Bosch'], icon: 'battery' },
+  'Batteries': { desc: 'Du 44 au 100 Ah, standard, AGM et Start & Stop, auto et moto.', marques: ['Fiamm', 'Bosch'], icon: 'battery' },
   'Ampoules & éclairage': { desc: 'H7, H4, W5W, LED — remplacement possible immédiatement au comptoir.', marques: ['Osram', 'Neolux'], icon: 'diag' },
   'Essuie-glaces': { desc: 'Balais plats de 400 à 650 mm, avant et arrière, posés gratuitement.', marques: ['Bosch', 'Valeo'], icon: 'diag' },
   'Bougies': { desc: 'Allumage et préchauffage, nickel et iridium.', marques: ['NGK', 'Bosch'], icon: 'engine' },
   'Liquides & entretien': { desc: 'Lave-glace, liquide de refroidissement -20 °C à -37 °C, en 5 L.', marques: ['Carex'], icon: 'oil' },
   'Produits d’entretien & additifs': { desc: 'Nettoyants freins, dégrippants, nettoyants injecteurs, soins intérieurs.', marques: ['Textar', 'Bardahl'], icon: 'engine' },
   'Recharge climatisation': { desc: 'Gaz R134A et nouveau gaz R1234YF, recharge réalisée sur place.', marques: [], icon: 'ac' },
+  'Gaz & recharge clim': { desc: 'Gaz R134A et nouveau gaz R1234YF, recharge réalisée sur place.', marques: [], icon: 'ac' },
+  'Additifs & entretien': { desc: 'Nettoyants freins, dégrippants, nettoyants injecteurs, soins intérieurs.', marques: ['Textar', 'Bardahl'], icon: 'engine' },
+  'Pièces train roulant': { desc: 'Amortisseurs, rotules, biellettes, triangles, roulements et soufflets.', marques: ['TRW', 'SKF', 'Moog'], icon: 'tire' },
+  'Autres pièces & accessoires': { desc: 'Pneumatiques toutes dimensions, balais, accessoires d’habitacle, produits de lavage.', marques: ['Firestone', 'Michelin', 'Bridgestone', 'Valeo'], icon: 'tire' },
 };
 
 /** Ancre de lien vers une catégorie boutique : « Huiles & lubrifiants » -> « huiles-lubrifiants ». */
@@ -175,7 +183,7 @@ export type CategorieBoutique = {
 };
 
 export const boutique: CategorieBoutique[] = Object.entries(
-  raw.produits_boutique as Record<string, { nb_references: number }>
+  raw.pieces as Record<string, { nb_references: number }>
 )
   .map(([nom, v]) => ({
     nom,

@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useMemo, useState } from 'react';
-import { prestations, boutique, prix, totalPrestations, totalReferences, populaires } from '@/lib/catalogue';
+import { prestations, boutique, prix, totalPrestations, totalReferences, populaires, MENTION_PRIX } from '@/lib/catalogue';
 import { site, brands } from '@/lib/site';
 import { ServiceIcon, Check, Phone } from './Icons';
 import Reveal from './Reveal';
@@ -266,6 +266,7 @@ export default function Catalogue() {
 
 function Liste({ items }: { items: { designation: string; label: string; prix_ttc: number }[] }) {
   return (
+    <>
     <ul className="divide-y divide-line">
       {items.map((it) => (
         <li key={it.designation + it.prix_ttc} className="flex items-center justify-between gap-4 px-5 py-3.5">
@@ -274,6 +275,9 @@ function Liste({ items }: { items: { designation: string; label: string; prix_tt
         </li>
       ))}
     </ul>
+    {/* Une condition à côté de chaque prix : le forfait est réel, mais il dépend du véhicule. */}
+    <p className="border-t border-line bg-wash px-5 py-3 text-[12px] leading-snug text-mut">{MENTION_PRIX}</p>
+    </>
   );
 }
 
@@ -287,7 +291,7 @@ function TuileBoutique({ c }: { c: { nom: string; slug: string; nbReferences: nu
       <p className="mt-1 text-[26px] font-extrabold leading-none tracking-tight text-red">
         {c.nbReferences}
         <span className="ml-1.5 text-[13px] font-bold text-mut">
-          référence{c.nbReferences > 1 ? 's' : ''} différentes
+          référence{c.nbReferences > 1 ? 's' : ''} vendues en 2026
         </span>
       </p>
       <p className="mt-3 flex-1 text-[14px] leading-relaxed text-body">{c.desc}</p>
