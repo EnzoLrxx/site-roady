@@ -17,16 +17,13 @@ export const site = {
   googleReviewsUrl: 'https://www.google.com/search?q=Roady+Solli%C3%A8s-Pont+avis',
 } as const;
 
-// ⚠️ IMAGES : elles pointent aujourd'hui vers ton WordPress (le temps qu'il est en ligne).
-// AVANT la bascule DNS vers Railway : copie /wp-content/uploads dans le dossier /public
-// et remplace IMAGE_BASE par '' (chaîne vide). Voir public/README-ASSETS.md.
-export const IMAGE_BASE = 'https://garage-auto-sollies.fr';
-
+// IMAGES : rapatriées du WordPress dans /public/img (14/08/2026).
+// Elles sont désormais servies par le site lui-même : la bascule DNS ne les casse plus.
 export const photos = {
-  atelier: `${IMAGE_BASE}/wp-content/uploads/2019/02/IMG_2560.jpg`,
-  essuie: `${IMAGE_BASE}/wp-content/uploads/2019/02/IMG_2528.jpg`,
-  batteries: `${IMAGE_BASE}/wp-content/uploads/2019/02/IMG_2534.jpg`,
-  huiles: `${IMAGE_BASE}/wp-content/uploads/2019/02/IMG_2550.jpg`,
+  atelier: '/img/photos/IMG_2560.jpg',
+  essuie: '/img/photos/IMG_2528.jpg',
+  batteries: '/img/photos/IMG_2534.jpg',
+  huiles: '/img/photos/IMG_2550.jpg',
 };
 
 export const services = [
@@ -40,16 +37,16 @@ export const services = [
   { t: 'Diagnostic électronique', d: 'Lecture des défauts et contrôle complet, avec photos de l’usure réelle.', icon: 'diag' },
 ] as const;
 
-// Logos réels (hébergés sur ton WordPress).
+// Logos réels (rapatriés du WordPress dans /public/img/marques).
 export const brands = [
-  { name: 'Michelin', logo: `${IMAGE_BASE}/wp-content/uploads/2019/01/Logo-Marque-garage-auto-Sollies-Var-pneu-michelin.png` },
-  { name: 'Bridgestone', logo: `${IMAGE_BASE}/wp-content/uploads/2019/01/Logo-Marque-garage-auto-Sollies-Var-pneu-bridgestone.png` },
-  { name: 'Firestone', logo: `${IMAGE_BASE}/wp-content/uploads/2019/01/Logo-Marque-garage-auto-Sollies-Var-Pneu-firestone.png` },
-  { name: 'Total', logo: `${IMAGE_BASE}/wp-content/uploads/2019/01/Logo-Marque-garage-auto-Sollies-Var-total-huile.png` },
-  { name: 'Motul', logo: `${IMAGE_BASE}/wp-content/uploads/2019/01/Logo-Marque-garage-auto-Sollies-Var-huiles-motul.png` },
-  { name: 'Valeo', logo: `${IMAGE_BASE}/wp-content/uploads/2019/01/Logo-Marque-garage-auto-Sollies-Var-valeo.png` },
-  { name: 'NGK', logo: `${IMAGE_BASE}/wp-content/uploads/2019/01/Logo-Marque-garage-auto-Sollies-Var-ngk.png` },
-  { name: 'Osram', logo: `${IMAGE_BASE}/wp-content/uploads/2019/01/Logo-Marque-garage-auto-Sollies-Var-Osram.png` },
+  { name: 'Michelin', logo: '/img/marques/pneu-michelin.png' },
+  { name: 'Bridgestone', logo: '/img/marques/pneu-bridgestone.png' },
+  { name: 'Firestone', logo: '/img/marques/Pneu-firestone.png' },
+  { name: 'Total', logo: '/img/marques/total-huile.png' },
+  { name: 'Motul', logo: '/img/marques/huiles-motul.png' },
+  { name: 'Valeo', logo: '/img/marques/valeo.png' },
+  { name: 'NGK', logo: '/img/marques/ngk.png' },
+  { name: 'Osram', logo: '/img/marques/Osram.png' },
 ];
 
 // ⚠️ AVIS : remplace ces 3 exemples par tes VRAIS avis Google/Goodays (copier-coller).

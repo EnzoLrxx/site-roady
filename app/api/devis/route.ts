@@ -31,15 +31,24 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: true, stub: true });
   }
 
+  // Slash final toléré : `https://app.lemonauto.fr/` produirait sinon une URL en `//api/...`
+  const base = apiUrl.replace(/\/+$/, '');
+
   try {
-    const r = await fetch(`${apiUrl}/api/public/devis-request`, {
+    // Sans timeout, un upstream qui pend laisse le visiteur bloqué sur « Envoi… ».
+    const r = await fetch(`${base}/api/public/devis-request`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'x-api-key': token },
       body: JSON.stringify(body),
+      signal: AbortSignal.timeout(8000),
     });
-    if (!r.ok) return NextResponse.json({ error: 'upstream' }, { status: 502 });
+    if (!r.ok) {
+      console.error('[devis] upstream', r.status);
+      return NextResponse.json({ error: 'upstream' }, { status: 502 });
+    }
     return NextResponse.json({ ok: true });
-  } catch {
+  } catch (e) {
+    console.error('[devis] network', e);
     return NextResponse.json({ error: 'network' }, { status: 502 });
   }
 }
