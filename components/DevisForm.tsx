@@ -14,6 +14,7 @@ type Estimate = {
   note: string;
   disclaimer: string;
   source: 'live' | 'default';
+  basis?: { level: 'category' | 'make' | 'model'; sampleSize?: number };
 };
 
 const CATEGORIES = estimatorData.categories as Category[];
@@ -24,23 +25,57 @@ const field =
 const label = 'mb-1 block text-[12.5px] font-bold text-ink';
 
 /** Carte d'estimation. `aria-live` pour que le lecteur d'écran annonce la fourchette. */
-function EstimateCard({ est, loading }: { est: Estimate | null; loading: boolean }) {
+function EstimateCard({
+  est,
+  loading,
+  make,
+  model,
+}: {
+  est: Estimate | null;
+  loading: boolean;
+  make?: string;
+  model?: string;
+}) {
+  // « Affinée » seulement si Lemonauto a vraiment calculé sur le véhicule.
+  // Le repli statique ne connaît que la catégorie : on n'en fait pas une personnalisation.
+  const refined =
+    est?.source === 'live' && (est.basis?.level === 'make' || est.basis?.level === 'model');
+  const vehicle = [make?.trim(), model?.trim()].filter(Boolean).join(' ');
+  // Une estimation déjà affichée n'est pas remplacée par le loader : on l'affine sur place.
+  const firstLoad = loading && !est;
+
   return (
     <div aria-live="polite" className="min-h-[1px]">
-      {loading && (
+      {firstLoad && (
         <div className="mt-4 flex items-center gap-2.5 rounded-xl border border-line bg-wash px-4 py-3.5 text-[13.5px] text-mut">
           <span className="h-4 w-4 animate-spin rounded-full border-2 border-line border-t-red" aria-hidden />
           Calcul de votre estimation…
         </div>
       )}
 
-      {!loading && est && est.low !== null && est.high !== null && (
+      {!firstLoad && est && est.low !== null && est.high !== null && (
         <div className="mt-4 animate-fadeUp rounded-xl border border-[#f2c9ce] bg-red-wash p-4">
-          <p className="text-[12px] font-extrabold uppercase tracking-wide text-red">Estimation indicative</p>
+          <div className="flex items-center gap-2">
+            <p className="text-[12px] font-extrabold uppercase tracking-wide text-red">
+              {refined ? 'Estimation affinée' : 'Estimation indicative'}
+            </p>
+            {loading && (
+              <span
+                className="h-3 w-3 animate-spin rounded-full border-2 border-[#f2c9ce] border-t-red"
+                aria-label="Affinage en cours"
+              />
+            )}
+          </div>
           <p className="mt-1.5 text-[22px] font-extrabold leading-tight text-ink">
             entre {est.low} et {est.high} €
           </p>
           {est.from != null && <p className="mt-0.5 text-[13.5px] font-bold text-red">dès {est.from} €</p>}
+          {refined && vehicle && (
+            <p className="mt-1 text-[13px] font-semibold text-body">
+              Pour votre {vehicle}
+              {est.basis?.sampleSize ? ` — basée sur ${est.basis.sampleSize} véhicules similaires` : ''}
+            </p>
+          )}
           {est.note && <p className="mt-1 text-[13px] text-body">{est.note}</p>}
           <p className="mt-2.5 border-t border-[#f2c9ce] pt-2.5 text-[11.5px] leading-snug text-mut">
             {est.disclaimer}
@@ -48,7 +83,7 @@ function EstimateCard({ est, loading }: { est: Estimate | null; loading: boolean
         </div>
       )}
 
-      {!loading && est && (est.low === null || est.high === null) && (
+      {!firstLoad && est && (est.low === null || est.high === null) && (
         <div className="mt-4 animate-fadeUp rounded-xl border border-line bg-wash p-4">
           <p className="text-[13.5px] font-bold text-ink">Estimation après description</p>
           <p className="mt-1 text-[13px] text-body">
@@ -117,12 +152,21 @@ export default function DevisForm() {
   const isAutre = category === 'autre';
   const canLeaveStep0 = category !== '' && (!isAutre || freetext.trim().length >= 3);
 
+  // Affinage par véhicule : dès que la marque ou le modèle est saisi à l'étape 2,
+  // on redemande une fourchette calculée sur ce véhicule précis.
+  // Débounce à 500 ms pour ne pas tirer une requête par frappe ; les réponses
+  // tardives sont neutralisées par le compteur dans runEstimate.
+  useEffect(() => {
+    if (step !== 1 || !category || isAutre) return;
+    if (!make.trim() && !model.trim()) return;
+    const t = setTimeout(() => {
+      runEstimate({ category, vehicle: { make: make.trim(), model: model.trim() } });
+    }, 500);
+    return () => clearTimeout(t);
+  }, [step, category, isAutre, make, model, runEstimate]);
+
   function next() {
     if (step === 0 && !canLeaveStep0) return;
-    // Au passage à l'étape 3, on tente d'affiner la fourchette avec le véhicule.
-    if (step === 1 && category && !isAutre && (make || model || plate)) {
-      runEstimate({ category, vehicle: { make, model, plateNumber: plate } });
-    }
     setStep((s) => Math.min(2, s + 1));
   }
 
@@ -260,7 +304,7 @@ export default function DevisForm() {
             </label>
             <input id="plate" value={plate} onChange={(e) => setPlate(e.target.value)} placeholder="AA-123-AA" className={field} />
           </div>
-          <EstimateCard est={est} loading={estLoading} />
+          <EstimateCard est={est} loading={estLoading} make={make} model={model} />
         </div>
       )}
 
@@ -283,7 +327,7 @@ export default function DevisForm() {
             </label>
             <input id="clientEmail" name="clientEmail" type="email" placeholder="vous@email.fr" className={field} />
           </div>
-          <EstimateCard est={est} loading={estLoading} />
+          <EstimateCard est={est} loading={estLoading} make={make} model={model} />
         </div>
       )}
 

@@ -31,6 +31,12 @@ export type Estimate = {
   disclaimer: string;
   /** 'live' = calculé par Lemonauto ; 'default' = repli statique. */
   source: 'live' | 'default';
+  /**
+   * Sur quoi Lemonauto a calculé la fourchette. `level` monte en précision :
+   * 'category' (tous véhicules) < 'make' (la marque) < 'model' (le modèle exact).
+   * Absent du repli statique, qui ne connaît que la catégorie.
+   */
+  basis?: { level: 'category' | 'make' | 'model'; sampleSize?: number };
 };
 
 function fallback(category?: string): Estimate {
