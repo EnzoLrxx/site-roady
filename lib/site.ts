@@ -19,8 +19,13 @@ export const site = {
 
 // IMAGES : rapatriées du WordPress dans /public/img (14/08/2026).
 // Elles sont désormais servies par le site lui-même : la bascule DNS ne les casse plus.
+// L'ancienne photo « atelier » (IMG_2560) montrait le comptoir pare-brise, couvert de
+// « ICI REMPLACEZ VOTRE PARE-BRISE / Franchise offerte ». Prestation abandonnée : elle
+// a été retirée du site, où elle servait au hero, au diagnostic ET à la boutique.
 export const photos = {
-  atelier: '/img/photos/IMG_2560.jpg',
+  devanture: '/img/photos/devanture.jpg',
+  atelier: '/img/photos/atelier-machines.jpg',
+  pneus: '/img/photos/pneus.jpg',
   essuie: '/img/photos/IMG_2528.jpg',
   batteries: '/img/photos/IMG_2534.jpg',
   huiles: '/img/photos/IMG_2550.jpg',

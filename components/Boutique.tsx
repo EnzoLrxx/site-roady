@@ -5,7 +5,7 @@ const gallery = [
   { src: photos.essuie, label: 'Accessoires & essuie-glaces' },
   { src: photos.batteries, label: 'Batteries' },
   { src: photos.huiles, label: 'Huiles & liquides' },
-  { src: photos.atelier, label: 'Atelier mécanique' },
+  { src: photos.pneus, label: 'Pneus toutes marques' },
 ];
 
 export default function Boutique() {

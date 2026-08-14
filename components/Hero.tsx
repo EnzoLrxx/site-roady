@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden bg-navy text-white">
       {/* Photo de fond (atelier) */}
-      <img src={photos.atelier} alt="Atelier Roady Solliès-Pont" className="hero-img absolute inset-0 h-full w-full object-cover opacity-30" loading="eager" />
+      <img src={photos.devanture} alt="Le centre auto Roady de Solliès-Pont vu de l’extérieur" className="hero-img absolute inset-0 h-full w-full object-cover opacity-30" loading="eager" />
       <div className="absolute inset-0 bg-gradient-to-br from-navy/95 via-navy/85 to-navy-3/80" />
       <div className="pointer-events-none absolute inset-0" style={{ background: 'radial-gradient(760px 380px at 88% -10%, rgba(226,0,26,.4), transparent 60%)' }} />
 

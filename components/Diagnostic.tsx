@@ -15,7 +15,7 @@ export default function Diagnostic() {
         <Reveal>
           <div className="relative">
             <div className="overflow-hidden rounded-3xl border border-line shadow-[0_20px_50px_rgba(14,27,44,.12)]">
-              <img src={photos.atelier} alt="Diagnostic en atelier" className="h-[360px] w-full object-cover" loading="lazy" />
+              <img src={photos.atelier} alt="Bancs de diagnostic et station de climatisation de l’atelier" className="h-[360px] w-full object-cover" loading="lazy" />
             </div>
             <div className="absolute -bottom-5 -right-3 hidden rounded-2xl bg-red px-5 py-4 text-white shadow-xl sm:block">
               <div className="text-2xl font-extrabold leading-none">100%</div>
