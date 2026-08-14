@@ -1,2124 +1,1122 @@
 {
  "garage": "Roady Solliès-Pont — SAS SUNCAR",
+ "periode": "ventes 2026 (janv.→10 août)",
  "prestations": {
-  "Accessoires & pose": [
-   {
-    "designation": "POSE PLAQUE IMMATRICULATION X1",
-    "prix_ttc": 5.0
-   },
-   {
-    "designation": "POSE AUTO RADIO PREEQ ISO",
-    "prix_ttc": 19.0
-   },
-   {
-    "designation": "POSE COFFRE DE TOIT",
-    "prix_ttc": 20.0
-   },
-   {
-    "designation": "POSE SILENCIEUX AR ECHAPPEMENT",
-    "prix_ttc": 35.0
-   },
-   {
-    "designation": "POSE BARRES DE TOIT",
-    "prix_ttc": 35.0
-   },
-   {
-    "designation": "POSE ELEMENT INTER ECHAPPEMENT X1",
-    "prix_ttc": 54.0
-   },
-   {
-    "designation": "POSE LIGNE ECHAPPEMENT SANS COLLECTEUR",
-    "prix_ttc": 65.0
-   }
-  ],
   "Attelage & remorque": [
    {
     "designation": "MONTAGE PNEU REMORQUE",
-    "prix_ttc": 19.0
-   },
-   {
-    "designation": "POSE FAISCEAU D'ATTELAGE R20",
-    "prix_ttc": 30.0
-   },
-   {
-    "designation": "POSE FAISCEAU D'ATTELAGE S30",
-    "prix_ttc": 30.0
-   },
-   {
-    "designation": "POSE FAISCEAU D'ATTELAGE T45",
-    "prix_ttc": 40.0
-   },
-   {
-    "designation": "POSE FAISCEAU D'ATTELAGE V60",
-    "prix_ttc": 60.0
-   },
-   {
-    "designation": "TARIF HORAIRE MAIN D'OEUVRE ATTELAGE",
-    "prix_ttc": 79.9
-   },
-   {
-    "designation": "OPTION FAISCEAU 13 BROCHES DIRECT BATT",
-    "prix_ttc": 79.9
-   },
-   {
-    "designation": "POSE FAISCEAU D'ATTELAGE W+60",
-    "prix_ttc": 80.0
-   },
-   {
-    "designation": "PACK REMORQUE SECURITE ERKA 428",
-    "prix_ttc": 99.0
-   },
-   {
-    "designation": "REMP FAISCEAU MULTIPLEXE (HORS PIECES)",
-    "prix_ttc": 119.0
-   },
-   {
-    "designation": "POSE FERRURE D'ATTELAGE A60",
-    "prix_ttc": 139.0
-   },
-   {
-    "designation": "PACK REMORQUE SECURITE 150",
-    "prix_ttc": 159.0
-   },
-   {
-    "designation": "PACK REMORQUE SECURITE 200",
-    "prix_ttc": 159.0
-   },
-   {
-    "designation": "PACK REMORQUE SECURITE 200 BOIS",
-    "prix_ttc": 159.0
-   },
-   {
-    "designation": "PACK REMORQUE SECURITE 230",
-    "prix_ttc": 159.0
-   },
-   {
-    "designation": "PACK REMORQUE SECURITE 252 BOIS",
-    "prix_ttc": 159.0
-   },
-   {
-    "designation": "POSE FERRURE D'ATTELAGE B90",
-    "prix_ttc": 179.0
-   },
-   {
-    "designation": "POSE FERRURE D'ATTELAGE C120",
-    "prix_ttc": 179.0
-   },
-   {
-    "designation": "POSE FERRURE D'ATTELAGE D150",
-    "prix_ttc": 219.0
-   },
-   {
-    "designation": "PACK REMORQUE PRO 200 BOIS",
-    "prix_ttc": 249.0
-   },
-   {
-    "designation": "PACK REMORQUE PRO 252 BOIS",
-    "prix_ttc": 259.0
-   },
-   {
-    "designation": "POSE FERRURE D'ATTELAGE E+150",
-    "prix_ttc": 259.0
-   },
-   {
-    "designation": "POSE ATTELAGE + FAISCEAU (HORS PIECES)",
-    "prix_ttc": 259.0
-   },
-   {
-    "designation": "PACK REMORQUE VACANCES 150",
-    "prix_ttc": 279.0
-   },
-   {
-    "designation": "PACK REMORQUE VACANCES 200",
-    "prix_ttc": 299.0
-   },
-   {
-    "designation": "PACK REMORQUE VACANCES 232",
-    "prix_ttc": 329.0
-   },
-   {
-    "designation": "PACK REMORQUE TOUT EQUIPE 150",
-    "prix_ttc": 389.0
-   },
-   {
-    "designation": "PACK REMORQUE TOUT EQUIPE 200",
-    "prix_ttc": 399.0
-   },
-   {
-    "designation": "PACK REMORQUE TOUT EQUIPE 232",
-    "prix_ttc": 449.0
-   },
-   {
-    "designation": "PACK REMORQUE PRO PRMIUM 200 BOIS",
-    "prix_ttc": 599.0
-   },
-   {
-    "designation": "PACK REMORQUE PRO PRMIUM 252 BOIS",
-    "prix_ttc": 599.0
+    "prix_ttc": 19.0,
+    "ventes": 6
    }
   ],
   "Autres prestations": [
    {
-    "designation": "ECHANGE BALAIS D'ESSUIE-GLACE",
-    "prix_ttc": 5.0
-   },
-   {
-    "designation": "PERMUTATION PAR ROUE",
-    "prix_ttc": 6.0
-   },
-   {
-    "designation": "PACK AQUAGLISS",
-    "prix_ttc": 9.9
-   },
-   {
-    "designation": "MAIN D'OEUVRE MECANIQUE",
-    "prix_ttc": 9.9
-   },
-   {
-    "designation": "PACK OTOKIT",
-    "prix_ttc": 10.55
-   },
-   {
-    "designation": "PRODUITS CONNEXES",
-    "prix_ttc": 10.8
-   },
-   {
-    "designation": "DECLARATION D'ACHAT",
-    "prix_ttc": 12.0
-   },
-   {
-    "designation": "SUPPLEMENT GAZ R134",
-    "prix_ttc": 14.0
-   },
-   {
-    "designation": "ESSAI ROUTIER",
-    "prix_ttc": 15.0
-   },
-   {
-    "designation": "PRISE EN CHARGE VEHICULE",
-    "prix_ttc": 15.0
-   },
-   {
-    "designation": "FRAIS DE TRANSPORT",
-    "prix_ttc": 15.0
-   },
-   {
-    "designation": "REMISE A ZERO INDICATEUR MAINTENANCE",
-    "prix_ttc": 15.0
-   },
-   {
-    "designation": "CONTROLE ESSENTIEL",
-    "prix_ttc": 19.0
-   },
-   {
-    "designation": "CHANGEMENT ADRESSE CARTE GRISE",
-    "prix_ttc": 19.0
-   },
-   {
-    "designation": "REMISE CONTROLE ESSENTIEL",
-    "prix_ttc": 19.0
-   },
-   {
-    "designation": "REMISE CONTROLE ESSENTIEL GH",
-    "prix_ttc": 19.0
-   },
-   {
-    "designation": "REMISE CONTROLE ESSENTIEL",
-    "prix_ttc": 19.0
-   },
-   {
-    "designation": "MISE A NIVEAU ADBLUE VL",
-    "prix_ttc": 19.9
-   },
-   {
-    "designation": "TRAIT. CURATIF DECRISTALLISANT ADBLUE",
-    "prix_ttc": 19.9
-   },
-   {
-    "designation": "FRAIS DE GARDIENNAGE JOURNALIER",
-    "prix_ttc": 20.0
-   },
-   {
-    "designation": "REMISE PRESTATION ATELIER",
-    "prix_ttc": 20.0
-   },
-   {
-    "designation": "PACK KIT HIVER I",
-    "prix_ttc": 20.9
-   },
-   {
-    "designation": "PACK KIT HIVER R",
-    "prix_ttc": 20.9
-   },
-   {
-    "designation": "REGLAGE PHARE SAUF XENON",
-    "prix_ttc": 21.0
-   },
-   {
-    "designation": "RÉNOVATION AUTO => DÉFAUT D'ASPECT",
-    "prix_ttc": 24.0
+    "designation": "POSE PLAQUE IMMATRICULATION X1",
+    "prix_ttc": 5.0,
+    "ventes": 21
    },
    {
     "designation": "ECHANGE BIELETTE BARRE STAB X1",
-    "prix_ttc": 25.0
-   },
-   {
-    "designation": "LECTURE CODE DEFAUT",
-    "prix_ttc": 29.0
-   },
-   {
-    "designation": "CONTROLE GRAND TRAJET",
-    "prix_ttc": 29.0
-   },
-   {
-    "designation": "ECHANGE FLEXIBLE  X1",
-    "prix_ttc": 29.0
-   },
-   {
-    "designation": "REMISE CONT GD TRAJET",
-    "prix_ttc": 29.0
-   },
-   {
-    "designation": "MISE A NIVEAU ADBLUE VUL",
-    "prix_ttc": 29.9
-   },
-   {
-    "designation": "REPARATION PAR EMPLATRE / RUNFLAT",
-    "prix_ttc": 35.0
-   },
-   {
-    "designation": "LAVAGE MOTO SCOOTER",
-    "prix_ttc": 39.0
+    "prix_ttc": 25.0,
+    "ventes": 20
    },
    {
     "designation": "LECTURE & EFFACEMENT CODE DEFAUT",
-    "prix_ttc": 39.0
+    "prix_ttc": 39.0,
+    "ventes": 17
    },
    {
-    "designation": "ECHANGE BATT S&S & CONTRÔLE CIRC CHARGE",
-    "prix_ttc": 39.0
+    "designation": "REGLAGE PHARE SAUF XENON",
+    "prix_ttc": 21.0,
+    "ventes": 14
    },
    {
     "designation": "ECHANGE ROTULE DE DIRECTION X1",
-    "prix_ttc": 39.0
-   },
-   {
-    "designation": "RÉNOVATION AUTO => MICRO RAYURES",
-    "prix_ttc": 48.0
-   },
-   {
-    "designation": "ECHANGE ROULEMENT TAMBOUR X1",
-    "prix_ttc": 49.0
-   },
-   {
-    "designation": "ECHANGE ROTULE DE SUSPENSION",
-    "prix_ttc": 49.0
-   },
-   {
-    "designation": "RÉNOVATION OPTIQUE PHARE X1",
-    "prix_ttc": 50.0
-   },
-   {
-    "designation": "BON ACHAT ROADY 100E",
-    "prix_ttc": 50.0
-   },
-   {
-    "designation": "ASPIRATION+REGHARGE R1234YF",
-    "prix_ttc": 54.0
-   },
-   {
-    "designation": "CARTE GRISE SUIVI ADMINISTRATIF",
-    "prix_ttc": 55.0
-   },
-   {
-    "designation": "ECHANGE SOUFFLET DE CREMAILLIERE",
-    "prix_ttc": 55.0
-   },
-   {
-    "designation": "ECHANGE ROTULE AXIALE X1",
-    "prix_ttc": 55.0
-   },
-   {
-    "designation": "LAVAGE ESSENTIEL",
-    "prix_ttc": 59.0
-   },
-   {
-    "designation": "FORFAIT NETTOYAGE ADMISSION",
-    "prix_ttc": 59.0
-   },
-   {
-    "designation": "FORFAIT NETTOYAGE INJECTION",
-    "prix_ttc": 59.0
-   },
-   {
-    "designation": "RECTIFICATION TAMBOURS",
-    "prix_ttc": 59.0
-   },
-   {
-    "designation": "ECHANGE TRIANGLE DE SUSPENSION",
-    "prix_ttc": 59.0
-   },
-   {
-    "designation": "NETTOYAGE INJECTION PROMO",
-    "prix_ttc": 59.9
-   },
-   {
-    "designation": "RECHARGE CERRINE FAP PSA (HORS LIQ)",
-    "prix_ttc": 65.0
-   },
-   {
-    "designation": "ECHANGE SOUFFLET TRANSMISSION COTE ROUE",
-    "prix_ttc": 65.0
-   },
-   {
-    "designation": "REPARATION IMPACT PARE BRISE X1",
-    "prix_ttc": 69.0
-   },
-   {
-    "designation": "TARIF HORAIRE MECANIQUE",
-    "prix_ttc": 69.0
-   },
-   {
-    "designation": "TARIF HORAIRE CARROSSERIE",
-    "prix_ttc": 69.0
-   },
-   {
-    "designation": "TRAITEMENT INJECTION DIESEL",
-    "prix_ttc": 69.9
-   },
-   {
-    "designation": "TRAITEMENT INJECTION ESSENCE",
-    "prix_ttc": 69.9
-   },
-   {
-    "designation": "TRAITEMENT TURBO FAP",
-    "prix_ttc": 69.9
-   },
-   {
-    "designation": "TARIF HORAIRE MECANIQUE COMPLEXE",
-    "prix_ttc": 74.0
-   },
-   {
-    "designation": "PACK KIT GARAGISTE",
-    "prix_ttc": 75.6
-   },
-   {
-    "designation": "RÉNOVATION OPTIQUE PHARE X2",
-    "prix_ttc": 89.0
-   },
-   {
-    "designation": "ANALYSE 5 GAZ ET TRAITEMENT INJ DIESEL",
-    "prix_ttc": 89.9
-   },
-   {
-    "designation": "ANALYSE 5 GAZ ET TRAITEMENT INJECT ESS",
-    "prix_ttc": 89.9
-   },
-   {
-    "designation": "ANALYSE 5 GAZ ET TRAITEMENT TURBO FAP",
-    "prix_ttc": 89.9
-   },
-   {
-    "designation": "PROTECTION ANTI IMPACT PB 12MOIS",
-    "prix_ttc": 99.0
-   },
-   {
-    "designation": "FORFAIT NETTOYAGE ADMISSION ET INJECTION",
-    "prix_ttc": 99.0
-   },
-   {
-    "designation": "FORFAIT MISE A NIVEAU CERINE",
-    "prix_ttc": 129.0
-   },
-   {
-    "designation": "LAVAGE CONFORT",
-    "prix_ttc": 139.0
+    "prix_ttc": 39.0,
+    "ventes": 7
    },
    {
     "designation": "FORF REMPLACEMENT KIT ARRIERE",
-    "prix_ttc": 168.6
+    "prix_ttc": 168.6,
+    "ventes": 5
    },
    {
-    "designation": "FORFAIT MISE A NIVEAU ADDITIF FAP CERINE",
-    "prix_ttc": 199.0
+    "designation": "RECTIFICATION TAMBOURS",
+    "prix_ttc": 59.0,
+    "ventes": 5
    },
    {
-    "designation": "LAVAGE PRESTIGE",
-    "prix_ttc": 199.0
+    "designation": "ECHANGE TRIANGLE DE SUSPENSION",
+    "prix_ttc": 59.0,
+    "ventes": 5
    },
    {
-    "designation": "FORFAIT REMPLACEMENT POCHE FAP CERINE",
-    "prix_ttc": 249.0
+    "designation": "ECHANGE ROTULE DE SUSPENSION",
+    "prix_ttc": 49.0,
+    "ventes": 4
    },
    {
     "designation": "FORFAIT NETTOYAGE FAP",
-    "prix_ttc": 249.0
+    "prix_ttc": 249.0,
+    "ventes": 3
+   },
+   {
+    "designation": "POSE SILENCIEUX AR ECHAPPEMENT",
+    "prix_ttc": 35.0,
+    "ventes": 3
+   },
+   {
+    "designation": "ECHANGE SOUFFLET DE CREMAILLIERE",
+    "prix_ttc": 55.0,
+    "ventes": 2
+   },
+   {
+    "designation": "ECHANGE ROTULE AXIALE X1",
+    "prix_ttc": 55.0,
+    "ventes": 2
+   },
+   {
+    "designation": "ECHANGE ROULEMENT TAMBOUR X1",
+    "prix_ttc": 49.0,
+    "ventes": 2
+   },
+   {
+    "designation": "POSE LIGNE ECHAPPEMENT SANS COLLECTEUR",
+    "prix_ttc": 65.0,
+    "ventes": 1
    }
   ],
   "Bioéthanol & reprogrammation": [
    {
-    "designation": "PRE VISITE INSTALLATION BOITIER ETHANOL",
-    "prix_ttc": 15.0
-   },
-   {
-    "designation": "MONTAGE BOITIER ETHANOL INJ IND 3-4 CYL",
-    "prix_ttc": 165.0
-   },
-   {
-    "designation": "MONTAGE BOITIER ETHANOL INJ IND 5-6 CYL",
-    "prix_ttc": 203.4
-   },
-   {
-    "designation": "MONTAGE BOITIER ETHANOL INJ DIR 3-4 CYL",
-    "prix_ttc": 220.8
-   },
-   {
-    "designation": "MONTAGE BOITIER ETHANOL INJ IND 8 CYL",
-    "prix_ttc": 241.8
-   },
-   {
-    "designation": "MONTAGE BOIT ETHANOL DBE INJ IND 3-4 CYL",
-    "prix_ttc": 242.1
-   },
-   {
-    "designation": "MONTAGE BOITIER ETHANOL INJ DIR 5-6 CYL",
-    "prix_ttc": 270.0
-   },
-   {
-    "designation": "MONTAGE BOIT ETHANOL BI INJ 3-4 CYL",
-    "prix_ttc": 309.0
-   },
-   {
-    "designation": "MONTAGE BOITIER ETHANOL INJ DIR 8 CYL",
-    "prix_ttc": 350.4
-   },
-   {
-    "designation": "MONTAGE BOIT ETHANOL BI INJ 5-6 CYL",
-    "prix_ttc": 375.6
-   },
-   {
-    "designation": "POSE BOITIER ETHANOL INJ IND 3-4 CYL",
-    "prix_ttc": 899.0
-   },
-   {
-    "designation": "POSE BOITIER ETHANOL INJ IND 5-6 CYL",
-    "prix_ttc": 1099.0
-   },
-   {
-    "designation": "POSE BOITIER ETHANOL INJ DIR 3-4 CYL",
-    "prix_ttc": 1199.0
-   },
-   {
-    "designation": "POSE BOITIER ETHANOL DBE INJ INDIR 3-4",
-    "prix_ttc": 1299.0
-   },
-   {
-    "designation": "POSE BOITIER ETHANOL INJ IND 8 CYL",
-    "prix_ttc": 1299.0
-   },
-   {
-    "designation": "POSE BOITIER ETHANOL INJ DIR 5-6 CYL",
-    "prix_ttc": 1499.0
-   },
-   {
     "designation": "POSE BOITIER ETHANOL BI-INJ 3-4",
-    "prix_ttc": 1599.0
+    "prix_ttc": 1599.0,
+    "ventes": 1
    },
    {
     "designation": "POSE BOITIER ETHANOL BI-INJ 5-6",
-    "prix_ttc": 1899.0
-   },
-   {
-    "designation": "POSE BOITIER ETHANOL INJ DIR 8 CYL",
-    "prix_ttc": 1999.0
+    "prix_ttc": 1899.0,
+    "ventes": 1
    }
   ],
   "Boîte de vitesses": [
    {
     "designation": "VIDANGE BOITE MANU OU PONT",
-    "prix_ttc": 39.0
-   },
-   {
-    "designation": "PRE VISITE ENTRETIEN BOITE AUTO",
-    "prix_ttc": 79.0
+    "prix_ttc": 39.0,
+    "ventes": 17
    },
    {
     "designation": "VIDANGE DE L'HUILE BOITE VITESSE AUTO",
-    "prix_ttc": 138.0
-   },
-   {
-    "designation": "FORFAIT ENTRETIEN BOITE VITESSE AUTO N1",
-    "prix_ttc": 349.0
-   },
-   {
-    "designation": "FORFAIT ENTRETIEN BOITE VITESSE AUTO N2",
-    "prix_ttc": 479.0
+    "prix_ttc": 138.0,
+    "ventes": 4
    }
   ],
   "Climatisation": [
    {
-    "designation": "REMISE ENTRETIEN+RECHARGE CLIM",
-    "prix_ttc": 10.0
-   },
-   {
-    "designation": "REMISE PRESTATION CLIM",
-    "prix_ttc": 10.0
-   },
-   {
-    "designation": "DIAGNOSTIC FONCTIONNEMENT CLIM",
-    "prix_ttc": 29.0
-   },
-   {
-    "designation": "FORF CLIM DEMI-CHARGE + TRACEUR",
-    "prix_ttc": 35.0
+    "designation": "ENTRETIEN ET RECHARGE CLIM R134A",
+    "prix_ttc": 95.0,
+    "ventes": 167
    },
    {
     "designation": "RECHARGE CLIM R134A",
-    "prix_ttc": 64.9
+    "prix_ttc": 64.9,
+    "ventes": 167
    },
    {
     "designation": "FORF CLIM CHARGE \"PROMO\"",
-    "prix_ttc": 69.0
-   },
-   {
-    "designation": "ENTRETIEN ET RECHARGE CLIM R134A",
-    "prix_ttc": 95.0
-   },
-   {
-    "designation": "FORF CLIM TOTALE \"PROMO\"",
-    "prix_ttc": 109.0
+    "prix_ttc": 69.0,
+    "ventes": 164
    },
    {
     "designation": "RECHARGE CLIM R1234YF",
-    "prix_ttc": 109.9
-   },
-   {
-    "designation": "ENTRETIEN ET RECHARGE CLIM R1234YF",
-    "prix_ttc": 139.9
+    "prix_ttc": 109.9,
+    "ventes": 26
    },
    {
     "designation": "FORFAIT CLIM NOUVEAU GAZ",
-    "prix_ttc": 199.0
+    "prix_ttc": 199.0,
+    "ventes": 26
+   },
+   {
+    "designation": "ENTRETIEN ET RECHARGE CLIM R1234YF",
+    "prix_ttc": 139.9,
+    "ventes": 1
    },
    {
     "designation": "FORFAIT CLIM TOTALE NOUVEAU GAZ",
-    "prix_ttc": 249.0
+    "prix_ttc": 249.0,
+    "ventes": 1
    }
   ],
-  "Diagnostic & électricité": [
+  "Diagnostic, élec & main-d’œuvre": [
    {
-    "designation": "OPTION DIAGNOSTIC 5 GAZ",
-    "prix_ttc": 12.9
+    "designation": "TARIF HORAIRE MECANIQUE",
+    "prix_ttc": 69.0,
+    "ventes": 98
+   },
+   {
+    "designation": "TARIF HORAIRE MECANIQUE COMPLEXE",
+    "prix_ttc": 74.0,
+    "ventes": 98
    },
    {
     "designation": "ECHANGE AMPOULE SANS DEPOSE ELEMENT X1",
-    "prix_ttc": 15.0
-   },
-   {
-    "designation": "CONTRÔLE BATTERIE & CIRCUIT DE CHARGE",
-    "prix_ttc": 16.0
-   },
-   {
-    "designation": "REMISE CONT BATTERIE+CIRC CHARGE",
-    "prix_ttc": 16.0
-   },
-   {
-    "designation": "REMISE CONT BATTERIE+CIRC CHARGE",
-    "prix_ttc": 16.0
-   },
-   {
-    "designation": "REMISE CONTROLE BATTERIE ET CIRCUIT",
-    "prix_ttc": 16.0
-   },
-   {
-    "designation": "PACK DIAG SECURITE",
-    "prix_ttc": 19.0
-   },
-   {
-    "designation": "DIAGNOSTIC ECHAPPEMENT",
-    "prix_ttc": 19.0
-   },
-   {
-    "designation": "DIAGNOSTIC LIAISON AU SOL",
-    "prix_ttc": 19.0
-   },
-   {
-    "designation": "DIAG FUITE SYSTÈME REFROID (HORS DEPOSE)",
-    "prix_ttc": 19.0
-   },
-   {
-    "designation": "REMISE DIAG LIAISON AU SOL",
-    "prix_ttc": 19.0
+    "prix_ttc": 15.0,
+    "ventes": 32
    },
    {
     "designation": "ECHANGE AMPOULE SANS DEPOSE ELEMENT X2",
-    "prix_ttc": 20.0
+    "prix_ttc": 20.0,
+    "ventes": 7
    },
    {
-    "designation": "ECHANGE BATTERIE & CONTRÔLE CIRC CHARGE",
-    "prix_ttc": 29.0
-   },
-   {
-    "designation": "DIAGNOSTIC 5 GAZ",
-    "prix_ttc": 29.9
-   },
-   {
-    "designation": "ECODIAG",
-    "prix_ttc": 35.0
+    "designation": "PACK DIAG SECURITE",
+    "prix_ttc": 19.0,
+    "ventes": 5
    },
    {
     "designation": "PACK DIAG SERENITE",
-    "prix_ttc": 39.0
-   },
-   {
-    "designation": "DIAGNOSTIC 5 GAZ ET LECTURE CODE DEFAUT",
-    "prix_ttc": 39.9
-   },
-   {
-    "designation": "TARIF HORAIRE ELECTRIQUE ET ELECTRONIQUE",
-    "prix_ttc": 80.0
-   },
-   {
-    "designation": "DIAGNOSTIC ELIGIBILITE GARANTIE",
-    "prix_ttc": 89.0
-   },
-   {
-    "designation": "DIAGNOSTIC EXPERTISE +",
-    "prix_ttc": 89.9
-   },
-   {
-    "designation": "RÉALISATION DU DIAGNOSTIC",
-    "prix_ttc": 89.9
+    "prix_ttc": 39.0,
+    "ventes": 1
    }
   ],
   "Distribution & moteur": [
    {
-    "designation": "REGLAGE TENSION COURROIE ACCESSOIRE",
-    "prix_ttc": 19.0
-   },
-   {
-    "designation": "PURGE CIRCUIT EMBRAYAGE (HORS LIQUIDE)",
-    "prix_ttc": 35.0
-   },
-   {
-    "designation": "DECALAMINAGE ECO",
-    "prix_ttc": 65.0
+    "designation": "ECHANGE KIT DISTRIBUTION",
+    "prix_ttc": 329.0,
+    "ventes": 55
    },
    {
     "designation": "DECALAMINAGE A L'HYDROGENE",
-    "prix_ttc": 65.0
-   },
-   {
-    "designation": "DECALAMINAGE PREVENTIF",
-    "prix_ttc": 84.0
-   },
-   {
-    "designation": "DECALAMINAGE CURATIF",
-    "prix_ttc": 150.0
-   },
-   {
-    "designation": "ECHANGE KIT DISTRIBUTION",
-    "prix_ttc": 329.0
+    "prix_ttc": 65.0,
+    "ventes": 38
    },
    {
     "designation": "REMPLACEMENT EMBRAYAGE",
-    "prix_ttc": 389.0
+    "prix_ttc": 389.0,
+    "ventes": 13
+   },
+   {
+    "designation": "REGLAGE TENSION COURROIE ACCESSOIRE",
+    "prix_ttc": 19.0,
+    "ventes": 1
    }
   ],
   "Entretien & vidange": [
    {
-    "designation": "REMISE VIDANGE 10 EUROS",
-    "prix_ttc": 10.0
-   },
-   {
-    "designation": "REMISE FORFAIT 10W40 1 FILTRE",
-    "prix_ttc": 14.8
-   },
-   {
     "designation": "VIDANGE DE L'HUILE MOTEUR",
-    "prix_ttc": 19.0
-   },
-   {
-    "designation": "REMISE FORFAIT 5W40 1 FILTRE",
-    "prix_ttc": 19.8
-   },
-   {
-    "designation": "REMISE VIDANGE 20 EUROS",
-    "prix_ttc": 20.0
-   },
-   {
-    "designation": "REMISE FORFAIT 10W40 2 FILTRES",
-    "prix_ttc": 22.3
-   },
-   {
-    "designation": "REMISE FORFAIT 5W30  1 FILTRE",
-    "prix_ttc": 24.8
-   },
-   {
-    "designation": "REMISE REVISION CONST ROADY",
-    "prix_ttc": 25.0
-   },
-   {
-    "designation": "REMISE REVISION CONST ROADY GH",
-    "prix_ttc": 25.0
-   },
-   {
-    "designation": "REMISE REVISION CONSTRUCTEUR GH",
-    "prix_ttc": 25.0
-   },
-   {
-    "designation": "REMISE REVISION CONSTRUCTEUR",
-    "prix_ttc": 25.0
-   },
-   {
-    "designation": "REMISE FORFAIT 5W40 2 FILTRES",
-    "prix_ttc": 27.3
-   },
-   {
-    "designation": "REMISE FORFAIT 10W40 3 FILTRES",
-    "prix_ttc": 29.8
-   },
-   {
-    "designation": "REMISE VIDANGE 30 EUROS",
-    "prix_ttc": 30.0
-   },
-   {
-    "designation": "REMISE FORFAIT 5W30 2 FILTRES",
-    "prix_ttc": 34.8
-   },
-   {
-    "designation": "REMISE FORFAIT 5W40 3 FILTRES",
-    "prix_ttc": 34.8
-   },
-   {
-    "designation": "REMISE FORFAIT 5W30 3 FILTRES",
-    "prix_ttc": 44.8
-   },
-   {
-    "designation": "REMISE REVISION CONSTRUCTEUR 50 EUROS",
-    "prix_ttc": 50.0
-   },
-   {
-    "designation": "VIDANGE + PURGE CIRC REFROID",
-    "prix_ttc": 59.0
-   },
-   {
-    "designation": "FORFAIT VIDANGE ROADY 10W40",
-    "prix_ttc": 79.9
-   },
-   {
-    "designation": "FORFAIT VIDANGE ROADY SPE",
-    "prix_ttc": 85.0
-   },
-   {
-    "designation": "FORFAIT REVISION 10W40 1FILTRE",
-    "prix_ttc": 99.0
-   },
-   {
-    "designation": "FORFAIT VIDANGE ROADY 5W40",
-    "prix_ttc": 104.9
-   },
-   {
-    "designation": "FORFAIT VIDANGE ROADY 5W20",
-    "prix_ttc": 119.9
-   },
-   {
-    "designation": "FORFAIT VIDANGE ROADY 5W30",
-    "prix_ttc": 119.9
-   },
-   {
-    "designation": "FORFAIT REVISION 5W40 1FILTRE",
-    "prix_ttc": 125.0
-   },
-   {
-    "designation": "FORFAIT REVISION 10W40 FILTRE HUILE +HAB",
-    "prix_ttc": 129.0
-   },
-   {
-    "designation": "FORFAIT REVISION 0W20 1FILTRE",
-    "prix_ttc": 139.0
-   },
-   {
-    "designation": "FORFAIT VIDANGE ROADY 0W30",
-    "prix_ttc": 139.9
-   },
-   {
-    "designation": "FORFAIT VIDANGE ROADY 10W40 CAMPING CAR",
-    "prix_ttc": 139.9
-   },
-   {
-    "designation": "FORFAIT VIDANGE ROADY 10W40 UTILITAIRES",
-    "prix_ttc": 139.9
-   },
-   {
-    "designation": "FORFAIT REVISION 10W40 3 FILTRES (HAB)",
-    "prix_ttc": 140.0
-   },
-   {
-    "designation": "FORFAIT VIDANGE ROADY 0W20",
-    "prix_ttc": 144.9
-   },
-   {
-    "designation": "FORFAIT REVISION 10W40 2FILTRES",
-    "prix_ttc": 145.0
-   },
-   {
-    "designation": "FORFAIT REVISION 5W30 1FILTRE",
-    "prix_ttc": 149.0
-   },
-   {
-    "designation": "FORFAIT VIDANGE ROADY 5W20",
-    "prix_ttc": 149.0
-   },
-   {
-    "designation": "FORFAIT REVISION 0W30 1FILTRE",
-    "prix_ttc": 159.0
-   },
-   {
-    "designation": "FORFAIT VIDANGE ROADY 5W40 CAMPING-CAR",
-    "prix_ttc": 164.9
-   },
-   {
-    "designation": "FORFAIT VIDANGE ROADY 5W40 UTILITAIRES",
-    "prix_ttc": 164.9
-   },
-   {
-    "designation": "FORFAIT REVISION 5W40 FILTRE HUILE + HAB",
-    "prix_ttc": 165.0
+    "prix_ttc": 19.0,
+    "ventes": 644
    },
    {
     "designation": "FORFAIT REVISION 5W30 FILTRE HUILE + HAB",
-    "prix_ttc": 170.0
+    "prix_ttc": 170.0,
+    "ventes": 165
    },
    {
-    "designation": "FORFAIT REVISION 10W40 3 FILTRES",
-    "prix_ttc": 175.0
-   },
-   {
-    "designation": "FORFAIT VIDANGE ROADY 5W20 CAMPING-CAR",
-    "prix_ttc": 179.9
-   },
-   {
-    "designation": "FORFAIT VIDANGE ROADY 5W20 UTILITAIRES",
-    "prix_ttc": 179.9
-   },
-   {
-    "designation": "FORFAIT VIDANGE ROADY 5W30 CAMPING-CAR",
-    "prix_ttc": 179.9
-   },
-   {
-    "designation": "FORFAIT VIDANGE ROADY 5W30 UTILITAIRES",
-    "prix_ttc": 179.9
-   },
-   {
-    "designation": "FORFAIT REVISION 5W40 2 FILTRES HUIL+AIR",
-    "prix_ttc": 180.0
-   },
-   {
-    "designation": "FORFAIT REVISION 5W40 3 FILTRES (HAB)",
-    "prix_ttc": 180.0
-   },
-   {
-    "designation": "FORFAIT REVISION 5W30 2 FILTRES HUIL+AIR",
-    "prix_ttc": 185.0
-   },
-   {
-    "designation": "FORFAIT REVISION 5W40 2 FILTRES H+G",
-    "prix_ttc": 191.0
-   },
-   {
-    "designation": "FORFAIT REVISION 0W30 FILTRE HUILE + HAB",
-    "prix_ttc": 195.0
-   },
-   {
-    "designation": "FORFAIT REVISION 0W30 2 FILTRES HUIL+AIR",
-    "prix_ttc": 199.0
-   },
-   {
-    "designation": "FORFAIT REVISION 5W30 2 FILTRES HUILE+GA",
-    "prix_ttc": 199.0
-   },
-   {
-    "designation": "FORFAIT REVISION 0W20 FILTRE HUILE + HAB",
-    "prix_ttc": 199.0
-   },
-   {
-    "designation": "FORFAIT VIDANGE ROADY 0W30 CAMPING-CAR",
-    "prix_ttc": 199.9
-   },
-   {
-    "designation": "FORFAIT VIDANGE ROADY 0W30 UTILITAIRES",
-    "prix_ttc": 199.9
+    "designation": "VIDANGE + PURGE CIRC REFROID",
+    "prix_ttc": 59.0,
+    "ventes": 70
    },
    {
     "designation": "FORFAIT REVISION 5W30 3 FILTRES (HAB)",
-    "prix_ttc": 200.0
+    "prix_ttc": 200.0,
+    "ventes": 67
    },
    {
-    "designation": "FORFAIT VIDANGE ROADY 0W20 CAMPING-CAR",
-    "prix_ttc": 204.9
+    "designation": "FORFAIT REVISION 5W40 FILTRE HUILE + HAB",
+    "prix_ttc": 165.0,
+    "ventes": 54
    },
    {
-    "designation": "FORFAIT VIDANGE ROADY 0W20 UTILITAIRES",
-    "prix_ttc": 204.9
-   },
-   {
-    "designation": "FORFAIT REVISION 0W20 2 FILTRES HUIL+AIR",
-    "prix_ttc": 205.0
-   },
-   {
-    "designation": "FORFAIT REVISION 0W30 2FILTRES HUILE+GAZ",
-    "prix_ttc": 209.0
-   },
-   {
-    "designation": "FORFAIT REVISION 0W20 2 FILTRES HUILE+GA",
-    "prix_ttc": 215.0
-   },
-   {
-    "designation": "FORFAIT REVISION 5W40 3 FILTRES",
-    "prix_ttc": 215.0
-   },
-   {
-    "designation": "FORFAIT REVISION 0W30 3 FILTRES (HAB)",
-    "prix_ttc": 220.0
-   },
-   {
-    "designation": "FORFAIT REVISION 0W20 3 FILTRES (HAB)",
-    "prix_ttc": 220.0
-   },
-   {
-    "designation": "FORFAIT REVISION 5W30 3 FILTRES",
-    "prix_ttc": 250.0
-   },
-   {
-    "designation": "FORFAIT REVISION 5W40 4 FILTRES",
-    "prix_ttc": 255.0
-   },
-   {
-    "designation": "FORFAIT REVISION 0W30 3 FILTRES",
-    "prix_ttc": 260.0
-   },
-   {
-    "designation": "FORFAIT REVISION 0W20 3 FILTRES",
-    "prix_ttc": 265.0
+    "designation": "FORFAIT REVISION 5W40 3 FILTRES (HAB)",
+    "prix_ttc": 180.0,
+    "ventes": 52
    },
    {
     "designation": "FORFAIT REVISION 5W30 4 FILTRES",
-    "prix_ttc": 290.0
+    "prix_ttc": 290.0,
+    "ventes": 43
+   },
+   {
+    "designation": "FORFAIT REVISION 5W30 1FILTRE",
+    "prix_ttc": 149.0,
+    "ventes": 35
+   },
+   {
+    "designation": "FORFAIT REVISION 5W40 4 FILTRES",
+    "prix_ttc": 255.0,
+    "ventes": 30
+   },
+   {
+    "designation": "FORFAIT REVISION 5W40 1FILTRE",
+    "prix_ttc": 125.0,
+    "ventes": 30
+   },
+   {
+    "designation": "FORFAIT REVISION 0W20 FILTRE HUILE + HAB",
+    "prix_ttc": 199.0,
+    "ventes": 25
+   },
+   {
+    "designation": "FORFAIT REVISION 5W30 2 FILTRES HUILE+GA",
+    "prix_ttc": 199.0,
+    "ventes": 13
+   },
+   {
+    "designation": "FORFAIT REVISION 0W30 FILTRE HUILE + HAB",
+    "prix_ttc": 195.0,
+    "ventes": 12
+   },
+   {
+    "designation": "FORFAIT REVISION 10W40 3 FILTRES (HAB)",
+    "prix_ttc": 140.0,
+    "ventes": 11
+   },
+   {
+    "designation": "FORFAIT REVISION 0W20 3 FILTRES (HAB)",
+    "prix_ttc": 220.0,
+    "ventes": 10
+   },
+   {
+    "designation": "FORFAIT REVISION 5W40 2 FILTRES HUIL+AIR",
+    "prix_ttc": 180.0,
+    "ventes": 8
+   },
+   {
+    "designation": "FORFAIT REVISION 10W40 3 FILTRES",
+    "prix_ttc": 175.0,
+    "ventes": 7
+   },
+   {
+    "designation": "FORFAIT REVISION 10W40 FILTRE HUILE +HAB",
+    "prix_ttc": 129.0,
+    "ventes": 6
+   },
+   {
+    "designation": "FORFAIT REVISION 5W30 2 FILTRES HUIL+AIR",
+    "prix_ttc": 185.0,
+    "ventes": 6
+   },
+   {
+    "designation": "FORFAIT REVISION 5W30 3 FILTRES",
+    "prix_ttc": 250.0,
+    "ventes": 6
+   },
+   {
+    "designation": "FORFAIT REVISION 0W20 1FILTRE",
+    "prix_ttc": 139.0,
+    "ventes": 5
+   },
+   {
+    "designation": "FORFAIT REVISION 10W40 1FILTRE",
+    "prix_ttc": 99.0,
+    "ventes": 5
+   },
+   {
+    "designation": "FORFAIT REVISION 0W30 3 FILTRES",
+    "prix_ttc": 260.0,
+    "ventes": 4
    },
    {
     "designation": "FORFAIT REVISION 0W30 4 FILTRES",
-    "prix_ttc": 299.0
+    "prix_ttc": 299.0,
+    "ventes": 4
+   },
+   {
+    "designation": "FORFAIT REVISION 0W30 3 FILTRES (HAB)",
+    "prix_ttc": 220.0,
+    "ventes": 4
+   },
+   {
+    "designation": "FORFAIT REVISION 0W30 1FILTRE",
+    "prix_ttc": 159.0,
+    "ventes": 3
+   },
+   {
+    "designation": "FORFAIT REVISION 5W40 2 FILTRES H+G",
+    "prix_ttc": 191.0,
+    "ventes": 3
+   },
+   {
+    "designation": "FORFAIT REVISION 5W40 3 FILTRES",
+    "prix_ttc": 215.0,
+    "ventes": 3
+   },
+   {
+    "designation": "FORFAIT REVISION 0W20 2 FILTRES HUIL+AIR",
+    "prix_ttc": 205.0,
+    "ventes": 3
+   },
+   {
+    "designation": "FORFAIT REVISION 10W40 2FILTRES",
+    "prix_ttc": 145.0,
+    "ventes": 2
+   },
+   {
+    "designation": "FORFAIT REVISION 0W20 3 FILTRES",
+    "prix_ttc": 265.0,
+    "ventes": 2
    },
    {
     "designation": "FORFAIT REVISION 0W20 4 FILTRES",
-    "prix_ttc": 305.0
+    "prix_ttc": 305.0,
+    "ventes": 2
+   },
+   {
+    "designation": "FORFAIT REVISION 0W30 2 FILTRES HUIL+AIR",
+    "prix_ttc": 199.0,
+    "ventes": 1
+   },
+   {
+    "designation": "REMISE FORFAIT 5W30 3 FILTRES",
+    "prix_ttc": 44.8,
+    "ventes": 1
    }
   ],
   "Esthétique & protection": [
    {
-    "designation": "RENOVATION OPTIQUE X1",
-    "prix_ttc": 49.9
+    "designation": "RÉNOVATION OPTIQUE PHARE X2",
+    "prix_ttc": 89.0,
+    "ventes": 20
    },
    {
     "designation": "RENOVATION OPTIQUE X2",
-    "prix_ttc": 79.9
+    "prix_ttc": 79.9,
+    "ventes": 7
    },
    {
-    "designation": "FORFAIT LUSTRAGE + POSE TITANE VÉH NEUF",
-    "prix_ttc": 216.0
+    "designation": "RÉNOVATION OPTIQUE PHARE X1",
+    "prix_ttc": 50.0,
+    "ventes": 1
    },
    {
-    "designation": "LUSTRAGE + POSE CÉRAMIQUE VEH NEUF",
-    "prix_ttc": 240.0
-   },
-   {
-    "designation": "FORFAIT POLISSAGE RÉGÉNÉRANT PEINTURE",
-    "prix_ttc": 240.0
-   },
-   {
-    "designation": "POLISSAGE RÉGÉNÉRANT+PROTECTION TITANE",
-    "prix_ttc": 360.0
-   },
-   {
-    "designation": "POLISSAGE COMPLET + DÉCONTAMINATION",
-    "prix_ttc": 540.0
+    "designation": "RENOVATION OPTIQUE X1",
+    "prix_ttc": 49.9,
+    "ventes": 1
    }
   ],
   "Freinage": [
    {
-    "designation": "DIAGNOSTIC FREINAGE",
-    "prix_ttc": 19.0
-   },
-   {
-    "designation": "REMISE DIAG FREINAGE",
-    "prix_ttc": 19.0
-   },
-   {
-    "designation": "CONTRÔLE + NETT + REGLAGE KIT FREIN AR",
-    "prix_ttc": 35.0
-   },
-   {
-    "designation": "ECHANGE PLAQUETTES FREIN AR ELEC",
-    "prix_ttc": 49.0
-   },
-   {
     "designation": "VIDANGE + PURGE CIRC FREIN (LIQ COMPRIS)",
-    "prix_ttc": 59.0
-   },
-   {
-    "designation": "ECHANGE ROULEMENT DISQUE X1",
-    "prix_ttc": 59.0
-   },
-   {
-    "designation": "ECHANGE PLAQUETTES FREIN AV",
-    "prix_ttc": 64.0
-   },
-   {
-    "designation": "ECHANGE PLAQUETTES FREIN AR",
-    "prix_ttc": 72.0
-   },
-   {
-    "designation": "ECHANGE DISQUES + PLAQ FREIN AR ELEC",
-    "prix_ttc": 79.0
-   },
-   {
-    "designation": "ECHANGE 2 FLEXIBLES FREIN + PURGE + LIQ",
-    "prix_ttc": 79.0
-   },
-   {
-    "designation": "ECHANGE KIT FREIN + PURGE + REGLAGE",
-    "prix_ttc": 95.0
+    "prix_ttc": 59.0,
+    "ventes": 199
    },
    {
     "designation": "ECHANGE DISQUES + PLAQUETTES FREIN AV",
-    "prix_ttc": 99.0
+    "prix_ttc": 99.0,
+    "ventes": 102
+   },
+   {
+    "designation": "ECHANGE PLAQUETTES FREIN AV",
+    "prix_ttc": 64.0,
+    "ventes": 61
+   },
+   {
+    "designation": "ECHANGE PLAQUETTES FREIN AR",
+    "prix_ttc": 72.0,
+    "ventes": 49
+   },
+   {
+    "designation": "ECHANGE PLAQUETTES FREIN AR ELEC",
+    "prix_ttc": 49.0,
+    "ventes": 49
    },
    {
     "designation": "ECHANGE DISQUES + PLAQUETTES FREIN AR",
-    "prix_ttc": 110.0
+    "prix_ttc": 110.0,
+    "ventes": 13
+   },
+   {
+    "designation": "ECHANGE KIT FREIN + PURGE + REGLAGE",
+    "prix_ttc": 95.0,
+    "ventes": 6
+   },
+   {
+    "designation": "ECHANGE ROULEMENT DISQUE X1",
+    "prix_ttc": 59.0,
+    "ventes": 3
+   },
+   {
+    "designation": "ECHANGE 2 FLEXIBLES FREIN + PURGE + LIQ",
+    "prix_ttc": 79.0,
+    "ventes": 2
    }
   ],
-  "Pneumatiques": [
-   {
-    "designation": "REMISE MONTAGE PNEU BRIDGESTONE ROADY80",
-    "prix_ttc": 1.0
-   },
-   {
-    "designation": "GARDIENNAGE PNEU X1",
-    "prix_ttc": 8.0
-   },
-   {
-    "designation": "MONTAGE 1 PNEUMATIQUE",
-    "prix_ttc": 10.0
-   },
-   {
-    "designation": "REMPLACEMENT VALVE",
-    "prix_ttc": 10.0
-   },
-   {
-    "designation": "EQUILIBRAGE PAR ROUE",
-    "prix_ttc": 10.0
-   },
-   {
-    "designation": "REMISE CONTROLE GEOMETRIE",
-    "prix_ttc": 10.0
-   },
-   {
-    "designation": "REMISE MONTAGE PNEU 1 EURO",
-    "prix_ttc": 15.0
-   },
-   {
-    "designation": "BA MONTAGE PNEU 18'' ET+ ET RUNFLAT",
-    "prix_ttc": 17.0
-   },
-   {
-    "designation": "MONTAGE 2 PNEUMATIQUES",
-    "prix_ttc": 20.0
-   },
-   {
-    "designation": "MONTAGE PNEU 4X4 / UTIL / CAMPING CAR",
-    "prix_ttc": 20.0
-   },
-   {
-    "designation": "REPARATION PNEUMATIQUE",
-    "prix_ttc": 21.0
-   },
-   {
-    "designation": "REPARATION CREVAISON X1 ROUE DEPOSEE",
-    "prix_ttc": 21.0
-   },
-   {
-    "designation": "REPARATION CREVAISON X1 ROUE S/ VEHICULE",
-    "prix_ttc": 21.0
-   },
+  "Pneumatiques & géométrie": [
    {
     "designation": "MONTAGE PNEU JUSQU'À 17 POUCES",
-    "prix_ttc": 23.0
-   },
-   {
-    "designation": "MONTAGE PNEU À PARTIR 18 POUCES/RUNFLAT",
-    "prix_ttc": 25.0
-   },
-   {
-    "designation": "CONTROLE GEOMETRIE",
-    "prix_ttc": 29.0
-   },
-   {
-    "designation": "PERMUTATION ET EQUILIBRAGE 2 ROUES",
-    "prix_ttc": 29.0
-   },
-   {
-    "designation": "MONTAGE PNEU FOURNI",
-    "prix_ttc": 30.0
-   },
-   {
-    "designation": "MONTAGE PNEU FOURNI JUSQU'À 17 POUCES",
-    "prix_ttc": 30.0
-   },
-   {
-    "designation": "MONTAGE PNEU FOURNI À PARTIR 18 POUCES",
-    "prix_ttc": 35.0
-   },
-   {
-    "designation": "PROGRAMMATION VALVE ELECTRONIQUE X1",
-    "prix_ttc": 39.0
-   },
-   {
-    "designation": "MONTAGE 4 PNEUMATIQUES",
-    "prix_ttc": 40.0
-   },
-   {
-    "designation": "ECHANGE ET PROG VALVE ELEC UNIV X1",
-    "prix_ttc": 59.0
-   },
-   {
-    "designation": "REGLAGE GEOMETRIE AVANT",
-    "prix_ttc": 69.0
-   },
-   {
-    "designation": "REGLAGE PARALLELISME AVANT",
-    "prix_ttc": 69.0
-   },
-   {
-    "designation": "PROGRAMMATION VALVES ELECTRONIQUES X4",
-    "prix_ttc": 69.0
+    "prix_ttc": 23.0,
+    "ventes": 270
    },
    {
     "designation": "REGLAGE GEOMETRIE AVANT + ARRIERE",
-    "prix_ttc": 80.0
+    "prix_ttc": 80.0,
+    "ventes": 166
    },
    {
-    "designation": "REGLAGE GEOMETRIE 4X4",
-    "prix_ttc": 99.0
+    "designation": "REGLAGE GEOMETRIE AVANT",
+    "prix_ttc": 69.0,
+    "ventes": 165
    },
    {
-    "designation": "REGLAGE GEOMETRIE CAMPING CAR",
-    "prix_ttc": 119.0
+    "designation": "REGLAGE PARALLELISME AVANT",
+    "prix_ttc": 69.0,
+    "ventes": 134
+   },
+   {
+    "designation": "REPARATION CREVAISON X1 ROUE DEPOSEE",
+    "prix_ttc": 21.0,
+    "ventes": 78
+   },
+   {
+    "designation": "MONTAGE PNEU À PARTIR 18 POUCES/RUNFLAT",
+    "prix_ttc": 25.0,
+    "ventes": 27
+   },
+   {
+    "designation": "ECHANGE SOUFFLET TRANSMISSION COTE ROUE",
+    "prix_ttc": 65.0,
+    "ventes": 17
+   },
+   {
+    "designation": "REPARATION CREVAISON X1 ROUE S/ VEHICULE",
+    "prix_ttc": 21.0,
+    "ventes": 10
+   },
+   {
+    "designation": "REMPLACEMENT VALVE",
+    "prix_ttc": 10.0,
+    "ventes": 9
+   },
+   {
+    "designation": "PERMUTATION PAR ROUE",
+    "prix_ttc": 6.0,
+    "ventes": 9
+   },
+   {
+    "designation": "MONTAGE PNEU FOURNI JUSQU'À 17 POUCES",
+    "prix_ttc": 30.0,
+    "ventes": 8
+   },
+   {
+    "designation": "EQUILIBRAGE PAR ROUE",
+    "prix_ttc": 10.0,
+    "ventes": 4
+   },
+   {
+    "designation": "MONTAGE 2 PNEUMATIQUES",
+    "prix_ttc": 20.0,
+    "ventes": 3
+   },
+   {
+    "designation": "MONTAGE 4 PNEUMATIQUES",
+    "prix_ttc": 40.0,
+    "ventes": 3
+   },
+   {
+    "designation": "MONTAGE PNEU 4X4 / UTIL / CAMPING CAR",
+    "prix_ttc": 20.0,
+    "ventes": 2
+   },
+   {
+    "designation": "MONTAGE 1 PNEUMATIQUE",
+    "prix_ttc": 10.0,
+    "ventes": 1
+   },
+   {
+    "designation": "MONTAGE PNEU FOURNI",
+    "prix_ttc": 30.0,
+    "ventes": 1
+   },
+   {
+    "designation": "MONTAGE PNEU FOURNI À PARTIR 18 POUCES",
+    "prix_ttc": 35.0,
+    "ventes": 1
+   },
+   {
+    "designation": "REMISE MONTAGE PNEU 1 EURO",
+    "prix_ttc": 15.0,
+    "ventes": 1
    }
   ]
  },
  "produits_boutique": {
   "Batteries": {
-   "nb_references": 28,
+   "nb_references": 12,
    "exemples": [
     {
-     "exemple": "Bat. Fiamm Titanium Pro 60Ah 540En",
-     "ventes_an_approx": 52
-    },
-    {
      "exemple": "Bat. Fiamm Titanium Pro 50Ah 460En",
-     "ventes_an_approx": 45
+     "ventes": 31
     },
     {
-     "exemple": "Batt.Fiaam 70Ah/720A 12V Start & Stop",
-     "ventes_an_approx": 40
+     "exemple": "Bat. Fiamm Titanium Pro 60Ah 540En",
+     "ventes": 31
     },
     {
      "exemple": "Bat.Fiamm Titanium Pro 70Ah 640En",
-     "ventes_an_approx": 36
+     "ventes": 23
+    },
+    {
+     "exemple": "Batt.Fiaam 70Ah/720A 12V Start & Stop",
+     "ventes": 22
     },
     {
      "exemple": "Batt.Fiamm Ecoforce Afb 60Ah 600A 12V",
-     "ventes_an_approx": 27
+     "ventes": 16
     },
     {
      "exemple": "Bat. Fiamm Titanium Pro 75Ah 730A",
-     "ventes_an_approx": 12
+     "ventes": 8
     },
     {
      "exemple": "Bat. Fiamm Titanium Pro 80Ah 730A",
-     "ventes_an_approx": 8
+     "ventes": 5
     },
     {
      "exemple": "Bat. Fiamm Titanium Pro 100Ah 870A",
-     "ventes_an_approx": 4
-    },
-    {
-     "exemple": "Chargeur Batterie Auto 12V 120Ah",
-     "ventes_an_approx": 3
-    },
-    {
-     "exemple": "Batt.Fiamm Ecorforce Afb 75Ah 730Aen",
-     "ventes_an_approx": 3
+     "ventes": 3
     },
     {
      "exemple": "Batterie Bosch 60Ah Start And Stop",
-     "ventes_an_approx": 3
+     "ventes": 2
     },
     {
      "exemple": "Batterie Moto 12V 10Ah",
-     "ventes_an_approx": 3
+     "ventes": 2
     },
     {
      "exemple": "Lai Chargeur Batterie Auto 12V 120Ah 693",
-     "ventes_an_approx": 3
+     "ventes": 2
     },
     {
      "exemple": "Batterie Moto 12V 6Ah",
-     "ventes_an_approx": 3
-    },
-    {
-     "exemple": "Batterie Bosch S5; 77Ah.; Ne 780Amp",
-     "ventes_an_approx": 1
-    },
-    {
-     "exemple": "Bat. Fiamm Titanium Pro 54Ah 520Aen",
-     "ventes_an_approx": 1
-    },
-    {
-     "exemple": "Tec Batt. Moto Sla 12V 8Ah Tp Ytx9.Sla",
-     "ventes_an_approx": 1
-    },
-    {
-     "exemple": "2 Bat.Fiamm Titanium Pro 70Ah 640En",
-     "ventes_an_approx": 1
-    },
-    {
-     "exemple": "Tec Batterie Moto 32Ah/350A U1.R9",
-     "ventes_an_approx": 1
-    },
-    {
-     "exemple": "Batt Moto 32Ah/350A U1.L9",
-     "ventes_an_approx": 1
-    }
-   ]
-  },
-  "Huiles & lubrifiants": {
-   "nb_references": 240,
-   "exemples": [
-    {
-     "exemple": "Huile 5W30 Fut",
-     "ventes_an_approx": 480
-    },
-    {
-     "exemple": "Huile 5W40 Fut",
-     "ventes_an_approx": 244
-    },
-    {
-     "exemple": "Fia Filtre A Huile Fa5670Deco",
-     "ventes_an_approx": 89
-    },
-    {
-     "exemple": "Huile 0W30 Ou 0W20 Fut",
-     "ventes_an_approx": 85
-    },
-    {
-     "exemple": "Fia Filtre A Huile Fa6086Eco",
-     "ventes_an_approx": 76
-    },
-    {
-     "exemple": "Fia Filtre A Huile Ft5901",
-     "ventes_an_approx": 52
-    },
-    {
-     "exemple": "Fia Filtre A Huile Ft6088",
-     "ventes_an_approx": 52
-    },
-    {
-     "exemple": "Pur Filtre A Huile Ls923",
-     "ventes_an_approx": 48
-    },
-    {
-     "exemple": "Fia Filtre A Huile Ft6087",
-     "ventes_an_approx": 43
-    },
-    {
-     "exemple": "Fia Filtre A Huile Ft5272",
-     "ventes_an_approx": 40
-    },
-    {
-     "exemple": "Huile 5W30 Fap Fut",
-     "ventes_an_approx": 39
-    },
-    {
-     "exemple": "Fia Filtre A Huile Ft5656",
-     "ventes_an_approx": 37
-    },
-    {
-     "exemple": "Mannol 10W40 Fut",
-     "ventes_an_approx": 37
-    },
-    {
-     "exemple": "Fia Filtre A Huile Ft5730",
-     "ventes_an_approx": 32
-    },
-    {
-     "exemple": "Fia Filtre A Huile Fa6584Eco",
-     "ventes_an_approx": 25
-    },
-    {
-     "exemple": "Roady 75W80 Boite Et Pont 2L",
-     "ventes_an_approx": 25
-    },
-    {
-     "exemple": "Fia Filtre A Huile Ft5369",
-     "ventes_an_approx": 23
-    },
-    {
-     "exemple": "Fia Filtre A Huile Fa5784Eco",
-     "ventes_an_approx": 23
-    },
-    {
-     "exemple": "Roady 75W80 Bte Fut",
-     "ventes_an_approx": 22
-    },
-    {
-     "exemple": "Mannol 5W40 5L",
-     "ventes_an_approx": 21
-    }
-   ]
-  },
-  "Filtres": {
-   "nb_references": 363,
-   "exemples": [
-    {
-     "exemple": "Fia Filtre D Habitacle Pc8374",
-     "ventes_an_approx": 90
-    },
-    {
-     "exemple": "Fia Filtre D Habitacle Pc8241-2",
-     "ventes_an_approx": 74
-    },
-    {
-     "exemple": "Fia Filtre D Habitacle Pc8128",
-     "ventes_an_approx": 44
-    },
-    {
-     "exemple": "Fia Filtre A Air Pa7778",
-     "ventes_an_approx": 35
-    },
-    {
-     "exemple": "Fia Filtre D Habitacle Pc8218-2",
-     "ventes_an_approx": 35
-    },
-    {
-     "exemple": "Fia Filtre D Habitacle Pc8348",
-     "ventes_an_approx": 22
-    },
-    {
-     "exemple": "Fia Filtre D Habitacle Pck8361",
-     "ventes_an_approx": 21
-    },
-    {
-     "exemple": "Fia Filtre D Habitacle Pc8077",
-     "ventes_an_approx": 19
-    },
-    {
-     "exemple": "Fia Filtre D Habitacle Pc8250",
-     "ventes_an_approx": 18
-    },
-    {
-     "exemple": "Fia Filtre D Habitacle Pc8170",
-     "ventes_an_approx": 18
-    },
-    {
-     "exemple": "Fia Filtre D Habitacle Pc8186",
-     "ventes_an_approx": 18
-    },
-    {
-     "exemple": "Fia Filtre D Habitacle Pc8279",
-     "ventes_an_approx": 17
-    },
-    {
-     "exemple": "Fia Filtre A Gazole Fp6782",
-     "ventes_an_approx": 15
-    },
-    {
-     "exemple": "Fia Filtre D Habitacle Pc8340",
-     "ventes_an_approx": 15
-    },
-    {
-     "exemple": "Fia Filtre A Air Pa7684",
-     "ventes_an_approx": 15
-    },
-    {
-     "exemple": "Fia Filtre A Air Pa7305",
-     "ventes_an_approx": 14
-    },
-    {
-     "exemple": "Fia Filtre A Air Pa7669",
-     "ventes_an_approx": 14
-    },
-    {
-     "exemple": "Fia Filtre D Habitacle Pc8566-2",
-     "ventes_an_approx": 13
-    },
-    {
-     "exemple": "Fia Filtre D Habitacle Pc8418",
-     "ventes_an_approx": 13
-    },
-    {
-     "exemple": "Fia Filtre D Habitacle Pc8217-2",
-     "ventes_an_approx": 13
-    }
-   ]
-  },
-  "Liquides & entretien": {
-   "nb_references": 33,
-   "exemples": [
-    {
-     "exemple": "Liqde Ref -20C 5L 1Er Prix",
-     "ventes_an_approx": 937
-    },
-    {
-     "exemple": "Lg 1Er Prix Carex 5L",
-     "ventes_an_approx": 931
-    },
-    {
-     "exemple": "Lave Glace Special Ete",
-     "ventes_an_approx": 40
-    },
-    {
-     "exemple": "Liquide De Refroidissement -20°C 5L",
-     "ventes_an_approx": 14
-    },
-    {
-     "exemple": "Liquide Refroi. -25°C Excell 5L",
-     "ventes_an_approx": 13
-    },
-    {
-     "exemple": "Liquide De Refroidissement -20C 5L",
-     "ventes_an_approx": 6
-    },
-    {
-     "exemple": "Liquide De Refroidissement -20C 5L 1Er Prix",
-     "ventes_an_approx": 5
-    },
-    {
-     "exemple": "Liquide De Refroidissement -20°C 5L 1Er Prix",
-     "ventes_an_approx": 4
-    },
-    {
-     "exemple": "Lave Glace 1Er Prix 5L",
-     "ventes_an_approx": 4
-    },
-    {
-     "exemple": "Voir Fuite Refroidissement",
-     "ventes_an_approx": 4
-    },
-    {
-     "exemple": "Liquide Refroidissement -20C 5L 1Er Prix",
-     "ventes_an_approx": 4
-    },
-    {
-     "exemple": "Lave-Glace Carex 5L",
-     "ventes_an_approx": 3
-    },
-    {
-     "exemple": "Liquide Refroidissement -20C 5L",
-     "ventes_an_approx": 3
-    },
-    {
-     "exemple": "Liquide Lave-Glace Carex 5L",
-     "ventes_an_approx": 1
-    },
-    {
-     "exemple": "Liquide De Refroidissement Carex 5L",
-     "ventes_an_approx": 1
-    },
-    {
-     "exemple": "Valavertis Electromagnet Am80S A 479175",
-     "ventes_an_approx": 1
-    },
-    {
-     "exemple": "Liquide Refroidissement -37° 5L",
-     "ventes_an_approx": 1
-    },
-    {
-     "exemple": "Liquide Refroi. -25°C Excell 5L (Quantité: 4)",
-     "ventes_an_approx": 1
-    },
-    {
-     "exemple": "Durite De Refroidissement",
-     "ventes_an_approx": 1
-    },
-    {
-     "exemple": "Liquide Carex 5L 1Er Prix",
-     "ventes_an_approx": 1
+     "ventes": 2
     }
    ]
   },
   "Freinage (pièces)": {
-   "nb_references": 260,
+   "nb_references": 72,
    "exemples": [
     {
      "exemple": "Fer Jeu De Plaquettes Premier Fdb5025",
-     "ventes_an_approx": 19
+     "ventes": 13
     },
     {
      "exemple": "Fer Jeu De Plaquettes Premier Fdb4180",
-     "ventes_an_approx": 15
-    },
-    {
-     "exemple": "Fer Disques De Frein Vl 2P. Ddf1152",
-     "ventes_an_approx": 12
+     "ventes": 9
     },
     {
      "exemple": "Fer Disques De Frein Vl 2P. Ddf1140",
-     "ventes_an_approx": 12
-    },
-    {
-     "exemple": "Fer Jeu De 2 Disques De Frein Ddf2327C",
-     "ventes_an_approx": 10
-    },
-    {
-     "exemple": "Fer Disques De Frein 2P Ddf1728C",
-     "ventes_an_approx": 10
+     "ventes": 8
     },
     {
      "exemple": "Fer Jeu De Plaquettes Fdb4907",
-     "ventes_an_approx": 10
+     "ventes": 8
+    },
+    {
+     "exemple": "Fer Jeu De 2 Disques De Frein Ddf2327C",
+     "ventes": 7
     },
     {
      "exemple": "Plaquettes Av À Remplacer",
-     "ventes_an_approx": 9
+     "ventes": 7
     },
     {
-     "exemple": "Fer Jeu De Plaquettes Premier Fdb4615",
-     "ventes_an_approx": 8
+     "exemple": "Fer Disques De Frein Vl 2P. Ddf1152",
+     "ventes": 7
     },
     {
-     "exemple": "Fer Jeu De Plaquettes Premier Fdb1617",
-     "ventes_an_approx": 8
+     "exemple": "Fer Disques De Frein 2P Ddf1728C",
+     "ventes": 7
     },
     {
      "exemple": "Disques Av À Remplacer",
-     "ventes_an_approx": 8
+     "ventes": 6
     },
     {
-     "exemple": "Fer Jeu De Plaquettes Premier Fdb4003",
-     "ventes_an_approx": 6
+     "exemple": "Fer Jeu De Plaquettes Premier Fdb1617",
+     "ventes": 5
+    },
+    {
+     "exemple": "Fer Jeu De Plaquettes Premier Fdb4615",
+     "ventes": 5
     },
     {
      "exemple": "Disques Et Plaquettes Av A Remplacer",
-     "ventes_an_approx": 6
-    },
-    {
-     "exemple": "Fer Jeu De Plaquettes Premier Fdb1094",
-     "ventes_an_approx": 5
-    },
-    {
-     "exemple": "Fer Jeu De Plaquettes Premier Fdb5026",
-     "ventes_an_approx": 5
-    },
-    {
-     "exemple": "Fer Jeu De Plaquettes Premier Fdb4288",
-     "ventes_an_approx": 5
+     "ventes": 5
     },
     {
      "exemple": "Fer Jeu De Plaquettes Premier Fdb5192",
-     "ventes_an_approx": 5
+     "ventes": 4
+    },
+    {
+     "exemple": "Fer Jeu De Plaquettes Premier Fdb4003",
+     "ventes": 4
     },
     {
      "exemple": "Fer Disques De Frein Vl 2P. Ddf141",
-     "ventes_an_approx": 5
-    },
-    {
-     "exemple": "Fer Jeu De Plaquettes Premier Fdb4353",
-     "ventes_an_approx": 5
-    },
-    {
-     "exemple": "Fer Jeu De Plaquettes Premier Fdb1944",
-     "ventes_an_approx": 5
-    }
-   ]
-  },
-  "Produits d’entretien & additifs": {
-   "nb_references": 56,
-   "exemples": [
-    {
-     "exemple": "Nettoyant Frein Textar Formula",
-     "ventes_an_approx": 195
-    },
-    {
-     "exemple": "Nettoyant Textar Formula",
-     "ventes_an_approx": 48
-    },
-    {
-     "exemple": "Nettoyant/Degrippant Textar Formula",
-     "ventes_an_approx": 23
-    },
-    {
-     "exemple": "Nettoyant /Degrippant Textar Formula",
-     "ventes_an_approx": 17
-    },
-    {
-     "exemple": "Nettoyant /Degraissant Textar Formula",
-     "ventes_an_approx": 15
-    },
-    {
-     "exemple": "Bar Nettoyant Injecteurs Diesel Gs 42009",
-     "ventes_an_approx": 13
-    },
-    {
-     "exemple": "Nettoyant/Degraissant Textar Formula",
-     "ventes_an_approx": 12
-    },
-    {
-     "exemple": "Nettoyant Plastiques Vanille 300 Ml",
-     "ventes_an_approx": 5
-    },
-    {
-     "exemple": "Nettoyant Plastiques Menthe 300Ml",
-     "ventes_an_approx": 5
-    },
-    {
-     "exemple": "Nettoyant Degraissant Textar Formula",
-     "ventes_an_approx": 4
-    },
-    {
-     "exemple": "Nettoyant Plastiques Pomme Vert 300Ml",
-     "ventes_an_approx": 4
-    },
-    {
-     "exemple": "1 Nettoyant Frein Textar Formula",
-     "ventes_an_approx": 3
-    },
-    {
-     "exemple": "Nettoyant Frein",
-     "ventes_an_approx": 3
-    },
-    {
-     "exemple": "Nettoyant/Degrippant",
-     "ventes_an_approx": 3
-    },
-    {
-     "exemple": "Bar Nettoyant Injecteurs Essence G 42004",
-     "ventes_an_approx": 3
-    },
-    {
-     "exemple": "Desodorisant Arbre Magique Black Ice",
-     "ventes_an_approx": 3
-    },
-    {
-     "exemple": "Nettoyant Tissus Avec Brosse Mousse Acti",
-     "ventes_an_approx": 3
-    },
-    {
-     "exemple": "Nettoyant Frein Formula",
-     "ventes_an_approx": 3
-    },
-    {
-     "exemple": "Nettoyant /Degrippanttextar Formula",
-     "ventes_an_approx": 1
-    },
-    {
-     "exemple": "Additif Anti Usure Atf",
-     "ventes_an_approx": 1
-    }
-   ]
-  },
-  "Distribution (pièces)": {
-   "nb_references": 85,
-   "exemples": [
-    {
-     "exemple": "Gat Courroie Micro V Vl 6Pk1198",
-     "ventes_an_approx": 15
-    },
-    {
-     "exemple": "Gat Kit Distribution K01T360Hob",
-     "ventes_an_approx": 13
-    },
-    {
-     "exemple": "Gat Courroie Micro V Vl 6Pk1070",
-     "ventes_an_approx": 13
-    },
-    {
-     "exemple": "Gat Kit Distribution + Pae Kp25578Xs-2",
-     "ventes_an_approx": 8
-    },
-    {
-     "exemple": "Gat Courroie Micro V Stretch Fi 3Pk576Sf",
-     "ventes_an_approx": 8
-    },
-    {
-     "exemple": "Gat Kit Distribution + Pae Kp25578Xs",
-     "ventes_an_approx": 6
-    },
-    {
-     "exemple": "Gat Kit Distribution + Pae Kp35675Xs",
-     "ventes_an_approx": 6
-    },
-    {
-     "exemple": "Gat Courroie Micro V Vl 7Pk1570",
-     "ventes_an_approx": 5
-    },
-    {
-     "exemple": "Kit Distri + P.Eau",
-     "ventes_an_approx": 5
-    },
-    {
-     "exemple": "Gat Courroie Micro V Vl 6Pk975",
-     "ventes_an_approx": 5
-    },
-    {
-     "exemple": "Gat Courroie Micro V Vl 6Pk1043",
-     "ventes_an_approx": 5
-    },
-    {
-     "exemple": "Gat Kit Distribution + Pae Kp15688Xs",
-     "ventes_an_approx": 4
-    },
-    {
-     "exemple": "Gat Courroie Micro V Vl 6Pk1708",
-     "ventes_an_approx": 3
-    },
-    {
-     "exemple": "Gat Courroie Micro V Vl 6Pk1195",
-     "ventes_an_approx": 3
-    },
-    {
-     "exemple": "Gat Courroie Micro V Vl 7Pk1378",
-     "ventes_an_approx": 3
-    },
-    {
-     "exemple": "Gat Galet Accessoire Vl T36831",
-     "ventes_an_approx": 3
-    },
-    {
-     "exemple": "Échange Kit Distribution",
-     "ventes_an_approx": 3
-    },
-    {
-     "exemple": "Voir Courroie",
-     "ventes_an_approx": 3
-    },
-    {
-     "exemple": "Gat Kit Distribution + Pae Kp15627Xs",
-     "ventes_an_approx": 3
-    },
-    {
-     "exemple": "Gat Courroie Micro V Unique Fi 6Pk1345Xs",
-     "ventes_an_approx": 3
+     "ventes": 4
     }
    ]
   },
   "Ampoules & éclairage": {
-   "nb_references": 49,
+   "nb_references": 15,
    "exemples": [
     {
      "exemple": "Lai Lampe H7 833",
-     "ventes_an_approx": 59
+     "ventes": 32
     },
     {
      "exemple": "Lai Lampe Wedge 5W La Paire 828",
-     "ventes_an_approx": 55
+     "ventes": 30
     },
     {
      "exemple": "Lai Lampe Bifils 21,5 W La Paire 825",
-     "ventes_an_approx": 23
+     "ventes": 12
     },
     {
      "exemple": "Lai Lampes Monofil 21 W La Paire 823",
-     "ventes_an_approx": 18
+     "ventes": 11
     },
     {
      "exemple": "Lai Lampe H4 P43T 12V 5560W 801",
-     "ventes_an_approx": 14
+     "ventes": 10
     },
     {
      "exemple": "Lai Lampe Bifils 21.5 W 825",
-     "ventes_an_approx": 12
-    },
-    {
-     "exemple": "Ampoule W21/5W",
-     "ventes_an_approx": 8
+     "ventes": 9
     },
     {
      "exemple": "Lai Lampe Wedge 12V 5W La Paire 828",
-     "ventes_an_approx": 6
+     "ventes": 5
     },
     {
      "exemple": "Lai Lampe Monofil 21 W 823",
-     "ventes_an_approx": 6
+     "ventes": 5
+    },
+    {
+     "exemple": "Ampoule W21/5W",
+     "ventes": 3
     },
     {
      "exemple": "Lampe Wedge 5W La Paire",
-     "ventes_an_approx": 5
-    },
-    {
-     "exemple": "Lampe Bifils 21,5 W La Paire",
-     "ventes_an_approx": 4
-    },
-    {
-     "exemple": "Lampe H7 833",
-     "ventes_an_approx": 4
+     "ventes": 3
     },
     {
      "exemple": "Ampoule W16W",
-     "ventes_an_approx": 4
+     "ventes": 3
     },
     {
-     "exemple": "Lampe Neolux P21/4W 12Vx2",
-     "ventes_an_approx": 3
-    },
-    {
-     "exemple": "Lampe Wedge 5W La Paire 828",
-     "ventes_an_approx": 3
-    },
-    {
-     "exemple": "Lampe Neolux R10W 12V X2",
-     "ventes_an_approx": 3
+     "exemple": "Lampe Bifils 21,5 W La Paire",
+     "ventes": 2
     },
     {
      "exemple": "Lai Lampe Wedge 5W La Paire",
-     "ventes_an_approx": 3
+     "ventes": 2
     },
     {
      "exemple": "Lai Lampe Monofilambre 21W La Paire 824",
-     "ventes_an_approx": 3
+     "ventes": 2
     },
     {
      "exemple": "Lai Lampe H4 12 V 55/60W 801",
-     "ventes_an_approx": 3
-    },
-    {
-     "exemple": "Rdi Ampoules Type Hb3 12V Hb3",
-     "ventes_an_approx": 1
+     "ventes": 2
     }
    ]
   },
-  "Essuie-glaces": {
-   "nb_references": 22,
+  "Huiles & lubrifiants": {
+   "nb_references": 88,
    "exemples": [
     {
-     "exemple": "Balais Plat 650Mm",
-     "ventes_an_approx": 5
+     "exemple": "Huile 5W30 Fut",
+     "ventes": 330
     },
     {
-     "exemple": "Balais Plat 400Mm",
-     "ventes_an_approx": 5
+     "exemple": "Huile 5W40 Fut",
+     "ventes": 176
     },
     {
-     "exemple": "Balais Plat 450Mm",
-     "ventes_an_approx": 4
+     "exemple": "Huile 0W30 Ou 0W20 Fut",
+     "ventes": 61
     },
     {
-     "exemple": "Balais Plat 600Mm",
-     "ventes_an_approx": 4
+     "exemple": "Fia Filtre A Huile Fa5670Deco",
+     "ventes": 58
     },
     {
-     "exemple": "Balais Plat 4550Mm",
-     "ventes_an_approx": 3
+     "exemple": "Fia Filtre A Huile Fa6086Eco",
+     "ventes": 55
     },
     {
-     "exemple": "Balais Plat 483Mm",
-     "ventes_an_approx": 3
+     "exemple": "Fia Filtre A Huile Ft6088",
+     "ventes": 33
     },
     {
-     "exemple": "Bos Beg Aerotwin A102S X2 3397014116",
-     "ventes_an_approx": 1
+     "exemple": "Fia Filtre A Huile Ft5901",
+     "ventes": 31
     },
     {
-     "exemple": "Bos Beg Aerotwin A199S X2 3397014199",
-     "ventes_an_approx": 1
+     "exemple": "Fia Filtre A Huile Ft6087",
+     "ventes": 31
     },
     {
-     "exemple": "Bos Beg Rear A310H X1 3397013049",
-     "ventes_an_approx": 1
+     "exemple": "Mannol 10W40 Fut",
+     "ventes": 29
     },
     {
-     "exemple": "Balais Essuie Glace Av À Remplacer",
-     "ventes_an_approx": 1
+     "exemple": "Fia Filtre A Huile Ft5272",
+     "ventes": 27
     },
     {
-     "exemple": "Balai Arr A Remplacer",
-     "ventes_an_approx": 1
+     "exemple": "Pur Filtre A Huile Ls923",
+     "ventes": 27
     },
     {
-     "exemple": "1 Balais Plat 650Mm",
-     "ventes_an_approx": 1
+     "exemple": "Fia Filtre A Huile Ft5656",
+     "ventes": 25
     },
     {
-     "exemple": "1 Balais Plat 400Mm",
-     "ventes_an_approx": 1
+     "exemple": "Fia Filtre A Huile Ft5730",
+     "ventes": 24
     },
     {
-     "exemple": "Bos Beg Aerotwin Ar707U X1 3397006803",
-     "ventes_an_approx": 1
+     "exemple": "Fia Filtre A Huile Fa5784Eco",
+     "ventes": 18
     },
     {
-     "exemple": "Balais Plat 484Mm",
-     "ventes_an_approx": 1
-    },
-    {
-     "exemple": "Bos Beg Aerotwin A994S X2 3397014877",
-     "ventes_an_approx": 1
-    },
-    {
-     "exemple": "Balai Ess.Glace Avd Hu45",
-     "ventes_an_approx": 1
-    },
-    {
-     "exemple": "Balai Ess.Glace Avg Hu55 X",
-     "ventes_an_approx": 1
-    },
-    {
-     "exemple": "Balais E.G X3 + Renovation Phare",
-     "ventes_an_approx": 1
-    },
-    {
-     "exemple": "Balais Ess.Glace Av/Arr À Remplacer",
-     "ventes_an_approx": 1
+     "exemple": "Fia Filtre A Huile Ft5369",
+     "ventes": 16
     }
    ]
   },
-  "Bougies": {
-   "nb_references": 34,
+  "Filtres": {
+   "nb_references": 131,
    "exemples": [
     {
-     "exemple": "Bougie Allumage X3",
-     "ventes_an_approx": 5
+     "exemple": "Fia Filtre D Habitacle Pc8374",
+     "ventes": 61
     },
     {
-     "exemple": "Bougie Allumage X4",
-     "ventes_an_approx": 5
+     "exemple": "Fia Filtre D Habitacle Pc8241-2",
+     "ventes": 46
     },
     {
-     "exemple": "Ngk Bougie Allumage Boite / Bkr6Ez 4619",
-     "ventes_an_approx": 3
+     "exemple": "Fia Filtre D Habitacle Pc8128",
+     "ventes": 31
     },
     {
-     "exemple": "Échange Bougies Allumage",
-     "ventes_an_approx": 3
+     "exemple": "Fia Filtre A Air Pa7778",
+     "ventes": 25
     },
     {
-     "exemple": "Ngk Bougie Allumage Boite / Bkr5Ek 7956",
-     "ventes_an_approx": 3
+     "exemple": "Fia Filtre D Habitacle Pc8218-2",
+     "ventes": 20
     },
     {
-     "exemple": "Bos Bougie All. Nickel Vr8Sc+ 0242129510",
-     "ventes_an_approx": 3
+     "exemple": "Fia Filtre D Habitacle Pc8077",
+     "ventes": 14
     },
     {
-     "exemple": "Ngk Bougie Allumage Boite / Lfr6B / 6677",
-     "ventes_an_approx": 1
+     "exemple": "Fia Filtre D Habitacle Pck8361",
+     "ventes": 14
     },
     {
-     "exemple": "Ngk Bougie Allumage Boite / Ilkar7 91121 (X3)",
-     "ventes_an_approx": 1
+     "exemple": "Fia Filtre D Habitacle Pc8348",
+     "ventes": 13
     },
     {
-     "exemple": "4 Ngk Bougie Allumage Boite / Ilznar 91924",
-     "ventes_an_approx": 1
+     "exemple": "Fia Filtre D Habitacle Pc8250",
+     "ventes": 12
     },
     {
-     "exemple": "Ngk Bougie Prechauffage Boite / Y10 8888 (X4)",
-     "ventes_an_approx": 1
+     "exemple": "Fia Filtre D Habitacle Pc8186",
+     "ventes": 12
     },
     {
-     "exemple": "Ngk Bougie Allumage Boite / Zkr7A-1 1691",
-     "ventes_an_approx": 1
+     "exemple": "Fia Filtre D Habitacle Pc8170",
+     "ventes": 12
     },
     {
-     "exemple": "Bougies De Préchauffage Ge110 (X4)",
-     "ventes_an_approx": 1
+     "exemple": "Fia Filtre D Habitacle Pc8340",
+     "ventes": 10
     },
     {
-     "exemple": "Échange Bougies De Préchauffage",
-     "ventes_an_approx": 1
+     "exemple": "Fia Filtre A Air Pa7669",
+     "ventes": 9
     },
     {
-     "exemple": "Ngk Bougie Prechauffage Boite / Y1 91210",
-     "ventes_an_approx": 1
+     "exemple": "Fia Filtre D Habitacle Pc8217-2",
+     "ventes": 9
     },
     {
-     "exemple": "Bos Bougie All. Nickel Yr7Leu 0242135580",
-     "ventes_an_approx": 1
+     "exemple": "Fia Filtre A Air Pa7774",
+     "ventes": 9
+    }
+   ]
+  },
+  "Liquides & entretien": {
+   "nb_references": 14,
+   "exemples": [
+    {
+     "exemple": "Liqde Ref -20C 5L 1Er Prix",
+     "ventes": 617
     },
     {
-     "exemple": "Bougie Allumage Boite / Tr5B-13 4559 (X4)",
-     "ventes_an_approx": 1
+     "exemple": "Lg 1Er Prix Carex 5L",
+     "ventes": 611
     },
     {
-     "exemple": "Bougies Allumage Ngk Bkr6Ez 4619",
-     "ventes_an_approx": 1
+     "exemple": "Lave Glace Special Ete",
+     "ventes": 28
     },
     {
-     "exemple": "Ngk Bougie Prechauffage Boite / Y1 94103",
-     "ventes_an_approx": 1
+     "exemple": "Liquide De Refroidissement -20°C 5L",
+     "ventes": 8
     },
     {
-     "exemple": "3 Ngk Bougie Allumage Boite / Lfr6C-1 5788",
-     "ventes_an_approx": 1
+     "exemple": "Liquide Refroi. -25°C Excell 5L",
+     "ventes": 8
     },
     {
-     "exemple": "Bos Bougie All. Iridiumfr6Li3 0242240654 (X4)",
-     "ventes_an_approx": 1
+     "exemple": "Lave Glace 1Er Prix 5L",
+     "ventes": 3
+    },
+    {
+     "exemple": "Liquide De Refroidissement -20C 5L",
+     "ventes": 3
+    },
+    {
+     "exemple": "Lg 1Er Prix Carex 5L",
+     "ventes": 2
+    },
+    {
+     "exemple": "Liquide Refroidissement -20C 5L 1Er Prix",
+     "ventes": 2
+    },
+    {
+     "exemple": "Liquide De Refroidissement -20C 5L 1Er Prix",
+     "ventes": 2
+    },
+    {
+     "exemple": "Liquide De Refroidissement -20°C 5L 1Er Prix",
+     "ventes": 2
+    },
+    {
+     "exemple": "Voir Fuite Refroidissement",
+     "ventes": 2
+    },
+    {
+     "exemple": "Liquide De Refroidissement -20C 5L",
+     "ventes": 2
+    },
+    {
+     "exemple": "Liquide Refroidissement -20C 5L",
+     "ventes": 2
+    }
+   ]
+  },
+  "Produits d’entretien & additifs": {
+   "nb_references": 17,
+   "exemples": [
+    {
+     "exemple": "Nettoyant Frein Textar Formula",
+     "ventes": 125
+    },
+    {
+     "exemple": "Nettoyant Textar Formula",
+     "ventes": 28
+    },
+    {
+     "exemple": "Nettoyant/Degrippant Textar Formula",
+     "ventes": 17
+    },
+    {
+     "exemple": "Nettoyant /Degrippant Textar Formula",
+     "ventes": 13
+    },
+    {
+     "exemple": "Nettoyant /Degraissant Textar Formula",
+     "ventes": 12
+    },
+    {
+     "exemple": "Bar Nettoyant Injecteurs Diesel Gs 42009",
+     "ventes": 10
+    },
+    {
+     "exemple": "Nettoyant/Degraissant Textar Formula",
+     "ventes": 7
+    },
+    {
+     "exemple": "Nettoyant Plastiques Vanille 300 Ml",
+     "ventes": 4
+    },
+    {
+     "exemple": "Nettoyant Plastiques Menthe 300Ml",
+     "ventes": 4
+    },
+    {
+     "exemple": "Nettoyant Degraissant Textar Formula",
+     "ventes": 3
+    },
+    {
+     "exemple": "Nettoyant Plastiques Pomme Vert 300Ml",
+     "ventes": 3
+    },
+    {
+     "exemple": "Nettoyant Frein",
+     "ventes": 2
+    },
+    {
+     "exemple": "Nettoyant Textar Formula",
+     "ventes": 2
+    },
+    {
+     "exemple": "Nettoyant/Degrippant",
+     "ventes": 2
+    },
+    {
+     "exemple": "Bar Nettoyant Injecteurs Essence G 42004",
+     "ventes": 2
     }
    ]
   },
   "Recharge climatisation": {
-   "nb_references": 12,
+   "nb_references": 6,
    "exemples": [
     {
-     "exemple": "Gaz 1Kg R134A 13Kg Gazechime",
-     "ventes_an_approx": 218
+     "exemple": "Recharge Clim R134A",
+     "ventes": 167
     },
     {
-     "exemple": "Recharge Clim R134A",
-     "ventes_an_approx": 217
+     "exemple": "Gaz 1Kg R134A 13Kg Gazechime",
+     "ventes": 166
     },
     {
      "exemple": "Nouveau Gaz R1234Yf",
-     "ventes_an_approx": 14
+     "ventes": 11
     },
     {
      "exemple": "Nouveau Gaz R1234Yf 0,50",
-     "ventes_an_approx": 14
+     "ventes": 11
     },
     {
      "exemple": "Recharge Climatisation R134A",
-     "ventes_an_approx": 5
+     "ventes": 3
     },
     {
      "exemple": "Nouveau Gaz R1234Yf 0.50",
-     "ventes_an_approx": 3
+     "ventes": 2
+    }
+   ]
+  },
+  "Distribution (pièces)": {
+   "nb_references": 22,
+   "exemples": [
+    {
+     "exemple": "Gat Courroie Micro V Vl 6Pk1198",
+     "ventes": 10
     },
     {
-     "exemple": "Nouveau Gaz R1234Yf (0,50)",
-     "ventes_an_approx": 3
+     "exemple": "Gat Kit Distribution K01T360Hob",
+     "ventes": 8
     },
     {
-     "exemple": "Nouveau Gaz R1234Yf 0,50 Kg",
-     "ventes_an_approx": 1
+     "exemple": "Gat Courroie Micro V Vl 6Pk1070",
+     "ventes": 8
     },
     {
-     "exemple": "Recharge Clim Nouveau Gaz",
-     "ventes_an_approx": 1
+     "exemple": "Gat Kit Distribution + Pae Kp25578Xs-2",
+     "ventes": 6
     },
     {
-     "exemple": "Nouveau Gaz R1234Yf (0.50)",
-     "ventes_an_approx": 1
+     "exemple": "Gat Courroie Micro V Stretch Fi 3Pk576Sf",
+     "ventes": 6
     },
     {
-     "exemple": "0,50 Gaz 1Kg R134A 13Kg Gazechime",
-     "ventes_an_approx": 1
+     "exemple": "Gat Kit Distribution + Pae Kp35675Xs",
+     "ventes": 4
     },
     {
-     "exemple": "Recharge Clim R134A (Gaz 1Kg R134A 13Kg Gazechime)",
-     "ventes_an_approx": 1
+     "exemple": "Kit Distri + P.Eau",
+     "ventes": 4
+    },
+    {
+     "exemple": "Gat Courroie Micro V Vl 6Pk975",
+     "ventes": 4
+    },
+    {
+     "exemple": "Gat Kit Distribution + Pae Kp25578Xs",
+     "ventes": 4
+    },
+    {
+     "exemple": "Gat Courroie Micro V Vl 6Pk1043",
+     "ventes": 4
+    },
+    {
+     "exemple": "Gat Courroie Micro V Vl 7Pk1570",
+     "ventes": 3
+    },
+    {
+     "exemple": "Gat Courroie Micro V Vl 6Pk1708",
+     "ventes": 2
+    },
+    {
+     "exemple": "Gat Courroie Micro V Vl 6Pk1195",
+     "ventes": 2
+    },
+    {
+     "exemple": "Gat Courroie Micro V Vl 7Pk1378",
+     "ventes": 2
+    },
+    {
+     "exemple": "Gat Kit Distribution + Pae Kp15688Xs",
+     "ventes": 2
+    }
+   ]
+  },
+  "Essuie-glaces": {
+   "nb_references": 5,
+   "exemples": [
+    {
+     "exemple": "Balais Plat 400Mm",
+     "ventes": 4
+    },
+    {
+     "exemple": "Balais Plat 450Mm",
+     "ventes": 3
+    },
+    {
+     "exemple": "Balais Plat 650Mm",
+     "ventes": 3
+    },
+    {
+     "exemple": "Balais Plat 600Mm",
+     "ventes": 3
+    },
+    {
+     "exemple": "Balais Plat 483Mm",
+     "ventes": 2
+    }
+   ]
+  },
+  "Bougies": {
+   "nb_references": 4,
+   "exemples": [
+    {
+     "exemple": "Bougie Allumage X4",
+     "ventes": 4
+    },
+    {
+     "exemple": "Bougie Allumage X3",
+     "ventes": 2
+    },
+    {
+     "exemple": "Ngk Bougie Allumage Boite / Bkr5Ek 7956",
+     "ventes": 2
+    },
+    {
+     "exemple": "Bos Bougie All. Nickel Vr8Sc+ 0242129510",
+     "ventes": 2
     }
    ]
   }

@@ -8,7 +8,10 @@ import raw from './catalogue-roady.json';
  * régénérable depuis W-Contact — tout le nettoyage se fait ici, à l'affichage.
  */
 
-export type Prestation = { designation: string; prix_ttc: number };
+export type Prestation = { designation: string; prix_ttc: number; ventes?: number };
+
+/** Période couverte par l'export (ex. « ventes 2026 (janv.→10 août) »). */
+export const periode: string = (raw as { periode?: string }).periode ?? '';
 
 /**
  * Lignes de caisse à ne jamais montrer au client. Une « REMISE VIDANGE 10 EUROS »
@@ -55,7 +58,7 @@ const ORTHOGRAPHE: Record<string, string> = {
   rectification: 'rectification', bielette: 'biellette', manu: 'manuelle',
   jusqu: 'jusqu', poussee: 'poussée', regulateur: 'régulateur',
   demarrage: 'démarrage', prealable: 'préalable', complementaire: 'complémentaire',
-  controle: 'contrôle', boitier: 'boîtier', boite: 'boîte', eco: 'éco',
+  arriere: 'arrière', controle: 'contrôle', boitier: 'boîtier', boite: 'boîte', eco: 'éco',
   systeme: 'système', numero: 'numéro', cerine: 'cérine', emplatre: 'emplâtre',
   permutation: 'permutation', equilibrage: 'équilibrage', valve: 'valve',
   electrique: 'électrique', electronique2: 'électronique', tres: 'très',
@@ -87,7 +90,8 @@ export function prix(v: number): string {
     : `${v.toFixed(2).replace('.', ',')} €`;
 }
 
-export type Categorie = { nom: string; items: (Prestation & { label: string })[]; aPartirDe: number };
+export type Item = Prestation & { label: string };
+export type Categorie = { nom: string; items: Item[]; aPartirDe: number; ventes: number };
 
 /** Catégories de prestations, nettoyées, dédoublonnées et triées par prix croissant. */
 export const prestations: Categorie[] = Object.entries(
@@ -106,12 +110,29 @@ export const prestations: Categorie[] = Object.entries(
       })
       .map((it) => ({ ...it, label: lisible(it.designation) }))
       .sort((a, b) => a.prix_ttc - b.prix_ttc);
-    return { nom, items: nettoyes, aPartirDe: nettoyes[0]?.prix_ttc ?? 0 };
+    return {
+      nom,
+      items: nettoyes,
+      aPartirDe: nettoyes[0]?.prix_ttc ?? 0,
+      ventes: nettoyes.reduce((n, it) => n + (it.ventes ?? 0), 0),
+    };
   })
   .filter((c) => c.items.length > 0)
-  .sort((a, b) => a.nom.localeCompare(b.nom, 'fr'));
+  // Les catégories les plus demandées en premier : c'est ce que le client cherche.
+  .sort((a, b) => b.ventes - a.ventes);
 
 export const totalPrestations = prestations.reduce((n, c) => n + c.items.length, 0);
+
+/**
+ * Les forfaits les plus vendus, toutes catégories confondues. L'export porte
+ * désormais les volumes réels : autant s'en servir pour mettre en avant ce que
+ * les clients demandent vraiment, plutôt qu'un choix éditorial arbitraire.
+ */
+export const populaires: (Item & { categorie: string })[] = prestations
+  .flatMap((c) => c.items.map((it) => ({ ...it, categorie: c.nom })))
+  .filter((it) => (it.ventes ?? 0) > 0)
+  .sort((a, b) => (b.ventes ?? 0) - (a.ventes ?? 0))
+  .slice(0, 6);
 
 /**
  * Boutique : on ne montre PAS les codes fournisseurs (« Fer Jeu De Plaquettes Fdb5025 »),
@@ -133,8 +154,20 @@ const EDITO: Record<string, { desc: string; marques: string[]; icon: string }> =
   'Recharge climatisation': { desc: 'Gaz R134A et nouveau gaz R1234YF, recharge réalisée sur place.', marques: [], icon: 'ac' },
 };
 
+/** Ancre de lien vers une catégorie boutique : « Huiles & lubrifiants » -> « huiles-lubrifiants ». */
+export function slug(nom: string): string {
+  return nom
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
 export type CategorieBoutique = {
   nom: string;
+  slug: string;
+  /** Nombre de références DIFFÉRENTES vendues sur la période — ce n'est pas le stock. */
   nbReferences: number;
   desc: string;
   marques: string[];
@@ -146,6 +179,7 @@ export const boutique: CategorieBoutique[] = Object.entries(
 )
   .map(([nom, v]) => ({
     nom,
+    slug: slug(nom),
     nbReferences: v.nb_references,
     desc: EDITO[nom]?.desc ?? '',
     marques: EDITO[nom]?.marques ?? [],

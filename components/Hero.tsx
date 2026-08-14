@@ -24,7 +24,7 @@ export default function Hero() {
           Votre garage de confiance à <span className="text-[#ff5a6a]">Solliès-Pont.</span>
         </h1>
         <p className="mb-8 max-w-xl animate-fadeUp text-lg text-white/90" style={{ animationDelay: '.1s' }}>
-          Entretien, pneus, freins, climatisation, distribution… Toutes marques, au juste prix, et surtout <b className="font-bold text-white">sans mauvaise surprise</b> — on vous montre tout en photo.
+          Entretien, pneus, freins, climatisation, distribution… Toutes marques, au juste prix, et surtout <b className="font-bold text-white">sans mauvaise surprise</b>.
         </p>
         <div className="mb-10 flex animate-fadeUp flex-wrap gap-3.5" style={{ animationDelay: '.15s' }}>
           <a href="#contact" className="rounded-full bg-red px-7 py-4 font-bold text-white shadow-lg shadow-red/30 transition hover:-translate-y-0.5 hover:bg-red-dark">Demander un devis gratuit</a>

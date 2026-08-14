@@ -1,6 +1,6 @@
 'use client';
-import { useMemo, useState } from 'react';
-import { prestations, boutique, prix, totalPrestations, totalReferences } from '@/lib/catalogue';
+import { useEffect, useMemo, useState } from 'react';
+import { prestations, boutique, prix, totalPrestations, totalReferences, populaires } from '@/lib/catalogue';
 import { site, brands } from '@/lib/site';
 import { ServiceIcon, Check, Phone } from './Icons';
 import Reveal from './Reveal';
@@ -28,6 +28,22 @@ export default function Catalogue() {
   const [ouverte, setOuverte] = useState<string | null>(null);
   const [q, setQ] = useState('');
 
+  // Les vignettes de la boutique, sur l'accueil, pointent vers /catalogue#boutique
+  // (voire #boutique-batteries). On ouvre le bon onglet et on descend dessus.
+  // Choix de l'ancre plutôt que d'un paramètre d'URL : ça garde la page statique.
+  useEffect(() => {
+    const h = decodeURIComponent(window.location.hash.replace('#', ''));
+    if (!h.startsWith('boutique')) return;
+    setOnglet('boutique');
+    const cible = h.slice('boutique'.length).replace(/^-/, '');
+    if (cible) {
+      // Laisser React peindre l'onglet avant de chercher l'élément.
+      requestAnimationFrame(() => {
+        document.getElementById(`b-${cible}`)?.scrollIntoView({ block: 'center' });
+      });
+    }
+  }, []);
+
   const recherche = normalise(q.trim());
 
   // La recherche traverse les deux univers : en borne, le client ne sait pas
@@ -45,7 +61,7 @@ export default function Catalogue() {
 
   const onglets = [
     { id: 'prestations' as const, label: 'Nos prestations', n: `${totalPrestations} forfaits` },
-    { id: 'boutique' as const, label: 'La boutique', n: `${totalReferences.toLocaleString('fr-FR')} références` },
+    { id: 'boutique' as const, label: 'La boutique', n: `${totalReferences} références` },
   ];
 
   return (
@@ -64,8 +80,8 @@ export default function Catalogue() {
             Tout ce qu’on fait, tout ce qu’on vend.
           </h1>
           <p className="mb-7 max-w-2xl text-[17px] text-white/90">
-            Nos forfaits atelier avec leurs prix TTC, et les {totalReferences.toLocaleString('fr-FR')} références
-            en stock dans la boutique. Prix affichés, pas de surprise au comptoir.
+            Nos {totalPrestations} forfaits atelier avec leurs prix TTC, et les {totalReferences} références
+            passées au comptoir cette année. Prix affichés, pas de surprise.
           </p>
 
           <label className="relative block max-w-xl">
@@ -137,6 +153,27 @@ export default function Catalogue() {
               </div>
 
               {onglet === 'prestations' && (
+                <>
+                  {/* Ce que les clients demandent réellement — issu des volumes de vente,
+                      pas d'une sélection éditoriale. */}
+                  <Reveal>
+                    <div className="mb-8 rounded-2xl border border-line bg-white p-6 sm:p-7">
+                      <h2 className="text-[19px] font-extrabold text-ink">Les forfaits les plus demandés</h2>
+                      <p className="mt-1 text-[14px] text-mut">Ce que nos clients nous confient le plus souvent cette année.</p>
+                      <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                        {populaires.map((it) => (
+                          <div key={it.designation} className="flex items-center justify-between gap-3 rounded-xl bg-wash px-4 py-3.5">
+                            <span className="min-w-0">
+                              <span className="block truncate text-[14px] font-bold text-ink">{it.label}</span>
+                              <span className="text-[12px] text-mut">{it.categorie}</span>
+                            </span>
+                            <span className="shrink-0 text-[15px] font-extrabold text-red">{prix(it.prix_ttc)}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </Reveal>
+
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                   {prestations.map((c, i) => {
                     const open = ouverte === c.nom;
@@ -169,6 +206,7 @@ export default function Catalogue() {
                     );
                   })}
                 </div>
+                </>
               )}
 
               {onglet === 'boutique' && (
@@ -239,16 +277,18 @@ function Liste({ items }: { items: { designation: string; label: string; prix_tt
   );
 }
 
-function TuileBoutique({ c }: { c: { nom: string; nbReferences: number; desc: string; marques: string[]; icon: string } }) {
+function TuileBoutique({ c }: { c: { nom: string; slug: string; nbReferences: number; desc: string; marques: string[]; icon: string } }) {
   return (
-    <div className="flex h-full flex-col rounded-2xl border border-line bg-white p-6 transition hover:-translate-y-1 hover:border-[#f2c9ce] hover:shadow-[0_10px_32px_rgba(14,27,44,.12)]">
+    <div id={`b-${c.slug}`} className="flex h-full scroll-mt-28 flex-col rounded-2xl border border-line bg-white p-6 transition hover:-translate-y-1 hover:border-[#f2c9ce] hover:shadow-[0_10px_32px_rgba(14,27,44,.12)]">
       <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-red-wash text-red">
         <ServiceIcon name={c.icon} />
       </span>
       <h3 className="text-[17.5px] font-extrabold leading-tight text-ink">{c.nom}</h3>
       <p className="mt-1 text-[26px] font-extrabold leading-none tracking-tight text-red">
         {c.nbReferences}
-        <span className="ml-1.5 text-[13px] font-bold text-mut">références</span>
+        <span className="ml-1.5 text-[13px] font-bold text-mut">
+          référence{c.nbReferences > 1 ? 's' : ''} différentes
+        </span>
       </p>
       <p className="mt-3 flex-1 text-[14px] leading-relaxed text-body">{c.desc}</p>
       {c.marques.length > 0 && (
