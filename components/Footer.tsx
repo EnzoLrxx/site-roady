@@ -7,9 +7,13 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl">
         <div className="grid grid-cols-1 gap-8 border-b border-white/10 pb-9 md:grid-cols-[2fr_1fr_1fr]">
           <div>
+            {/* Variante blanche du logo : le lettrage noir serait invisible sur le navy. */}
             <div className="mb-3 flex items-center gap-3 text-lg font-extrabold text-white">
-              <span className="flex h-10 w-10 items-center justify-center rounded-[10px] bg-red font-black italic text-white">R</span>
-              <span>{site.name}<small className="block text-[11px] font-semibold text-white/60">{site.legal}</small></span>
+              <img src="/img/logo-roady-blanc.png" alt="Roady Centre Auto" className="h-9 w-auto" />
+              <span className="border-l border-white/20 pl-3 leading-tight">
+                {site.address.city}
+                <small className="block text-[11px] font-semibold text-white/60">{site.legal}</small>
+              </span>
             </div>
             <p className="max-w-sm text-[14.5px]">Votre garage automobile toutes marques à {site.address.city}. Entretien, réparation, pneus et climatisation — au juste prix, en toute transparence.</p>
           </div>

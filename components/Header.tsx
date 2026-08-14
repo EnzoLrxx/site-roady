@@ -23,10 +23,12 @@ export default function Header() {
   return (
     <header className={`sticky top-0 z-50 transition-colors ${solid ? 'bg-white/95 backdrop-blur border-b border-line' : 'bg-white/95 border-b border-line'}`}>
       <div className="mx-auto flex h-[68px] max-w-6xl items-center gap-3 px-5">
-        <a href="/#top" className="flex items-center gap-3">
-          <span className="flex h-10 w-10 items-center justify-center rounded-[10px] bg-red font-black italic text-white">R</span>
-          <span className="font-extrabold text-ink leading-tight">
-            {site.name}
+        {/* Le vrai logo Roady, extrait des médias du garage. Le libellé à droite ne
+            répète pas « Roady » — l'enseigne est déjà dans l'image — il situe le centre. */}
+        <a href="/#top" className="flex items-center gap-3" aria-label={`${site.name}, accueil`}>
+          <img src="/img/logo-roady.png" alt="Roady Centre Auto" className="h-8 w-auto sm:h-9" />
+          <span className="border-l border-line pl-3 leading-tight">
+            <span className="block text-[15px] font-extrabold text-ink">{site.address.city}</span>
             <small className="block text-[11px] font-semibold text-mut">Garage auto · {site.legal}</small>
           </span>
         </a>
