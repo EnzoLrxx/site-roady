@@ -1,6 +1,9 @@
 [build]
 builder = "NIXPACKS"
-buildCommand = "npm ci && npm run build"
+# Pas de `npm ci` ici : Nixpacks installe déjà les dépendances dans sa phase `install`.
+# Le relancer pendant le build échoue en EBUSY, car il tente de supprimer node_modules
+# alors que Railway y monte un cache (/app/node_modules/.cache).
+buildCommand = "npm run build"
 
 [deploy]
 startCommand = "npm run start"
