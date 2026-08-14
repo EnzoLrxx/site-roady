@@ -112,7 +112,7 @@ export const offers: Offer[] = [
   },
   {
     id: 'pare-brise',
-    tag: 'Pris en charge assurance',
+    tag: 'Assurance',
     title: 'Remplacement de pare-brise',
     subtitle: 'Toutes assurances',
     price: null,

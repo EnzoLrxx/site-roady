@@ -42,10 +42,16 @@ function Compare({ before, after }: { before: string; after: string }) {
   );
 }
 
+/**
+ * Toutes les cartes partagent la même ossature, et les zones titre/prix ont une
+ * hauteur plancher : c'est ce qui aligne les prix d'une carte à l'autre quels que
+ * soient la longueur du titre et le nombre de lignes de l'accroche.
+ * Le visuel (comparateur) est en BAS : au milieu, il décalait tout ce qui suit.
+ */
 function Card({ o }: { o: Offer }) {
   return (
     <article className="flex h-full min-w-[286px] max-w-[286px] snap-start flex-col rounded-2xl border border-line bg-white p-6 shadow-[0_2px_14px_rgba(14,27,44,.05)] transition hover:-translate-y-1 hover:border-[#f2c9ce] hover:shadow-[0_10px_32px_rgba(14,27,44,.12)] sm:min-w-[320px] sm:max-w-[320px]">
-      <div className="mb-4 flex items-start justify-between gap-3">
+      <div className="mb-4 flex h-10 items-start justify-between gap-3">
         <span className="rounded-full bg-red-wash px-2.5 py-1 text-[11px] font-extrabold uppercase tracking-wide text-red">
           {o.tag}
         </span>
@@ -56,27 +62,23 @@ function Card({ o }: { o: Offer }) {
         )}
       </div>
 
-      {o.kind === 'compare' && o.before && o.after && (
-        <div className="mb-4">
-          <Compare before={o.before} after={o.after} />
-        </div>
-      )}
+      <div className="min-h-[62px]">
+        <h3 className="text-[19px] font-extrabold leading-tight text-ink">{o.title}</h3>
+        <p className="mt-1 text-[13px] leading-snug text-mut">{o.subtitle}</p>
+      </div>
 
-      <h3 className="text-[19px] font-extrabold leading-tight text-ink">{o.title}</h3>
-      <p className="mt-1 text-[13px] text-mut">{o.subtitle}</p>
-
-      <div className="my-4 border-t border-line pt-4">
+      <div className="my-4 flex min-h-[58px] items-center border-t border-line pt-4">
         {o.price ? (
           <p className="flex items-baseline gap-1">
             <span className="text-[42px] font-extrabold leading-none tracking-tight text-red">{o.price}</span>
             <span className="text-[15px] font-bold text-red">{o.unit}</span>
           </p>
         ) : (
-          <p className="text-[19px] font-extrabold leading-snug text-red">{o.headline}</p>
+          <p className="text-[18px] font-extrabold leading-snug text-red">{o.headline}</p>
         )}
       </div>
 
-      <ul className="mb-5 flex-1 space-y-2">
+      <ul className="space-y-2">
         {o.points.map((p) => (
           <li key={p} className="flex gap-2 text-[13.5px] leading-snug text-body">
             <Check className="mt-0.5 h-4 w-4 shrink-0 text-red" />
@@ -85,12 +87,11 @@ function Card({ o }: { o: Offer }) {
         ))}
       </ul>
 
-      <a
-        href="#contact"
-        className="mt-auto block rounded-full bg-navy px-4 py-3 text-center text-sm font-bold text-white transition hover:bg-navy-3"
-      >
-        Demander un devis
-      </a>
+      {o.kind === 'compare' && o.before && o.after && (
+        <div className="mt-auto pt-5">
+          <Compare before={o.before} after={o.after} />
+        </div>
+      )}
     </article>
   );
 }
@@ -172,10 +173,20 @@ export default function Offres() {
           ))}
         </div>
 
-        <p className="mt-5 text-center text-[12px] text-mut">
-          Offres valables en centre Roady Solliès-Pont. Voir conditions en magasin ou au {' '}
-          <a href="tel:+33494288142" className="font-semibold text-body underline underline-offset-2">04 94 28 81 42</a>.
-        </p>
+        {/* Un seul appel à l'action pour tout le carrousel : répété sur chaque carte,
+            il perdait son poids et alourdissait la lecture. */}
+        <div className="mt-7 flex flex-col items-center gap-3">
+          <a
+            href="#contact"
+            className="rounded-full bg-red px-7 py-3.5 text-base font-bold text-white transition hover:bg-red-dark"
+          >
+            Demander un devis gratuit
+          </a>
+          <p className="text-center text-[12px] text-mut">
+            Offres valables en centre Roady Solliès-Pont. Voir conditions en magasin ou au{' '}
+            <a href="tel:+33494288142" className="font-semibold text-body underline underline-offset-2">04 94 28 81 42</a>.
+          </p>
+        </div>
       </div>
     </section>
   );
