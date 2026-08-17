@@ -15,7 +15,14 @@ type Estimate = {
   note: string;
   disclaimer: string;
   source: 'live' | 'default';
-  basis?: { level: 'category' | 'make' | 'model'; sampleSize?: number };
+  /** Prix médian — « le plus souvent X € ». Renvoyé par Lemonauto en mode live. */
+  typical?: number | null;
+  basis?: {
+    level: 'category' | 'segment' | 'make' | 'model';
+    segment?: string;
+    segmentLabel?: string;
+    sampleSize?: number;
+  };
 };
 
 const CATEGORIES = estimatorData.categories as Category[];
@@ -39,8 +46,11 @@ function EstimateCard({
 }) {
   // « Affinée » seulement si Lemonauto a vraiment calculé sur le véhicule.
   // Le repli statique ne connaît que la catégorie : on n'en fait pas une personnalisation.
+  // Lemonauto calcule désormais par SEGMENT (citadine, utilitaire…) : c'est ce
+  // niveau qui remonte, pas make/model, tous deux conservés par compatibilité.
+  const niveau = est?.basis?.level;
   const refined =
-    est?.source === 'live' && (est.basis?.level === 'make' || est.basis?.level === 'model');
+    est?.source === 'live' && (niveau === 'segment' || niveau === 'make' || niveau === 'model');
   const vehicle = [make?.trim(), model?.trim()].filter(Boolean).join(' ');
   // Une estimation déjà affichée n'est pas remplacée par le loader : on l'affine sur place.
   const firstLoad = loading && !est;
@@ -70,10 +80,16 @@ function EstimateCard({
           <p className="mt-1.5 text-[22px] font-extrabold leading-tight text-ink">
             entre {est.low} et {est.high} €
           </p>
+          {est.typical != null && (
+            <p className="mt-1 text-[14px] font-bold text-ink">
+              le plus souvent {est.typical} €
+            </p>
+          )}
           {est.from != null && <p className="mt-0.5 text-[13.5px] font-bold text-red">dès {est.from} €</p>}
-          {refined && vehicle && (
+          {refined && (
             <p className="mt-1 text-[13px] font-semibold text-body">
-              Pour votre {vehicle}
+              Pour votre {vehicle || est.basis?.segmentLabel?.toLowerCase() || 'véhicule'}
+              {est.basis?.segmentLabel && vehicle ? ` (${est.basis.segmentLabel.toLowerCase()})` : ''}
               {est.basis?.sampleSize ? ` — basée sur ${est.basis.sampleSize} véhicules similaires` : ''}
             </p>
           )}
@@ -204,6 +220,7 @@ export default function DevisForm() {
       category: category || null,
       estimateLow: est?.low ?? null,
       estimateHigh: est?.high ?? null,
+      estimateTypical: est?.typical ?? null,
       website: String(fd.get('website') || ''), // honeypot
     };
     try {
