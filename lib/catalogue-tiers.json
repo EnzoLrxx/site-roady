@@ -1,59 +1,108 @@
 {
-  "_comment": "Transparence tarifaire à 3 niveaux (cahier du gérant, §2-§3). Fichier SÉPARÉ de catalogue-roady.json, qui est régénéré depuis W-Contact : y écrire les tiers les ferait disparaître au prochain export. Ici, ils survivent. Enzo peut réaffecter une prestation en changeant un motif ci-dessous, sans toucher au code.",
+  "_comment": "Politique d'affichage des prix (cahier §2). Le site n'est PAS un catalogue de prix exhaustif : on affiche un prix uniquement sur une sélection de « prix vitrines », tout le reste passe en « Sur devis ». Fichier SÉPARÉ de catalogue-roady.json, qui est régénéré depuis W-Contact et écraserait ces réglages.",
   "_niveaux": {
-    "vert": "Prix fixe affiché tel quel — prestation standardisée.",
-    "orange": "Affiché « à partir de X € » — le prix dépend du véhicule.",
-    "rouge": "Aucun prix public, « Sur devis » — trop variable pour être annoncé."
+    "vitrine": "Prix ferme affiché, validé par le gérant.",
+    "apartir": "« à partir de X € » où X est le vrai p25 calculé sur les devis (lib/estimator-data.json). Bascule en « devis » si l'échantillon est insuffisant.",
+    "devis": "Aucun prix public. C'est le DÉFAUT : mieux vaut « sur devis » qu'un prix qui induit en erreur."
   },
-  "_ordre": "Les règles sont évaluées dans l'ordre : rouge d'abord, puis vert. Tout le reste bascule en orange.",
-  "regles": [
+  "_prix_vitrines": "Le prix affiché vient de ce fichier, pas de l'export de caisse : c'est le gérant qui arbitre ce qui est mis en avant. `motif` sert à retrouver la ligne correspondante dans l'export.",
+  "vitrines": [
     {
-      "tier": "rouge",
+      "motif": "forf clim charge",
+      "label": "Recharge climatisation (R134A)",
+      "prix": 69,
+      "unite": ""
+    },
+    {
+      "motif": "renovation optique",
+      "label": "Rénovation d’optique de phares",
+      "prix": 39,
+      "unite": " / phare",
+      "_note": "À CONFIRMER : l'export de caisse indique 49,90 € (X1) et 79,90 € (X2). Le 39 € vient des supports commerciaux du garage. Enzo doit trancher."
+    },
+    {
+      "motif": "equilibrage par roue",
+      "label": "Équilibrage par roue",
+      "prix": 10,
+      "unite": ""
+    },
+    {
+      "motif": "montage pneu jusqu",
+      "label": "Montage pneu (jusqu’à 17 pouces)",
+      "prix": 23,
+      "unite": ""
+    },
+    {
+      "motif": "reparation crevaison",
+      "label": "Réparation de crevaison",
+      "prix": 21,
+      "unite": ""
+    },
+    {
+      "motif": "reglage parallelisme avant",
+      "label": "Réglage parallélisme avant",
+      "prix": 69,
+      "unite": ""
+    },
+    {
+      "motif": "reglage geometrie avant + arriere",
+      "label": "Réglage géométrie avant + arrière",
+      "prix": 80,
+      "unite": ""
+    },
+    {
+      "motif": "decalaminage a l'hydrogene",
+      "label": "Décalaminage à l’hydrogène",
+      "prix": 65,
+      "unite": ""
+    }
+  ],
+  "_a_partir_de": "Familles dont le prix varie trop pour être ferme, mais dont on possède un p25 réel. `estimateur` désigne la clé dans lib/estimator-data.json. Sous `n_min` devis, la famille bascule en « Sur devis ».",
+  "n_min": 30,
+  "apartir": [
+    {
+      "label": "Vidange / révision",
+      "estimateur": "vidange",
       "motifs": [
-        "distribution",
-        "embrayage",
-        "alternateur",
-        "demarreur",
-        "recherche de panne",
-        "nettoyage fap",
-        "triangle",
-        "rotule",
-        "biellette",
-        "soufflet",
-        "roulement",
-        "rectification",
-        "kit arriere",
-        "cremaillere",
-        "bielette"
+        "vidange de l'huile moteur",
+        "forfait vidange",
+        "forfait revision",
+        "vidange + purge circ refroid"
       ]
     },
     {
-      "tier": "vert",
+      "label": "Freinage",
+      "estimateur": "freinage",
       "motifs": [
-        "crevaison",
-        "montage pneu",
-        "montage 1 pneu",
-        "montage 2 pneu",
-        "montage 4 pneu",
-        "equilibrage",
-        "permutation",
-        "geometrie",
-        "parallelisme",
-        "valve",
-        "recharge clim",
-        "forf clim",
-        "entretien et recharge clim",
-        "forfait clim",
-        "diagnostic",
-        "pack diag",
-        "lecture",
-        "reglage phare",
-        "renovation optique",
-        "ampoule",
-        "tarif horaire",
-        "pose plaque"
+        "plaquettes",
+        "disques",
+        "kit frein"
+      ]
+    },
+    {
+      "label": "Batterie / démarrage",
+      "estimateur": "batterie",
+      "motifs": [
+        "batterie"
+      ]
+    },
+    {
+      "label": "Amortisseurs",
+      "estimateur": "amortisseurs",
+      "motifs": [
+        "amortisseur"
       ]
     }
   ],
-  "defaut": "orange"
+  "_taxonomie": "Corrections de rattachement : l'export range certaines prestations dans une famille aberrante.",
+  "taxonomie": [
+    {
+      "motifs": [
+        "silencieux",
+        "echappement"
+      ],
+      "famille": "Échappement"
+    }
+  ],
+  "_vitrine_en_attente": "Diagnostic électronique « à partir de 35 € » : AUCUNE ligne correspondante dans l'export 2026 vérifié (les lignes proches sont PACK DIAG SECURITE à 19 € et LECTURE & EFFACEMENT CODE DEFAUT à 39 €). Non affiché tant qu'Enzo n'a pas indiqué à quelle prestation ce prix se rattache."
 }

@@ -1,5 +1,7 @@
 import raw from './catalogue-roady.json';
 import tiers from './catalogue-tiers.json';
+import estimateur from './estimator-data.json';
+import { marquesConfirmees } from './site';
 
 /**
  * Couche de présentation du catalogue W-Contact.
@@ -97,54 +99,131 @@ export function prix(v: number): string {
 }
 
 /** Niveau de transparence tarifaire (cf. lib/catalogue-tiers.json). */
-export type Tier = 'vert' | 'orange' | 'rouge';
+export type Tier = 'vitrine' | 'apartir' | 'devis';
 
 function sansAccents(s: string) {
-  return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+  return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 }
 
-/** Le tier d'une prestation, déduit des motifs du fichier de règles. */
-export function tierDe(designation: string): Tier {
+type Vitrine = { motif: string; label: string; prix: number; unite: string; apartir?: boolean };
+const VITRINES = tiers.vitrines as Vitrine[];
+
+/** p25 réel d'une famille, lu depuis l'estimateur. `null` si l'échantillon est trop faible. */
+function p25(cle: string): number | null {
+  const c = (estimateur.categories as { key: string; low: number | null; n?: number }[])
+    .find((x) => x.key === cle);
+  if (!c || c.low == null) return null;
+  // Un « à partir de » adossé à une poignée de devis ne vaut rien : on préfère
+  // « sur devis » à un chiffre que le comptoir ne pourra pas tenir.
+  if ((c.n ?? 0) < tiers.n_min) return null;
+  return c.low;
+}
+
+type Classement =
+  | { tier: 'vitrine'; vitrine: Vitrine }
+  | { tier: 'apartir'; prix: number; famille: string }
+  | { tier: 'devis' };
+
+/**
+ * Classe une prestation. Ordre : vitrine (choix du gérant), puis « à partir de »
+ * adossé à un p25 réel, sinon « sur devis ».
+ * Le défaut est volontairement « devis » : mieux vaut ne pas afficher de prix
+ * qu'un prix susceptible d'induire en erreur.
+ */
+export function classer(designation: string): Classement {
   const d = sansAccents(designation);
-  for (const regle of tiers.regles) {
-    if (regle.motifs.some((m) => d.includes(sansAccents(m)))) return regle.tier as Tier;
+
+  const v = VITRINES.find((x) => d.includes(sansAccents(x.motif)));
+  if (v) return { tier: 'vitrine', vitrine: v };
+
+  for (const f of tiers.apartir) {
+    if (f.motifs.some((m) => d.includes(sansAccents(m)))) {
+      const prix = p25(f.estimateur);
+      return prix == null ? { tier: 'devis' } : { tier: 'apartir', prix, famille: f.label };
+    }
   }
-  return tiers.defaut as Tier;
+  return { tier: 'devis' };
 }
 
-export type Item = Prestation & { label: string; tier: Tier };
+/** Famille corrigée quand l'export range la prestation dans une catégorie aberrante. */
+function familleCorrigee(designation: string, defaut: string): string {
+  const d = sansAccents(designation);
+  const r = tiers.taxonomie.find((t) => t.motifs.some((m) => d.includes(sansAccents(m))));
+  return r ? r.famille : defaut;
+}
+
+export type Item = Prestation & {
+  label: string;
+  tier: Tier;
+  affiche: string;
+  /** p25 de la famille, porté par l'item pour être remonté au niveau catégorie. */
+  p25?: number;
+};
 export type Categorie = {
   nom: string;
   items: Item[];
-  /** Plus petit prix RÉELLEMENT affichable (hors « sur devis »). 0 si aucun. */
-  aPartirDe: number;
   ventes: number;
+  /** « à partir de » de la FAMILLE, quand un p25 réel existe. `null` sinon. */
+  aPartirDe: number | null;
 };
 
-/** Catégories de prestations, nettoyées, dédoublonnées et triées par prix croissant. */
-export const prestations: Categorie[] = Object.entries(
-  raw.prestations as Record<string, Prestation[]>
-)
+/**
+ * Rendu du prix, LIGNE par ligne.
+ *
+ * Règle du cahier : on n'affiche un prix que sur les prix vitrines ; tout le
+ * reste est « Sur devis », sans prix. Le p25 d'une famille n'est donc jamais
+ * répété sur chaque ligne — ce serait absurde (une révision à 305 € annoncée
+ * « à partir de 165 € ») — il est remonté au niveau de la famille.
+ */
+function afficher(designation: string): { tier: Tier; affiche: string; p25?: number; libelle?: string } {
+  const c = classer(designation);
+  if (c.tier === 'vitrine') {
+    const p = prix(c.vitrine.prix) + c.vitrine.unite;
+    // Le libellé validé par le gérant prime sur celui de la caisse : « Recharge
+    // climatisation (R134A) » plutôt que « Forfait clim charge "promo" ».
+    return {
+      tier: 'vitrine',
+      affiche: c.vitrine.apartir ? `à partir de ${p}` : p,
+      libelle: c.vitrine.label,
+    };
+  }
+  if (c.tier === 'apartir') return { tier: 'apartir', affiche: 'Sur devis', p25: c.prix };
+  return { tier: 'devis', affiche: 'Sur devis' };
+}
+
+/**
+ * Prestations regroupées par famille. Aucun « dès {prix mini} » n'est calculé au
+ * niveau catégorie : le minimum d'une famille n'est pas un prix d'appel honnête
+ * (le plus bas de « Moteur & distribution » était une pose de silencieux à 35 €).
+ */
+const parFamille = new Map<string, Item[]>();
+for (const [famille, items] of Object.entries(raw.prestations as Record<string, Prestation[]>)) {
+  const vus = new Set<string>();
+  for (const it of items) {
+    // Le même forfait apparaît parfois plusieurs fois dans l'export.
+    const cle = `${it.designation}|${it.prix_ttc}`;
+    if (vus.has(cle)) continue;
+    vus.add(cle);
+    const nom = familleCorrigee(it.designation, famille);
+    const rendu = afficher(it.designation);
+    const liste = parFamille.get(nom) ?? [];
+    // Plusieurs lignes de caisse peuvent pointer vers un même prix vitrine
+    // (« RENOVATION OPTIQUE X2 » et « RÉNOVATION OPTIQUE PHARE X2 ») : on n'en
+    // publie qu'une, sous son libellé validé.
+    if (rendu.libelle && liste.some((x) => x.label === rendu.libelle)) continue;
+    liste.push({ ...it, label: rendu.libelle ?? lisible(it.designation), ...rendu });
+    parFamille.set(nom, liste);
+  }
+}
+
+export const prestations: Categorie[] = [...parFamille.entries()]
   .map(([nom, items]) => {
-    const vus = new Set<string>();
-    const nettoyes = items
-      .filter((it) => {
-        // Le même forfait apparaît parfois plusieurs fois dans l'export.
-        const cle = `${it.designation}|${it.prix_ttc}`;
-        if (vus.has(cle)) return false;
-        vus.add(cle);
-        return true;
-      })
-      .map((it) => ({ ...it, label: lisible(it.designation), tier: tierDe(it.designation) }))
-      .sort((a, b) => a.prix_ttc - b.prix_ttc);
-    // « dès X € » ne doit jamais reprendre le prix d'une prestation sur devis :
-    // ce serait annoncer un tarif qu'on a précisément choisi de ne pas publier.
-    const affichables = nettoyes.filter((it) => it.tier !== 'rouge');
+    const p25s = items.map((i) => i.p25).filter((v): v is number => typeof v === 'number');
     return {
       nom,
-      items: nettoyes,
-      aPartirDe: affichables[0]?.prix_ttc ?? 0,
-      ventes: nettoyes.reduce((n, it) => n + (it.ventes_2026 ?? 0), 0),
+      items: items.sort((a, b) => a.prix_ttc - b.prix_ttc),
+      ventes: items.reduce((n, it) => n + (it.ventes_2026 ?? 0), 0),
+      aPartirDe: p25s.length ? Math.min(...p25s) : null,
     };
   })
   .filter((c) => c.items.length > 0)
@@ -153,21 +232,13 @@ export const prestations: Categorie[] = Object.entries(
 
 export const totalPrestations = prestations.reduce((n, c) => n + c.items.length, 0);
 
-/** Rendu du prix selon le niveau de transparence retenu pour la prestation. */
-export function prixAffiche(it: { prix_ttc: number; tier: Tier }): string {
-  if (it.tier === 'rouge') return 'Sur devis';
-  if (it.tier === 'orange') return `dès ${prix(it.prix_ttc)}`;
-  return prix(it.prix_ttc);
-}
-
 /**
- * Les forfaits les plus vendus, toutes catégories confondues. L'export porte
- * désormais les volumes réels : autant s'en servir pour mettre en avant ce que
- * les clients demandent vraiment, plutôt qu'un choix éditorial arbitraire.
+ * « Les plus demandés » : uniquement des prix vitrines. Un prix mini trompeur
+ * (« vidange dès 19 € ») n'a rien à faire en tête de page.
  */
 export const populaires: (Item & { categorie: string })[] = prestations
   .flatMap((c) => c.items.map((it) => ({ ...it, categorie: c.nom })))
-  .filter((it) => (it.ventes_2026 ?? 0) > 0)
+  .filter((it) => it.tier === 'vitrine')
   .sort((a, b) => (b.ventes_2026 ?? 0) - (a.ventes_2026 ?? 0))
   .slice(0, 6);
 
@@ -223,7 +294,8 @@ export const boutique: CategorieBoutique[] = Object.entries(
     slug: slug(nom),
     nbReferences: v.nb_references,
     desc: EDITO[nom]?.desc ?? '',
-    marques: EDITO[nom]?.marques ?? [],
+    // Filtre volontaire : une marque non confirmée par Enzo n'est pas affichée.
+    marques: (EDITO[nom]?.marques ?? []).filter((m) => marquesConfirmees.includes(m)),
     icon: EDITO[nom]?.icon ?? 'diag',
   }))
   .sort((a, b) => b.nbReferences - a.nbReferences);

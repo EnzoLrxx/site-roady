@@ -124,6 +124,37 @@ export const brands = [
   { name: 'Osram', logo: '/img/marques/Osram.png' },
 ];
 
+/**
+ * Marques CONFIRMÉES comme distribuées par le garage : ce sont celles dont le
+ * logo figure sur ses supports (cf. `brands` ci-dessus). Elles seules peuvent
+ * être présentées comme certaines sur la page catalogue.
+ *
+ * Les autres marques repérées dans l'export de caisse (Ferodo, Fiamm, Gates,
+ * Purflux, TRW, SKF, Moog, Textar, Bardahl, Mannol, Carex, Neolux) sont bien
+ * apparues sur des ventes 2026, mais rien ne dit qu'elles sont référencées en
+ * permanence — un achat ponctuel chez un fournisseur suffit à les faire
+ * apparaître. Elles restent donc listées en « à valider » et ne sont PAS
+ * affichées tant qu'Enzo ne les a pas confirmées.
+ */
+export const marquesConfirmees = brands.map((b) => b.name);
+
+/** À VALIDER par Enzo : basculer une entrée dans `brands` la rendra visible. */
+export const marquesAValider = [
+  'Ferodo', // plaquettes et disques — très présent dans les ventes
+  'Fiamm', // batteries — marque dominante de l'export
+  'Gates', // kits de distribution et courroies
+  'Purflux', // filtres
+  'Fiaam', // filtres
+  'TRW', // freinage et train roulant
+  'SKF', // roulements
+  'Moog', // rotules et biellettes
+  'Textar', // nettoyants freins
+  'Bardahl', // additifs et dépollution
+  'Mannol', // huiles
+  'Carex', // liquides
+  'Neolux', // ampoules
+];
+
 // AVIS — volontairement VIDE.
 // Les trois avis qui figuraient ici (Julien M., Sophie R., Karim B.) étaient inventés
 // par le scaffold initial. Publier de faux témoignages est interdit (pratique

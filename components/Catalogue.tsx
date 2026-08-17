@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useMemo, useState } from 'react';
-import { prestations, boutique, prix, totalPrestations, totalReferences, populaires, MENTION_PRIX, prixAffiche, type Tier } from '@/lib/catalogue';
+import { prestations, boutique, prix, totalPrestations, totalReferences, populaires, MENTION_PRIX, type Tier } from '@/lib/catalogue';
 import { site, brands } from '@/lib/site';
 import { ServiceIcon, Check, Phone } from './Icons';
 import Reveal from './Reveal';
@@ -160,7 +160,7 @@ export default function Catalogue() {
                     <div className="mb-8 flex flex-wrap gap-x-6 gap-y-2 rounded-2xl border border-line bg-white px-6 py-4 text-[13px]">
                       <span className="flex items-center gap-2">
                         <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-500" />
-                        <span className="text-body"><strong className="font-bold text-ink">Prix fixe</strong> — forfait standardisé</span>
+                        <span className="text-body"><strong className="font-bold text-ink">Prix fixe</strong> — nos forfaits vitrines</span>
                       </span>
                       <span className="flex items-center gap-2">
                         <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-amber-500" />
@@ -186,7 +186,7 @@ export default function Catalogue() {
                               <span className="block truncate text-[14px] font-bold text-ink">{it.label}</span>
                               <span className="text-[12px] text-mut">{it.categorie}</span>
                             </span>
-                            <span className="shrink-0 whitespace-nowrap text-[15px] font-extrabold text-red">{prixAffiche(it)}</span>
+                            <span className="shrink-0 whitespace-nowrap text-[15px] font-extrabold text-red">{it.affiche}</span>
                           </div>
                         ))}
                       </div>
@@ -211,7 +211,7 @@ export default function Catalogue() {
                               <span className="block text-[17px] font-extrabold leading-tight text-ink">{c.nom}</span>
                               <span className="mt-0.5 block text-[13px] text-mut">
                                 {c.items.length} forfait{c.items.length > 1 ? 's' : ''}
-                                {c.aPartirDe > 0 ? <> · dès {prix(c.aPartirDe)}</> : <> · sur devis</>}
+                                {c.aPartirDe != null && <> · à partir de {prix(c.aPartirDe)}</>}
                               </span>
                             </span>
                             <span className={`shrink-0 text-red transition ${open ? 'rotate-45' : ''}`}>
@@ -290,25 +290,25 @@ export default function Catalogue() {
  * une panne se diagnostique.
  */
 const CTA: Record<Tier, string> = {
-  vert: 'Prendre rendez-vous',
-  orange: 'Obtenir mon devis gratuit',
-  rouge: 'Faire diagnostiquer mon véhicule',
+  vitrine: 'Prendre rendez-vous',
+  apartir: 'Obtenir mon devis gratuit',
+  devis: 'Faire diagnostiquer mon véhicule',
 };
 
 /** Niveau dominant d'une catégorie : le plus « incertain » l'emporte. */
 function tierDominant(items: { tier: Tier }[]): Tier {
-  if (items.some((i) => i.tier === 'rouge')) return 'rouge';
-  if (items.some((i) => i.tier === 'orange')) return 'orange';
-  return 'vert';
+  if (items.some((i) => i.tier === 'devis')) return 'devis';
+  if (items.some((i) => i.tier === 'apartir')) return 'apartir';
+  return 'vitrine';
 }
 
 const TEINTE: Record<Tier, string> = {
-  vert: 'text-ink',
-  orange: 'text-ink',
-  rouge: 'text-mut',
+  vitrine: 'text-ink',
+  apartir: 'text-ink',
+  devis: 'text-mut',
 };
 
-function Liste({ items }: { items: { designation: string; label: string; prix_ttc: number; tier: Tier }[] }) {
+function Liste({ items }: { items: { designation: string; label: string; prix_ttc: number; tier: Tier; affiche: string }[] }) {
   return (
     <>
     <ul className="divide-y divide-line">
@@ -316,7 +316,7 @@ function Liste({ items }: { items: { designation: string; label: string; prix_tt
         <li key={it.designation + it.prix_ttc} className="flex items-center justify-between gap-4 px-5 py-3.5">
           <span className="text-[14.5px] leading-snug text-body">{it.label}</span>
           <span className={`shrink-0 whitespace-nowrap text-[15px] font-extrabold ${TEINTE[it.tier]}`}>
-            {prixAffiche(it)}
+            {it.affiche}
           </span>
         </li>
       ))}
