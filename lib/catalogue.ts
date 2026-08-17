@@ -1,4 +1,5 @@
 import raw from './catalogue-roady.json';
+import tiers from './catalogue-tiers.json';
 
 /**
  * Couche de présentation du catalogue W-Contact.
@@ -95,8 +96,30 @@ export function prix(v: number): string {
     : `${v.toFixed(2).replace('.', ',')} €`;
 }
 
-export type Item = Prestation & { label: string };
-export type Categorie = { nom: string; items: Item[]; aPartirDe: number; ventes: number };
+/** Niveau de transparence tarifaire (cf. lib/catalogue-tiers.json). */
+export type Tier = 'vert' | 'orange' | 'rouge';
+
+function sansAccents(s: string) {
+  return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+}
+
+/** Le tier d'une prestation, déduit des motifs du fichier de règles. */
+export function tierDe(designation: string): Tier {
+  const d = sansAccents(designation);
+  for (const regle of tiers.regles) {
+    if (regle.motifs.some((m) => d.includes(sansAccents(m)))) return regle.tier as Tier;
+  }
+  return tiers.defaut as Tier;
+}
+
+export type Item = Prestation & { label: string; tier: Tier };
+export type Categorie = {
+  nom: string;
+  items: Item[];
+  /** Plus petit prix RÉELLEMENT affichable (hors « sur devis »). 0 si aucun. */
+  aPartirDe: number;
+  ventes: number;
+};
 
 /** Catégories de prestations, nettoyées, dédoublonnées et triées par prix croissant. */
 export const prestations: Categorie[] = Object.entries(
@@ -112,12 +135,15 @@ export const prestations: Categorie[] = Object.entries(
         vus.add(cle);
         return true;
       })
-      .map((it) => ({ ...it, label: lisible(it.designation) }))
+      .map((it) => ({ ...it, label: lisible(it.designation), tier: tierDe(it.designation) }))
       .sort((a, b) => a.prix_ttc - b.prix_ttc);
+    // « dès X € » ne doit jamais reprendre le prix d'une prestation sur devis :
+    // ce serait annoncer un tarif qu'on a précisément choisi de ne pas publier.
+    const affichables = nettoyes.filter((it) => it.tier !== 'rouge');
     return {
       nom,
       items: nettoyes,
-      aPartirDe: nettoyes[0]?.prix_ttc ?? 0,
+      aPartirDe: affichables[0]?.prix_ttc ?? 0,
       ventes: nettoyes.reduce((n, it) => n + (it.ventes_2026 ?? 0), 0),
     };
   })
@@ -126,6 +152,13 @@ export const prestations: Categorie[] = Object.entries(
   .sort((a, b) => b.ventes - a.ventes);
 
 export const totalPrestations = prestations.reduce((n, c) => n + c.items.length, 0);
+
+/** Rendu du prix selon le niveau de transparence retenu pour la prestation. */
+export function prixAffiche(it: { prix_ttc: number; tier: Tier }): string {
+  if (it.tier === 'rouge') return 'Sur devis';
+  if (it.tier === 'orange') return `dès ${prix(it.prix_ttc)}`;
+  return prix(it.prix_ttc);
+}
 
 /**
  * Les forfaits les plus vendus, toutes catégories confondues. L'export porte

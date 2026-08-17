@@ -1,0 +1,59 @@
+{
+  "_comment": "Transparence tarifaire à 3 niveaux (cahier du gérant, §2-§3). Fichier SÉPARÉ de catalogue-roady.json, qui est régénéré depuis W-Contact : y écrire les tiers les ferait disparaître au prochain export. Ici, ils survivent. Enzo peut réaffecter une prestation en changeant un motif ci-dessous, sans toucher au code.",
+  "_niveaux": {
+    "vert": "Prix fixe affiché tel quel — prestation standardisée.",
+    "orange": "Affiché « à partir de X € » — le prix dépend du véhicule.",
+    "rouge": "Aucun prix public, « Sur devis » — trop variable pour être annoncé."
+  },
+  "_ordre": "Les règles sont évaluées dans l'ordre : rouge d'abord, puis vert. Tout le reste bascule en orange.",
+  "regles": [
+    {
+      "tier": "rouge",
+      "motifs": [
+        "distribution",
+        "embrayage",
+        "alternateur",
+        "demarreur",
+        "recherche de panne",
+        "nettoyage fap",
+        "triangle",
+        "rotule",
+        "biellette",
+        "soufflet",
+        "roulement",
+        "rectification",
+        "kit arriere",
+        "cremaillere",
+        "bielette"
+      ]
+    },
+    {
+      "tier": "vert",
+      "motifs": [
+        "crevaison",
+        "montage pneu",
+        "montage 1 pneu",
+        "montage 2 pneu",
+        "montage 4 pneu",
+        "equilibrage",
+        "permutation",
+        "geometrie",
+        "parallelisme",
+        "valve",
+        "recharge clim",
+        "forf clim",
+        "entretien et recharge clim",
+        "forfait clim",
+        "diagnostic",
+        "pack diag",
+        "lecture",
+        "reglage phare",
+        "renovation optique",
+        "ampoule",
+        "tarif horaire",
+        "pose plaque"
+      ]
+    }
+  ],
+  "defaut": "orange"
+}

@@ -2,7 +2,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Check, Phone } from './Icons';
 import estimatorData from '@/lib/estimator-data.json';
-import { site } from '@/lib/site';
+import { site, CONFIRMATION_DEVIS } from '@/lib/site';
+import { EVT_CATEGORIE } from './Problemes';
 
 type Category = { key: string; label: string; from?: number; low: number | null; high: number | null; note: string };
 type Estimate = {
@@ -107,6 +108,7 @@ export default function DevisForm() {
   const [make, setMake] = useState('');
   const [model, setModel] = useState('');
   const [plate, setPlate] = useState('');
+  const [km, setKm] = useState('');
 
   const headingRef = useRef<HTMLParagraphElement>(null);
   const firstRender = useRef(true);
@@ -133,6 +135,21 @@ export default function DevisForm() {
     },
     []
   );
+
+  // Présélection depuis la section « Quel problème rencontrez-vous ? » : on ouvre
+  // l'étape 1 sur la bonne catégorie et on lance l'estimation dans la foulée.
+  useEffect(() => {
+    function onCategorie(e: Event) {
+      const key = (e as CustomEvent<string>).detail;
+      if (!CATEGORIES.some((c) => c.key === key)) return;
+      setStep(0);
+      setCategory(key);
+      setEst(null);
+      if (key !== 'autre') runEstimate({ category: key });
+    }
+    window.addEventListener(EVT_CATEGORIE, onCategorie);
+    return () => window.removeEventListener(EVT_CATEGORIE, onCategorie);
+  }, [runEstimate]);
 
   // Déplacer le focus sur le titre d'étape : sans ça, le clavier reste au bouton précédent.
   useEffect(() => {
@@ -180,6 +197,8 @@ export default function DevisForm() {
       clientPhone: String(fd.get('clientPhone') || ''),
       clientEmail: String(fd.get('clientEmail') || ''),
       vehicle: { make, model, plateNumber: plate },
+      // Le kilométrage aide l'atelier à chiffrer (révision, distribution).
+      kilometrage: km.replace(/\s/g, '') || null,
       message: [catLabel, freetext.trim()].filter(Boolean).join(' — '),
       // Pré-qualification : la demande arrive catégorisée et chiffrée côté Lemonauto.
       category: category || null,
@@ -206,7 +225,7 @@ export default function DevisForm() {
           <Check className="h-8 w-8" />
         </div>
         <h3 className="mb-2 text-xl font-extrabold text-ink">Demande envoyée !</h3>
-        <p className="text-body">On vous rappelle rapidement, aux horaires d’ouverture. Merci de votre confiance.</p>
+        <p className="text-body">{CONFIRMATION_DEVIS}</p>
         {est?.low != null && est.high != null && (
           <p className="mt-3 text-[13px] text-mut">
             Estimation retenue : entre {est.low} et {est.high} €. Le devis définitif sera établi après le contrôle gratuit.
@@ -298,11 +317,26 @@ export default function DevisForm() {
               <input id="model" value={model} onChange={(e) => setModel(e.target.value)} placeholder="Ex : 208" className={field} />
             </div>
           </div>
-          <div className="mt-3">
-            <label className={label} htmlFor="plate">
-              Immatriculation <span className="font-normal text-mut">(optionnel)</span>
-            </label>
-            <input id="plate" value={plate} onChange={(e) => setPlate(e.target.value)} placeholder="AA-123-AA" className={field} />
+          <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <div>
+              <label className={label} htmlFor="plate">
+                Immatriculation <span className="font-normal text-mut">(optionnel)</span>
+              </label>
+              <input id="plate" value={plate} onChange={(e) => setPlate(e.target.value)} placeholder="AA-123-AA" className={field} />
+            </div>
+            <div>
+              <label className={label} htmlFor="km">
+                Kilométrage <span className="font-normal text-mut">(optionnel)</span>
+              </label>
+              <input
+                id="km"
+                value={km}
+                onChange={(e) => setKm(e.target.value)}
+                inputMode="numeric"
+                placeholder="120 000 km"
+                className={field}
+              />
+            </div>
           </div>
           <EstimateCard est={est} loading={estLoading} make={make} model={model} />
         </div>
@@ -359,7 +393,7 @@ export default function DevisForm() {
             disabled={status === 'sending'}
             className="flex-1 rounded-full bg-red px-4 py-3.5 text-base font-bold text-white transition hover:bg-red-dark disabled:opacity-60"
           >
-            {status === 'sending' ? 'Envoi…' : 'Recevez le devis exact'}
+            {status === 'sending' ? 'Envoi…' : 'Demander mon devis gratuit'}
           </button>
         )}
       </div>

@@ -1,7 +1,6 @@
-import { site, photos } from '@/lib/site';
+import { site, photos, heroBadges } from '@/lib/site';
 import { Check, Star } from './Icons';
 
-const trust = ['Toutes marques', 'Sans rendez-vous', 'Paiement 3x / 4x', 'Devis gratuit'];
 
 export default function Hero() {
   return (
@@ -31,7 +30,7 @@ export default function Hero() {
           <a href={site.phoneHref} className="flex items-center gap-2 rounded-full border-[1.5px] border-white/35 bg-white/10 px-6 py-4 font-bold text-white backdrop-blur transition hover:bg-white/20">📞 {site.phone}</a>
         </div>
         <div className="flex max-w-3xl flex-wrap gap-x-7 gap-y-3 border-t border-white/15 pt-5">
-          {trust.map((t) => (
+          {heroBadges.map((t) => (
             <div key={t} className="flex items-center gap-2 text-[14.5px] font-semibold text-white/90">
               <Check className="h-5 w-5 shrink-0 text-[#ff5a6a]" /> {t}
             </div>

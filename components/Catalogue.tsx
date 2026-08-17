@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useMemo, useState } from 'react';
-import { prestations, boutique, prix, totalPrestations, totalReferences, populaires, MENTION_PRIX } from '@/lib/catalogue';
+import { prestations, boutique, prix, totalPrestations, totalReferences, populaires, MENTION_PRIX, prixAffiche, type Tier } from '@/lib/catalogue';
 import { site, brands } from '@/lib/site';
 import { ServiceIcon, Check, Phone } from './Icons';
 import Reveal from './Reveal';
@@ -74,7 +74,7 @@ export default function Catalogue() {
         />
         <div className="relative mx-auto max-w-6xl px-5">
           <span className="inline-block rounded-full bg-white/15 px-3 py-1.5 text-xs font-extrabold uppercase tracking-wide text-[#ffd0d5]">
-            Catalogue &amp; tarifs
+            Prestations &amp; forfaits
           </span>
           <h1 className="mb-3 mt-3 text-[38px] font-extrabold leading-tight tracking-tight sm:text-[46px]">
             Tout ce qu’on fait, tout ce qu’on vend.
@@ -154,6 +154,25 @@ export default function Catalogue() {
 
               {onglet === 'prestations' && (
                 <>
+                  {/* Légende des 3 niveaux de transparence (cahier §3) : le client
+                      comprend d'emblée pourquoi certains prix ne sont pas affichés. */}
+                  <Reveal>
+                    <div className="mb-8 flex flex-wrap gap-x-6 gap-y-2 rounded-2xl border border-line bg-white px-6 py-4 text-[13px]">
+                      <span className="flex items-center gap-2">
+                        <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-500" />
+                        <span className="text-body"><strong className="font-bold text-ink">Prix fixe</strong> — forfait standardisé</span>
+                      </span>
+                      <span className="flex items-center gap-2">
+                        <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-amber-500" />
+                        <span className="text-body"><strong className="font-bold text-ink">À partir de</strong> — dépend du véhicule</span>
+                      </span>
+                      <span className="flex items-center gap-2">
+                        <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-red" />
+                        <span className="text-body"><strong className="font-bold text-ink">Sur devis</strong> — après contrôle à l’atelier</span>
+                      </span>
+                    </div>
+                  </Reveal>
+
                   {/* Ce que les clients demandent réellement — issu des volumes de vente,
                       pas d'une sélection éditoriale. */}
                   <Reveal>
@@ -167,7 +186,7 @@ export default function Catalogue() {
                               <span className="block truncate text-[14px] font-bold text-ink">{it.label}</span>
                               <span className="text-[12px] text-mut">{it.categorie}</span>
                             </span>
-                            <span className="shrink-0 text-[15px] font-extrabold text-red">{prix(it.prix_ttc)}</span>
+                            <span className="shrink-0 whitespace-nowrap text-[15px] font-extrabold text-red">{prixAffiche(it)}</span>
                           </div>
                         ))}
                       </div>
@@ -191,7 +210,8 @@ export default function Catalogue() {
                             <span className="min-w-0 flex-1">
                               <span className="block text-[17px] font-extrabold leading-tight text-ink">{c.nom}</span>
                               <span className="mt-0.5 block text-[13px] text-mut">
-                                {c.items.length} forfait{c.items.length > 1 ? 's' : ''} · dès {prix(c.aPartirDe)}
+                                {c.items.length} forfait{c.items.length > 1 ? 's' : ''}
+                                {c.aPartirDe > 0 ? <> · dès {prix(c.aPartirDe)}</> : <> · sur devis</>}
                               </span>
                             </span>
                             <span className={`shrink-0 text-red transition ${open ? 'rotate-45' : ''}`}>
@@ -264,19 +284,53 @@ export default function Catalogue() {
   );
 }
 
-function Liste({ items }: { items: { designation: string; label: string; prix_ttc: number }[] }) {
+/**
+ * Libellé d'action adapté à la situation (cahier §7). Il découle du niveau de
+ * transparence : un forfait à prix fixe se réserve, un prix variable se devise,
+ * une panne se diagnostique.
+ */
+const CTA: Record<Tier, string> = {
+  vert: 'Prendre rendez-vous',
+  orange: 'Obtenir mon devis gratuit',
+  rouge: 'Faire diagnostiquer mon véhicule',
+};
+
+/** Niveau dominant d'une catégorie : le plus « incertain » l'emporte. */
+function tierDominant(items: { tier: Tier }[]): Tier {
+  if (items.some((i) => i.tier === 'rouge')) return 'rouge';
+  if (items.some((i) => i.tier === 'orange')) return 'orange';
+  return 'vert';
+}
+
+const TEINTE: Record<Tier, string> = {
+  vert: 'text-ink',
+  orange: 'text-ink',
+  rouge: 'text-mut',
+};
+
+function Liste({ items }: { items: { designation: string; label: string; prix_ttc: number; tier: Tier }[] }) {
   return (
     <>
     <ul className="divide-y divide-line">
       {items.map((it) => (
         <li key={it.designation + it.prix_ttc} className="flex items-center justify-between gap-4 px-5 py-3.5">
           <span className="text-[14.5px] leading-snug text-body">{it.label}</span>
-          <span className="shrink-0 text-[15px] font-extrabold text-ink">{prix(it.prix_ttc)}</span>
+          <span className={`shrink-0 whitespace-nowrap text-[15px] font-extrabold ${TEINTE[it.tier]}`}>
+            {prixAffiche(it)}
+          </span>
         </li>
       ))}
     </ul>
     {/* Une condition à côté de chaque prix : le forfait est réel, mais il dépend du véhicule. */}
-    <p className="border-t border-line bg-wash px-5 py-3 text-[12px] leading-snug text-mut">{MENTION_PRIX}</p>
+    <div className="border-t border-line bg-wash px-5 py-4">
+      <p className="text-[12px] leading-snug text-mut">{MENTION_PRIX}</p>
+      <a
+        href="/#contact"
+        className="mt-3 inline-flex min-h-[48px] items-center rounded-full bg-navy px-5 text-[14.5px] font-bold text-white transition hover:bg-navy-3"
+      >
+        {CTA[tierDominant(items)]}
+      </a>
+    </div>
     </>
   );
 }

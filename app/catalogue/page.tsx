@@ -6,12 +6,12 @@ import { site } from '@/lib/site';
 import { totalPrestations, totalReferences } from '@/lib/catalogue';
 
 export const metadata: Metadata = {
-  title: 'Catalogue & tarifs — Roady Solliès-Pont',
-  description: `Tous nos forfaits atelier avec leurs prix TTC (${totalPrestations} prestations) et les ${totalReferences} références en stock dans la boutique : filtres, huiles, freinage, batteries, pneus. Garage auto à Solliès-Pont (83).`,
+  title: 'Nos prestations & forfaits — Roady Solliès-Pont',
+  description: `Tous nos forfaits atelier avec leurs prix TTC (${totalPrestations} prestations) et les ${totalReferences} références vendues au comptoir en 2026 : filtres, huiles, freinage, batteries, pneus. Garage auto à Solliès-Pont (83).`,
   alternates: { canonical: `${site.url}/catalogue` },
   openGraph: {
-    title: 'Catalogue & tarifs — Roady Solliès-Pont',
-    description: 'Nos forfaits atelier avec les prix, et tout ce que la boutique tient en stock.',
+    title: 'Nos prestations & forfaits — Roady Solliès-Pont',
+    description: 'Nos forfaits atelier avec les prix, et l’étendue de la gamme en boutique.',
     url: `${site.url}/catalogue`,
     type: 'website',
   },

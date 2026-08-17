@@ -31,6 +31,74 @@ export const photos = {
   huiles: '/img/photos/IMG_2550.jpg',
 };
 
+/** Badges du hero. « Sans rendez-vous » remplacé par « Diagnostic en photos » (cahier §10). */
+export const heroBadges = ['Toutes marques', 'Diagnostic en photos', 'Paiement 3x / 4x', 'Devis gratuit'];
+
+/** Message affiché après envoi du formulaire — texte imposé par le gérant (cahier §11). */
+export const CONFIRMATION_DEVIS =
+  'Votre demande a bien été transmise à l’équipe ROADY Solliès-Pont. Nous revenons vers vous pendant nos horaires d’ouverture.';
+
+/**
+ * « Par où commencer ? » — les trois portes d'entrée du cahier (§12).
+ * Elles convergent toutes vers une demande qualifiée.
+ */
+export const portes = [
+  {
+    titre: 'Nos prestations',
+    desc: 'Ce que nous faisons, avec les tarifs quand ils sont fixes.',
+    href: '#prestations',
+    cta: 'Voir les prestations',
+    icon: 'oil',
+  },
+  {
+    titre: 'J’ai un problème avec ma voiture',
+    desc: 'Un bruit, un voyant, une vibration ? Partez du symptôme.',
+    href: '#problemes',
+    cta: 'Décrire mon problème',
+    icon: 'diag',
+  },
+  {
+    titre: 'Devis gratuit',
+    desc: 'Une estimation immédiate, puis un prix exact après contrôle.',
+    href: '#contact',
+    cta: 'Demander mon devis',
+    icon: 'brake',
+  },
+];
+
+/**
+ * « Quel problème rencontrez-vous ? » (cahier §6 et §12).
+ * `categorie` correspond à une clé de lib/estimator-data.json : cliquer sur une
+ * tuile présélectionne cette catégorie dans le formulaire de devis.
+ */
+export const problemes = [
+  { symptome: 'Ma climatisation ne fait plus de froid', piste: 'Diagnostic climatisation', categorie: 'climatisation' },
+  { symptome: 'Un voyant s’est allumé', piste: 'Diagnostic électronique', categorie: 'autre' },
+  { symptome: 'Ma voiture tire à droite ou à gauche', piste: 'Pneus, géométrie, train roulant', categorie: 'geometrie' },
+  { symptome: 'Mon volant vibre', piste: 'Pneus, équilibrage, géométrie', categorie: 'geometrie' },
+  { symptome: 'Bruit au freinage', piste: 'Contrôle du freinage', categorie: 'freinage' },
+  { symptome: 'Démarrage difficile', piste: 'Batterie, alternateur, démarreur', categorie: 'batterie' },
+  { symptome: 'Manque de puissance', piste: 'Diagnostic, dépollution', categorie: 'autre' },
+  { symptome: 'Bruit inhabituel', piste: 'Diagnostic mécanique', categorie: 'autre' },
+  { symptome: 'Je ne sais pas ce qu’a ma voiture', piste: 'Décrire mon problème', categorie: 'autre' },
+];
+
+/**
+ * Hiérarchisation des travaux présentée au client (cahier §5).
+ * Bloc explicatif : le diagnostic en photos se fait en atelier sur la tablette
+ * Lemonauto, ce n'est pas une fonctionnalité du site.
+ */
+export const urgences = [
+  {
+    niveau: 'Urgent',
+    desc: 'Intervention à réaliser rapidement, pour votre sécurité ou pour éviter que la panne ne s’aggrave.',
+  },
+  {
+    niveau: 'À prévoir',
+    desc: 'Intervention non urgente : à surveiller, ou à programmer lors d’un prochain passage.',
+  },
+];
+
 export const services = [
   // « contrôle 24 points » retiré ici aussi : le chiffre n'est fondé sur rien,
   // il avait déjà été enlevé de la bande de statistiques.

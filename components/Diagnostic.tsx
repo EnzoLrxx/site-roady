@@ -1,4 +1,4 @@
-import { photos } from '@/lib/site';
+import { photos, urgences } from '@/lib/site';
 import { Check } from './Icons';
 import Reveal from './Reveal';
 
@@ -27,8 +27,14 @@ export default function Diagnostic() {
           <div>
             <span className="inline-block rounded-full bg-red-wash px-3 py-1.5 text-xs font-extrabold uppercase tracking-wide text-red">Ce qui nous rend différents</span>
             <h2 className="mb-4 mt-3 text-[34px] font-extrabold leading-tight tracking-tight text-ink">La preuve en photo, pas juste notre parole</h2>
-            <p className="mb-6 text-[16.5px] text-body">
-              Le plus dur, chez un garagiste, c’est de savoir si on peut lui faire confiance. Chez nous, vous ne décidez jamais à l’aveugle : on vous <b className="text-ink">montre en photo</b> l’état réel de vos pièces. Vous voyez, vous comprenez, vous choisissez.
+            <p className="mb-5 text-[16.5px] text-body">
+              Le plus dur, chez un garagiste, c’est de savoir si on peut lui faire confiance. Chez nous,
+              vous ne décidez jamais à l’aveugle : lors du contrôle en atelier, on vous{' '}
+              <b className="text-ink">montre en photo</b> l’état réel de vos pièces.
+            </p>
+            {/* Slogan imposé par le gérant (cahier §4). */}
+            <p className="mb-6 text-[19px] font-extrabold uppercase leading-tight tracking-tight text-red">
+              Vous voyez. Vous comprenez. Vous décidez.
             </p>
             <ul className="flex flex-col gap-3">
               {pts.map((p) => (
@@ -37,6 +43,32 @@ export default function Diagnostic() {
                 </li>
               ))}
             </ul>
+
+            {/* Hiérarchisation des travaux (cahier §5) : rassure sur le fait qu'on ne
+                cherche pas à tout remplacer d'un coup. */}
+            <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {urgences.map((u, i) => (
+                <div
+                  key={u.niveau}
+                  className={`rounded-2xl border p-4 ${
+                    i === 0 ? 'border-[#f2c9ce] bg-red-wash' : 'border-amber-200 bg-amber-50'
+                  }`}
+                >
+                  <p
+                    className={`text-[12px] font-extrabold uppercase tracking-wide ${
+                      i === 0 ? 'text-red' : 'text-amber-700'
+                    }`}
+                  >
+                    {u.niveau}
+                  </p>
+                  <p className="mt-1.5 text-[13.5px] leading-snug text-body">{u.desc}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-3 text-[13.5px] leading-snug text-mut">
+              Nous ne cherchons pas à tout remplacer immédiatement : nous vous aidons à hiérarchiser
+              les travaux.
+            </p>
           </div>
         </Reveal>
       </div>

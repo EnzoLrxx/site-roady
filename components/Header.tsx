@@ -4,8 +4,8 @@ import { site } from '@/lib/site';
 
 // Ancres préfixées par « / » : sans cela elles ne mènent nulle part depuis /catalogue.
 const links = [
-  { href: '/#prestations', label: 'Prestations' },
-  { href: '/catalogue', label: 'Catalogue & tarifs' },
+  { href: '/#prestations', label: 'Nos services' },
+  { href: '/catalogue', label: 'Prestations & forfaits' },
   { href: '/#pourquoi', label: 'Pourquoi nous' },
   { href: '/#avis', label: 'Avis' },
   { href: '/#contact', label: 'Accès' },

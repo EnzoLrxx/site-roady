@@ -1,8 +1,10 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Stats from '@/components/Stats';
+import Portes from '@/components/Portes';
 import Services from '@/components/Services';
 import Offres from '@/components/Offres';
+import Problemes from '@/components/Problemes';
 import Diagnostic from '@/components/Diagnostic';
 import Boutique from '@/components/Boutique';
 import WhyUs from '@/components/WhyUs';
@@ -21,8 +23,10 @@ export default function Home() {
       <main>
         <Hero />
         <Stats />
+        <Portes />
         <Services />
         <Offres />
+        <Problemes />
         <Diagnostic />
         <Boutique />
         <WhyUs />
