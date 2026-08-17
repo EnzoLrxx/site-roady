@@ -104,5 +104,9 @@
       "famille": "Échappement"
     }
   ],
-  "_vitrine_en_attente": "Diagnostic électronique « à partir de 35 € » : AUCUNE ligne correspondante dans l'export 2026 vérifié (les lignes proches sont PACK DIAG SECURITE à 19 € et LECTURE & EFFACEMENT CODE DEFAUT à 39 €). Non affiché tant qu'Enzo n'a pas indiqué à quelle prestation ce prix se rattache."
+  "_vitrine_en_attente": "Diagnostic électronique « à partir de 35 € » : AUCUNE ligne correspondante dans l'export 2026 vérifié (les lignes proches sont PACK DIAG SECURITE à 19 € et LECTURE & EFFACEMENT CODE DEFAUT à 39 €). Non affiché tant qu'Enzo n'a pas indiqué à quelle prestation ce prix se rattache.",
+  "_masquees": "Prestations retirées du catalogue public : le tarif horaire est une donnée interne de facturation, le client n'a pas à la voir — il regarde un forfait, pas un taux.",
+  "masquees": [
+    "tarif horaire"
+  ]
 }

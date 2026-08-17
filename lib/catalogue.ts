@@ -145,6 +145,12 @@ export function classer(designation: string): Classement {
   return { tier: 'devis' };
 }
 
+/** Prestations volontairement absentes du catalogue public. */
+function masquee(designation: string): boolean {
+  const d = sansAccents(designation);
+  return (tiers.masquees as string[]).some((m) => d.includes(sansAccents(m)));
+}
+
 /** Famille corrigée quand l'export range la prestation dans une catégorie aberrante. */
 function familleCorrigee(designation: string, defaut: string): string {
   const d = sansAccents(designation);
@@ -204,6 +210,7 @@ for (const [famille, items] of Object.entries(raw.prestations as Record<string, 
     const cle = `${it.designation}|${it.prix_ttc}`;
     if (vus.has(cle)) continue;
     vus.add(cle);
+    if (masquee(it.designation)) continue;
     const nom = familleCorrigee(it.designation, famille);
     const rendu = afficher(it.designation);
     const liste = parFamille.get(nom) ?? [];
